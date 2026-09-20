@@ -1,16 +1,210 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="el" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jules Verne 200 | An Immersive Extraordinary Journey</title>
+  <meta name="description" content="Η διεθνής ψηφιακή έκθεση για τα 200 χρόνια από τη γέννηση του Ιουλίου Βερν. Μια μοναδική immersive εμπειρία στην Αθήνα.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .bg-steampunk {
+      background-color: #0b0f19;
+      background-image: radial-gradient(at 0% 0%, rgba(217, 119, 6, 0.12) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
-  <div class="text-center p-8">
-    <h1 class="text-4xl font-bold text-amber-400 mb-4">Jules Verne 200</h1>
-    <p class="text-lg text-slate-300">An Immersive Extraordinary Journey — Video Theatre Production</p>
-    <p class="text-sm text-slate-500 mt-2">Connected via GitHub CI/CD</p>
-  </div>
+<body class="bg-steampunk text-slate-100 min-h-screen selection:bg-amber-500 selection:text-black">
+
+  <!-- Header / Navigation -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-500/10 text-amber-400 font-cinzel font-bold text-xl">JV</div>
+        <div>
+          <span class="block font-cinzel font-bold text-lg text-amber-400 tracking-wider leading-none">JULES VERNE 200</span>
+          <span class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">An Immersive Journey</span>
+        </div>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-amber-400 transition-colors">Η Έκθεση</a>
+        <a href="#experience" class="hover:text-amber-400 transition-colors">Εμπειρία & VR</a>
+        <a href="#schools" class="hover:text-amber-400 transition-colors">Σχολεία & Ομάδες</a>
+        <a href="#info" class="hover:text-amber-400 transition-colors">Πληροφορίες</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#booking" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-amber-500/20">
+          Εισιτηρια
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative pt-24 pb-32 overflow-hidden border-b border-slate-800/50">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-widest mb-8">
+        <i class="fa-solid fa-compass animate-spin text-amber-400" style="animation-duration: 10s;"></i>
+        200 Χρονια απο τη γεννηση του οραματιστη
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-cinzel font-black tracking-tight text-white mb-6 leading-tight">
+        Ενα Αξεπεραστο <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Ταξιδι στη Φαντασια</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
+        Από τα βάθη των ωκεανών με τον Ναυτίλο μέχρι τη σκοτεινή πλευρά της Σελήνης. Η μεγαλύτερη διαδραστική έκθεση ψηφιακής τεχνολογίας, 3D projection mapping και Virtual Reality.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#booking" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-amber-500/25">
+          Κρατηση Εισιτηριων
+        </a>
+        <a href="#schools" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-sm uppercase tracking-wider transition-all">
+          Εκπαιδευτικες Επισκεψεις
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Core Highlights / Numbers -->
+  <section class="py-16 border-b border-slate-800/60 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">1.200+ m²</div>
+        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Εκθεσιακος Χωρος</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">360°</div>
+        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Projection Mapping</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">VR Metaverse</div>
+        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Διαδραστικη Εμπειρια</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">5 Εμβληματικα</div>
+        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Εργα του Βερν</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Thematic Worlds -->
+  <section id="experience" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-xs uppercase tracking-widest text-amber-400 font-bold mb-3">Θεματικες Ζωνες</h2>
+      <p class="text-3xl md:text-4xl font-cinzel font-bold text-white mb-4">Ζηστε τους Μυθους του Ιουλιου Βερν</p>
+      <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+        Ένα πολυαισθητηριακό ταξίδι μέσα από τα σπουδαιότερα μυθιστορήματα που προέβλεψαν το μέλλον της επιστήμης και της ανθρώπινης εξερεύνησης.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-water"></i>
+        </div>
+        <h3 class="text-xl font-cinzel font-bold text-white mb-2">20.000 Λευγες κατω απο τη Θαλασσα</h3>
+        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+          Μπείτε στο θρυλικό υποβρύχιο Ναυτίλος του Πλοιάρχου Νέμο. Εξερευνήστε τον μυστηριώδη βυθό μέσα από 360° προβολές και ηχοτοπία.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <h3 class="text-xl font-cinzel font-bold text-white mb-2">Ο Γυρος του Κοσμου σε 80 Ημερες</h3>
+        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+          Ακολουθήστε τα βήματα του Φιλέα Φογκ μέσα από εξωτικές διαδρομές, ατμοκίνητα τρένα, αερόστατα και διαδραστικούς σταθμούς εποχής.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h3 class="text-xl font-cinzel font-bold text-white mb-2">Απο τη Γη στη Σεληνη</h3>
+        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+          Φορέστε τα VR headsets και επιβιβαστείτε στην κάψουλα της διαστημικής πρωτοπορίας, δεκαετίες πριν την ιστορική αποστολή Apollo 11.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schools & Groups Section -->
+  <section id="schools" class="py-20 bg-slate-900/40 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Εκπαιδευτικο Προγραμμα</span>
+        <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-white mt-2 mb-6">Σχολικες Επισκεψεις & Ομαδικες Κρατησεις</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          Η έκθεση αποτελεί έναν ιδανικό εκπαιδευτικό προορισμό για μαθητές Πρωτοβάθμιας και Δευτεροβάθμιας εκπαίδευσης. Συνδυάζει τη λογοτεχνία, την επιστήμη, την ιστορία και την τεχνολογία του μέλλοντος μέσα από ειδικά σχεδιασμένες ξεναγήσεις.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-check text-amber-400"></i> Εγκεκριμένος εκπαιδευτικός οδηγός για εκπαιδευτικούς
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-check text-amber-400"></i> Ειδικές προνομιακές τιμές για οργανωμένα σχολικά γκρουπ
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-check text-amber-400"></i> Πλήρως προσβάσιμος χώρος με συνεχή επίβλεψη
+          </li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all">
+          <i class="fa-solid fa-file-arrow-down"></i> Αιτηση Κρατησης Σχολειου
+        </a>
+      </div>
+
+      <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-2xl">
+        <h3 class="text-xl font-cinzel font-bold text-white mb-4">Εκδηλωση Ενδιαφεροντος</h3>
+        <form id="contactForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Ονομα / Σχολειο / Φορεας</label>
+            <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Τηλεφωνο</label>
+              <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Email</label>
+              <input type="email" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Εκτιμωμενος Αριθμος Μαθητων / Ατομων</label>
+            <input type="number" placeholder="π.χ. 45" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+          <button type="submit" class="w-full py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all">
+            Αποστολη Αιτηματος
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="info" class="py-12 border-t border-slate-800 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-cinzel font-bold text-amber-400 text-sm">VIDEO THEATRE</span>
+        <span>•</span>
+        <span>Jules Verne 200 Athens</span>
+      </div>
+      <p>© 2026 Video Theatre. Όλα τα δικαιώματα διατηρούνται.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

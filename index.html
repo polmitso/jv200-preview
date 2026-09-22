@@ -21,13 +21,13 @@
   <!-- ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --light-cream: #F7F4EE;
       --parchment: #EFE9DE;
-      --warm-gold: #A67C1E; /* Πιο σκούρο, βαθύ μουσταρδί/χρυσό */
+      --warm-gold: #A67C1E;
       --dark-bronze: #2C221E;
       --text-main: #231B17;
       --text-muted: #5C504A;
@@ -143,14 +143,12 @@
       color: #FFFFFF;
     }
 
-    /* RIGHT CONTROLS CONTAINER */
     .nav-right-controls {
       display: flex;
       align-items: center;
       gap: 1.2rem;
     }
 
-    /* HAMBURGER TOGGLE BUTTON */
     .hamburger-btn {
       display: none;
       background: transparent;
@@ -164,7 +162,6 @@
       justify-content: center;
     }
 
-    /* MOBILE OVERLAY MENU */
     .mobile-menu-overlay {
       position: fixed;
       top: 75px;
@@ -247,20 +244,7 @@
       box-shadow: 0 6px 20px rgba(166, 124, 30, 0.6);
     }
 
-    .btn-outline {
-      background-color: transparent;
-      color: var(--dark-bronze);
-      border: 1px solid var(--warm-gold);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--dark-bronze);
-      color: #FFFFFF;
-      background: var(--dark-bronze);
-      transform: translateY(-2px);
-    }
-
-    /* HERO (ΜΕ ΕΝΤΟΝΗ ΣΚΙΑ ΣΤΟΝ ΤΙΤΛΟ) */
+    /* HERO */
     .hero {
       position: relative;
       height: 100vh;
@@ -310,7 +294,6 @@
       line-height: 1.2;
       letter-spacing: 1.5px;
       font-weight: 800;
-      /* ΕΝΤΟΝΗ ΣΚΙΑ ΓΙΑ ΝΑ ΒΓΑΙΝΕΙ ΜΠΡΟΣΤΑ */
       text-shadow: 0 2px 4px rgba(0,0,0,0.95), 0 0 35px rgba(0,0,0,0.9), 0 0 70px rgba(0,0,0,0.6);
     }
 
@@ -374,6 +357,31 @@
       align-items: center;
     }
 
+    /* VERN QUOTE STΥΛ */
+    .vern-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--dark-bronze);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--warm-gold);
+      background: rgba(166, 124, 30, 0.06);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .vern-quote .quote-author {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--warm-gold);
+      letter-spacing: 1px;
+    }
+
     .intro-balloon-wrap {
       display: flex;
       justify-content: center;
@@ -383,13 +391,11 @@
 
     .intro-balloon-wrap img {
       max-width: 100%;
-      max-height: 580px;
+      max-height: 520px;
       width: auto;
       height: auto;
       object-fit: contain;
-      border-radius: 6px;
-      border: 1px solid var(--border-gold);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.18));
     }
 
     /* 2. THE 10 STATIONS BLOCK */
@@ -847,7 +853,7 @@
       padding-top: 2rem;
     }
 
-    /* RESPONSIVE BREAKPOINTS & MOBILE FONT OPTIMIZATION */
+    /* RESPONSIVE BREAKPOINTS */
     @media (max-width: 1100px) {
       .nav-menu { display: none; }
       .hamburger-btn { display: flex; }
@@ -938,7 +944,7 @@
     </div>
   </header>
 
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ΜΕ ΑΠΟΦΘΕΓΜΑ & ΧΩΡΙΣ ΤΟ LINK ΤΩΝ ΣΤΑΘΜΩΝ) -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>
@@ -954,11 +960,15 @@
         <p style="color: var(--text-muted); margin-bottom: 1.8rem;" data-el="Ο Βερν υπήρξε ο θεμελιωτής του επιστημονικού μυθιστορήματος, προβλέποντας τα υποβρύχια, την κατάκτηση της Σελήνης, τα ελικόπτερα και τη σύγχρονη τεχνολογία. Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια." data-en="Verne was the founder of the scientific novel, foreseeing submarines, lunar conquest, helicopters, and modern technological wonders. The international blockbuster Jules Verne 200 arrives in Greece, delivering a multi-sensory digital art experience featuring 360° projections, VR stations, interactive labs, and rare authentic 19th-century artifacts.">
           Ο Βερν υπήρξε ο θεμελιωτής του επιστημονικού μυθιστορήματος, προβλέποντας τα υποβρύχια, την κατάκτηση της Σελήνης, τα ελικόπτερα και τη σύγχρονη τεχνολογία. Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια.
         </p>
-
-        <a href="#experience" class="btn btn-outline" data-el="ΟΙ 10 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ" data-en="EXPLORE THE 10 STATIONS">ΟΙ 10 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ</a>
       </div>
-      <div class="intro-balloon-wrap">
-        <img src="https://admin.videotheatre.gr/api/files/media/jhpzs15inrjfd4u/balloon_gr_fr_zoe3l52ckm.png" alt="Το Αερόστατο του Ιουλίου Βερν">
+
+      <!-- ΑΕΡΟΣΤΑΤΟ ΜΕ ΤΟ ΑΠΟΦΘΕΓΜΑ ΑΠΟ ΠΑΝΩ -->
+      <div class="intro-balloon-wrap" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="vern-quote" data-el="&ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;<span class=&quot;quote-author&quot;>Ιούλιος Βερν</span>" data-en="&ldquo;Tout ce qu’un homme est capable d’imaginer, d’autres hommes seront capables de le réaliser.&rdquo;<span class=&quot;quote-author&quot;>Jules Verne</span>">
+          &ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;
+          <span class="quote-author">Ιούλιος Βερν</span>
+        </div>
+        <img src="https://admin.videotheatre.gr/api/files/media/imb2ensnw5bw3fl/balloon_transparents_7g3h1e4z5w.png" alt="Το Αερόστατο του Ιουλίου Βερν">
       </div>
     </div>
   </section>
@@ -1194,7 +1204,6 @@
               </li>
             </ul>
 
-            <!-- GOOGLE MAPS BUTTON (ΜΕ ΙΔΙΑ ΓΡΑΜΜΑΤΟΣΕΙΡΑ & ΠΙΟ ΣΚΟΥΡΟ ΜΟΥΣΤΑΡΔΙ) -->
             <div style="margin-top: 1.5rem; text-align: center;">
               <a href="https://maps.app.goo.gl/QAspfTbA8cZcZ6oN6" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; font-size: 1.1rem; padding: 0.75rem 1rem;">
                 📍 Άνοιγμα στο Google Maps

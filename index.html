@@ -632,90 +632,87 @@
       font-weight: bold;
     }
 
-    /* 5. INFO BLOCK */
+    /* 5. INFO BLOCK (STACKED VERTICAL LAYOUT FOR MOBILE FRIENDLINESS) */
     .block-info {
       background-image: var(--sky-gradient);
       border-bottom: 1px solid var(--border-blue);
     }
 
     .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 3.5rem;
+      display: flex;
+      flex-direction: column; /* Πάνω-κάτω διάταξη για απόλυτη άνεση */
+      gap: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .schedule-box {
+    .schedule-box, .pricing-box {
       background: var(--cloud-white);
       border: 1px solid var(--border-blue);
       padding: 2.5rem;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      width: 100%;
     }
 
-    .schedule-box h3 {
+    .schedule-box h3, .pricing-box h3 {
       color: var(--text-dark);
       font-size: 1.6rem;
       margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--sky-main);
+      padding-bottom: 0.5rem;
     }
 
     .schedule-item {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px dashed rgba(27, 54, 93, 0.3);
-      padding: 0.8rem 0;
-      font-size: 1.05rem;
+      align-items: center;
+      border-bottom: 1px dashed rgba(27, 54, 93, 0.2);
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      gap: 1rem;
     }
 
     .schedule-item:last-child { border-bottom: none; }
-    .schedule-day { font-weight: 600; color: var(--text-dark); }
+    .schedule-day { font-weight: 700; color: var(--text-dark); flex-shrink: 0; }
     .schedule-hours { color: var(--sky-blue-dark); font-weight: bold; text-align: right; }
 
-    .pricing-box {
-      background: var(--cloud-white);
-      border: 1px solid var(--border-blue);
-      padding: 2.5rem;
-      border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .pricing-box h3 {
-      color: var(--text-dark);
-      font-size: 1.6rem;
+    /* ΝΕΕΣ ΤΙΜΕΣ ΚΑΘΑΡΗ ΔΙΑΤΑΞΗ */
+    .pricing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       margin-bottom: 1.5rem;
     }
 
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .pricing-table th, .pricing-table td {
-      padding: 1rem 1.1rem;
-      border-bottom: 1px solid rgba(27, 54, 93, 0.2);
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1rem;
+      background: var(--sky-main);
+      border: 1px solid var(--border-blue);
+      border-radius: 4px;
       font-size: 1.15rem;
     }
 
-    .pricing-table th {
-      font-family: 'Playfair Display', serif;
+    .pricing-label {
       color: var(--text-dark);
-      font-size: 1.1rem;
-      background: var(--sky-main);
+      font-weight: 600;
     }
 
-    .pricing-table td {
-      color: var(--text-muted);
-    }
-
-    .pricing-table td.price {
-      color: var(--text-dark);
-      font-weight: bold;
+    .pricing-val {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.5px;
+      font-weight: 800;
+      color: var(--sky-blue-dark);
+      font-size: 1.3rem;
+    }
+
+    .pricing-note {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      line-height: 1.6;
     }
 
     /* 6. FAQS BLOCK */
@@ -860,7 +857,7 @@
         gap: 2rem; 
       }
       .partners-grid img { height: 55px; }
-      .intro-grid, .schools-grid, .venue-grid, .info-grid {
+      .intro-grid, .schools-grid, .venue-grid {
         grid-template-columns: 1fr;
         gap: 2.2rem;
       }
@@ -868,10 +865,11 @@
       .intro-balloon-wrap img { max-height: 380px; }
       .room-body h3 { font-size: 1.35rem; }
       .room-body p { font-size: 1.05rem; }
-      .access-list li, .school-features li, .schedule-item, .pricing-table th, .pricing-table td, .faq-answer, .venue-info {
-        font-size: 1.05rem;
+      .access-list li, .school-features li, .schedule-item, .pricing-row, .faq-answer, .venue-info {
+        font-size: 1.02rem;
       }
       .faq-question { font-size: 1.1rem; }
+      .schedule-box, .pricing-box { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -1249,7 +1247,7 @@
     </div>
   </section>
 
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (ΜΕ ΝΕΟ ΩΡΑΡΙΟ ΚΑΙ ΤΙΜΕΣ) -->
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (ΩΡΑΡΙΟ & ΝΕΕΣ ΤΙΜΕΣ ΠΑΝΩ-ΚΑΤΩ) -->
   <section id="info" class="block-section block-info">
     <div class="block-inner">
       <div class="block-header">
@@ -1262,6 +1260,7 @@
       </div>
 
       <div class="info-grid">
+        <!-- ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ -->
         <div class="schedule-box">
           <h3 data-el="Ωράριο Λειτουργίας (με σχολεία)" data-en="Opening Hours (with schools)">Ωράριο Λειτουργίας (με σχολεία)</h3>
           
@@ -1270,7 +1269,7 @@
             <span class="schedule-hours" data-el="ΚΛΕΙΣΤΑ για το κοινό (κατ’ εξαίρεση σχολεία)" data-en="CLOSED to the public (schools by exception)">ΚΛΕΙΣΤΑ για το κοινό (κατ’ εξαίρεση σχολεία)</span>
           </div>
           <div class="schedule-item">
-            <span class="schedule-day" data-el="ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ" data-el="TUE - WED - THU">ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ</span>
+            <span class="schedule-day" data-el="ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ" data-en="TUE - WED - THU">ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ</span>
             <span class="schedule-hours">9.30 - 15.00</span>
           </div>
           <div class="schedule-item">
@@ -1282,48 +1281,40 @@
             <span class="schedule-hours" data-el="10.00 - 21.00 (19.00 Τελευταία είσοδος)" data-en="10.00 - 21.00 (19.00 Last entry)">10.00 - 21.00 (19.00 Τελευταία είσοδος)</span>
           </div>
 
-          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed rgba(27,54,93,0.2); padding-top: 1rem;" data-el="* Τρίτη έως Παρασκευή: Οι σχολικές επισκέψεις τελειώνουν 12.30μ μ." data-en="* Tuesday to Friday: School visits end at 12:30 PM.">
+          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed rgba(27,54,93,0.2); padding-top: 1rem;" data-el="* Τρίτη έως Παρασκευή: Οι σχολικές επισκέψεις τελειώνουν 12.30μ.μ." data-en="* Tuesday to Friday: School visits end at 12:30 PM.">
             * Τρίτη έως Παρασκευή: Οι σχολικές επισκέψεις τελειώνουν 12.30μ.μ.
           </div>
         </div>
 
+        <!-- ΤΙΜΕΣ ΕΙΣΙΤΗΡΙΩΝ (ΝΕΕΣ ΤΙΜΕΣ ΚΑΙ ΣΗΜΕΙΩΣΕΙΣ) -->
         <div class="pricing-box">
-          <h3 data-el="Πίνακας Εισιτηρίων" data-en="Ticket Prices">Πίνακας Εισιτηρίων</h3>
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th data-el="Κατηγορία Εισιτηρίου" data-en="Ticket Type">Κατηγορία Εισιτηρίου</th>
-                <th data-el="Καθημερινές" data-en="Weekdays">Καθημερινές</th>
-                <th data-el="Σαββατοκύριακα" data-en="Weekends">Σαββατοκύριακα</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-el="Γενική Είσοδος (Ενήλικες)" data-en="General Admission (Adults)">Γενική Είσοδος (Ενήλικες)</td>
-                <td class="price">14,50 €</td>
-                <td class="price">18,50 €</td>
-              </tr>
-              <tr>
-                <td data-el="Μειωμένο (Φοιτητές, 65+, ΑμεΑ)" data-en="Reduced (Students, 65+, Disabled)">Μειωμένο (Φοιτητές, 65+, ΑμεΑ)</td>
-                <td class="price">11,50 €</td>
-                <td class="price">14,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Παιδικό / Junior (έως 12 ετών)" data-en="Junior / Kids (up to 12 yrs)">Παιδικό / Junior (έως 12 ετών)</td>
-                <td class="price">9,50 €</td>
-                <td class="price">12,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Οικογενειακό Πακέτο (4 άτομα)" data-en="Family Pack (4 persons)">Οικογενειακό Πακέτο (4 άτομα)</td>
-                <td class="price">38,00 €</td>
-                <td class="price">48,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Σχολικές Ομάδες (ανά μαθητή)" data-en="School Groups (per student)">Σχολικές Ομάδες (ανά μαθητή)</td>
-                <td class="price" colspan="2" style="color: #0D9269; font-size: 1.25rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3 data-el="Τιμές Εισιτηρίων" data-en="Ticket Prices">Τιμές Εισιτηρίων</h3>
+          
+          <div class="pricing-list">
+            <div class="pricing-row">
+              <span class="pricing-label" data-el="Κανονικό" data-en="General Admission">Κανονικό</span>
+              <span class="pricing-val">18 €</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-label" data-el="FAMILY 3 (3 Άτομα)" data-en="FAMILY 3 (3 Persons)">FAMILY 3</span>
+              <span class="pricing-val">17 €</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-label" data-el="FAMILY 4 (4 Άτομα)" data-en="FAMILY 4 (4 Persons)">FAMILY 4</span>
+              <span class="pricing-val">16 €</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-label" data-el="AMEA" data-en="Disabled (AMEA)">AMEA</span>
+              <span class="pricing-val">14 €</span>
+            </div>
+          </div>
+
+          <div class="pricing-note" data-el="• Παιδιά κάτω των 3 ετών εισέρχονται δωρεάν.<br>• Παιδιά κάτω των 7 ετών (*) δεν μπορούν να εισέλθουν στην περιοχή MetaVerne.<br>(*) ανάλογα τη σωματική διάπλαση λόγω του μεγέθους των VR συσκευών." data-en="• Children under 3 years old enter for free.<br>• Children under 7 years old (*) cannot enter the MetaVerne area.<br>(*) depending on body build due to VR headset size.">
+            • Παιδιά κάτω των 3 ετών εισέρχονται δωρεάν.<br>
+            • Παιδιά κάτω των 7 ετών (*) δεν μπορούν να εισέλθουν στην περιοχή MetaVerne.<br>
+            <span style="font-size: 0.95rem; opacity: 0.85;">(*) ανάλογα τη σωματική διάπλαση λόγω του μεγέθους των VR συσκευών</span>
+          </div>
+
           <div style="margin-top: 2rem; text-align: center;">
             <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-blue" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
               ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE (MORE.COM)

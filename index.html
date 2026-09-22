@@ -24,15 +24,15 @@
 
   <style>
     :root {
-      --red-oxide: #611205;
-      --harvest-gold: #E9BE74;
-      --elf-green: #0D9269;
-      --seal-brown: #3F1210;
-      --snow-white: #FFFCFC;
-      --dark-green: #003B2A;
-      --bg-dark: #080504;
-      --border-gold: rgba(233, 190, 116, 0.3);
-      --text-muted: #e8ded4;
+      --light-cream: #F7F4EE;
+      --parchment: #EFE9DE;
+      --warm-gold: #C59B27;
+      --dark-bronze: #2C221E;
+      --text-main: #231B17;
+      --text-muted: #5C504A;
+      --card-bg: #FFFFFF;
+      --border-gold: rgba(197, 155, 39, 0.35);
+      --red-accent: #8A1C14;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,16 +42,11 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--snow-white);
+      background-color: var(--light-cream);
+      color: var(--text-main);
       font-family: 'EB Garamond', Georgia, serif;
       font-size: 1.32rem;
       line-height: 1.85;
-      background-image: 
-        radial-gradient(circle at 50% 15%, rgba(97, 18, 5, 0.3) 0%, rgba(8, 5, 4, 0.88) 80%),
-        url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
-      background-attachment: fixed;
-      background-size: cover;
       overflow-x: hidden;
     }
 
@@ -68,7 +63,7 @@
       font-weight: 700;
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION (LIGHT & CLEAN) */
     nav {
       position: fixed;
       top: 0;
@@ -80,9 +75,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 3.5rem;
-      background: rgba(8, 5, 4, 0.94);
+      background: rgba(247, 244, 238, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(233, 190, 116, 0.25);
+      border-bottom: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
     /* OVERHANGING LOGO */
@@ -98,14 +94,14 @@
     .nav-logo-link img {
       height: 158px;
       width: auto;
-      filter: drop-shadow(0 12px 25px rgba(0,0,0,0.95));
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
       transition: transform 0.35s ease-out, filter 0.35s ease;
       transform-origin: center top;
     }
 
     .nav-logo-link:hover img {
       transform: translateY(8px) scale(1.02);
-      filter: drop-shadow(0 16px 30px rgba(233, 190, 116, 0.45));
+      filter: drop-shadow(0 14px 25px rgba(197, 155, 39, 0.4));
     }
 
     .nav-menu {
@@ -115,7 +111,7 @@
     }
 
     .nav-menu a {
-      color: var(--snow-white);
+      color: var(--dark-bronze);
       text-decoration: none;
       font-size: 1.25rem;
       font-family: 'Barlow Condensed', sans-serif;
@@ -124,12 +120,12 @@
       transition: color 0.3s;
     }
 
-    .nav-menu a:hover { color: var(--harvest-gold); }
+    .nav-menu a:hover { color: var(--warm-gold); }
 
     .lang-btn {
       background: transparent;
-      border: 1px solid var(--harvest-gold);
-      color: var(--harvest-gold);
+      border: 1px solid var(--warm-gold);
+      color: var(--dark-bronze);
       padding: 0.3rem 0.8rem;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -140,8 +136,8 @@
     }
 
     .lang-btn:hover {
-      background: var(--harvest-gold);
-      color: var(--seal-brown);
+      background: var(--warm-gold);
+      color: #FFFFFF;
     }
 
     /* RIGHT CONTROLS CONTAINER */
@@ -155,8 +151,8 @@
     .hamburger-btn {
       display: none;
       background: transparent;
-      border: 1px solid var(--harvest-gold);
-      color: var(--harvest-gold);
+      border: 1px solid var(--warm-gold);
+      color: var(--dark-bronze);
       font-size: 1.6rem;
       padding: 0.2rem 0.6rem;
       border-radius: 3px;
@@ -172,7 +168,7 @@
       left: 0;
       width: 100%;
       height: calc(100vh - 75px);
-      background: rgba(8, 5, 4, 0.98);
+      background: rgba(247, 244, 238, 0.98);
       backdrop-filter: blur(16px);
       display: flex;
       flex-direction: column;
@@ -191,7 +187,7 @@
     }
 
     .mobile-menu-overlay a {
-      color: var(--snow-white);
+      color: var(--dark-bronze);
       text-decoration: none;
       font-size: 1.6rem;
       font-family: 'Barlow Condensed', sans-serif;
@@ -201,13 +197,13 @@
     }
 
     .mobile-menu-overlay a:hover {
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
     }
 
     .mobile-lang-btn {
       background: transparent;
-      border: 1px solid var(--harvest-gold);
-      color: var(--harvest-gold);
+      border: 1px solid var(--warm-gold);
+      color: var(--dark-bronze);
       padding: 0.5rem 1.5rem;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -234,29 +230,29 @@
     }
 
     .btn-gold {
-      background-color: var(--harvest-gold);
-      color: var(--seal-brown);
-      border: 1px solid var(--harvest-gold);
+      background-color: var(--warm-gold);
+      color: #FFFFFF;
+      border: 1px solid var(--warm-gold);
       font-weight: 800;
-      box-shadow: 0 4px 15px rgba(233, 190, 116, 0.35);
+      box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
     }
 
     .btn-gold:hover {
-      background-color: #f7d18e;
+      background-color: #b08920;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(233, 190, 116, 0.55);
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.45);
     }
 
     .btn-outline {
       background-color: transparent;
-      color: var(--snow-white);
-      border: 1px solid rgba(233, 190, 116, 0.65);
+      color: var(--dark-bronze);
+      border: 1px solid var(--warm-gold);
     }
 
     .btn-outline:hover {
-      border-color: var(--harvest-gold);
-      color: var(--harvest-gold);
-      background: rgba(233, 190, 116, 0.12);
+      border-color: var(--dark-bronze);
+      color: #FFFFFF;
+      background: var(--dark-bronze);
       transform: translateY(-2px);
     }
 
@@ -284,7 +280,7 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
@@ -292,7 +288,7 @@
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.2) 0%, rgba(8, 5, 4, 0.72) 85%);
+      background: radial-gradient(circle at center, rgba(247, 244, 238, 0.25) 0%, rgba(44, 34, 30, 0.65) 85%);
       z-index: 2;
     }
 
@@ -305,19 +301,19 @@
 
     .hero-title {
       font-size: 2.6rem;
-      color: var(--harvest-gold);
+      color: #FFFFFF;
       margin-bottom: 0.8rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.95);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.85);
       line-height: 1.25;
       letter-spacing: 1.5px;
     }
 
     .hero-date {
       font-size: 1.25rem;
-      color: var(--snow-white);
+      color: var(--parchment);
       margin-bottom: 2rem;
       letter-spacing: 2.5px;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+      text-shadow: 0 3px 12px rgba(0,0,0,0.8);
       font-weight: 700;
     }
 
@@ -346,7 +342,7 @@
     }
 
     .block-header .sub-badge {
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
       font-size: 1.35rem;
       letter-spacing: 3px;
       display: block;
@@ -355,22 +351,21 @@
 
     .block-header h2 {
       font-size: 2.9rem;
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       margin-bottom: 1rem;
     }
 
     .dashed-divider {
       width: 90px;
       height: 2px;
-      border-top: 2px dashed var(--harvest-gold);
+      border-top: 2px dashed var(--warm-gold);
       margin: 1.2rem auto;
       opacity: 0.7;
     }
 
     /* 1. INTRO BLOCK */
     .block-intro {
-      background: rgba(63, 18, 16, 0.55);
-      backdrop-filter: blur(8px);
+      background: var(--parchment);
       border-bottom: 1px solid var(--border-gold);
     }
 
@@ -396,13 +391,12 @@
       object-fit: contain;
       border-radius: 6px;
       border: 1px solid var(--border-gold);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.85);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     /* 2. THE 10 STATIONS BLOCK */
     .block-rooms {
-      background: rgba(12, 8, 7, 0.75);
-      backdrop-filter: blur(10px);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--border-gold);
     }
 
@@ -413,24 +407,23 @@
     }
 
     .room-card {
-      background: rgba(45, 14, 12, 0.65);
+      background: var(--light-cream);
       border: 1px solid var(--border-gold);
       border-radius: 5px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      backdrop-filter: blur(8px);
       transition: all 0.3s ease;
     }
 
     .room-card:hover {
-      border-color: var(--harvest-gold);
+      border-color: var(--warm-gold);
       transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
     }
 
     .room-card-header {
-      background: linear-gradient(90deg, rgba(97, 18, 5, 0.95) 0%, rgba(55, 12, 10, 0.95) 100%);
+      background: linear-gradient(90deg, var(--dark-bronze) 0%, #3D302B 100%);
       padding: 0.85rem 1.2rem;
       display: flex;
       align-items: center;
@@ -439,8 +432,8 @@
     }
 
     .room-num-badge {
-      background: var(--harvest-gold);
-      color: var(--seal-brown);
+      background: var(--warm-gold);
+      color: #FFFFFF;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
       font-size: 1.25rem;
@@ -454,7 +447,7 @@
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.35rem;
       font-weight: 700;
-      color: var(--snow-white);
+      color: #FFFFFF;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       line-height: 1.2;
@@ -483,7 +476,7 @@
     }
 
     .room-body h3 {
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       font-size: 1.6rem;
       margin-bottom: 0.8rem;
     }
@@ -496,8 +489,7 @@
 
     /* 3. VENUE & ACCESS BLOCK */
     .block-venue {
-      background: rgba(20, 10, 8, 0.8);
-      backdrop-filter: blur(10px);
+      background: var(--light-cream);
       border-bottom: 1px solid var(--border-gold);
     }
 
@@ -509,7 +501,7 @@
     }
 
     .venue-card {
-      background: rgba(63, 18, 16, 0.55);
+      background: #FFFFFF;
       border: 1px solid var(--border-gold);
       border-radius: 4px;
       overflow: hidden;
@@ -530,7 +522,7 @@
     }
 
     .venue-card-body h3 {
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       font-size: 1.65rem;
       margin-bottom: 1rem;
     }
@@ -552,7 +544,7 @@
       content: "•";
       position: absolute;
       left: 0;
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
       font-size: 1.6rem;
       line-height: 1;
     }
@@ -574,9 +566,22 @@
 
     /* 4. SCHOOLS BLOCK */
     .block-schools {
-      background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.95) 100%);
-      border-top: 2px solid var(--harvest-gold);
-      border-bottom: 2px solid var(--harvest-gold);
+      background: linear-gradient(135deg, #4A1A14 0%, #2A0E0B 100%);
+      color: #FFFFFF;
+      border-top: 2px solid var(--warm-gold);
+      border-bottom: 2px solid var(--warm-gold);
+    }
+
+    .block-schools h2 {
+      color: var(--warm-gold);
+    }
+
+    .block-schools .sub-badge {
+      color: var(--warm-gold);
+    }
+
+    .block-schools p {
+      color: #EFE9DE;
     }
 
     .schools-grid {
@@ -589,8 +594,8 @@
     .schools-poster img {
       width: 100%;
       border-radius: 4px;
-      border: 1px solid rgba(233, 190, 116, 0.4);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     }
 
     .school-features {
@@ -602,7 +607,7 @@
       position: relative;
       padding-left: 2rem;
       margin-bottom: 1rem;
-      color: var(--text-muted);
+      color: #EFE9DE;
       font-size: 1.25rem;
     }
 
@@ -610,13 +615,13 @@
       content: "✦";
       position: absolute;
       left: 0;
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
       font-size: 1.3rem;
     }
 
     .contact-box {
       margin-top: 1.8rem;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.25);
       border: 1px solid var(--border-gold);
       padding: 1.4rem;
       border-radius: 4px;
@@ -628,14 +633,14 @@
     }
 
     .contact-box a {
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
       text-decoration: none;
       font-weight: bold;
     }
 
     /* 5. INFO BLOCK */
     .block-info {
-      background: linear-gradient(180deg, rgba(233, 190, 116, 0.14) 0%, rgba(20, 12, 10, 0.85) 100%);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--border-gold);
     }
 
@@ -646,18 +651,18 @@
     }
 
     .schedule-box {
-      background: rgba(35, 12, 10, 0.7);
-      border: 1px solid var(--harvest-gold);
+      background: var(--light-cream);
+      border: 1px solid var(--warm-gold);
       padding: 2.5rem;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
 
     .schedule-box h3 {
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       font-size: 1.7rem;
       margin-bottom: 1.5rem;
     }
@@ -665,25 +670,25 @@
     .schedule-item {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px dashed rgba(233, 190, 116, 0.3);
+      border-bottom: 1px dashed rgba(197, 155, 39, 0.3);
       padding: 1rem 0;
       font-size: 1.25rem;
     }
 
     .schedule-item:last-child { border-bottom: none; }
-    .schedule-day { font-weight: 600; color: var(--snow-white); }
-    .schedule-hours { color: var(--harvest-gold); font-weight: bold; }
+    .schedule-day { font-weight: 600; color: var(--text-main); }
+    .schedule-hours { color: var(--warm-gold); font-weight: bold; }
 
     .pricing-box {
-      background: rgba(35, 12, 10, 0.7);
-      border: 1px solid var(--harvest-gold);
+      background: var(--light-cream);
+      border: 1px solid var(--warm-gold);
       padding: 2.5rem;
       border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
 
     .pricing-box h3 {
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       font-size: 1.7rem;
       margin-bottom: 1.5rem;
     }
@@ -696,15 +701,15 @@
 
     .pricing-table th, .pricing-table td {
       padding: 1rem 1.1rem;
-      border-bottom: 1px solid rgba(233, 190, 116, 0.2);
+      border-bottom: 1px solid rgba(197, 155, 39, 0.2);
       font-size: 1.24rem;
     }
 
     .pricing-table th {
       font-family: 'Cinzel', serif;
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       font-size: 1.15rem;
-      background: rgba(97, 18, 5, 0.4);
+      background: var(--parchment);
     }
 
     .pricing-table td {
@@ -712,7 +717,7 @@
     }
 
     .pricing-table td.price {
-      color: var(--snow-white);
+      color: var(--dark-bronze);
       font-weight: bold;
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.45rem;
@@ -721,7 +726,7 @@
 
     /* 6. FAQS BLOCK */
     .block-faqs {
-      background: rgba(8, 5, 4, 0.85);
+      background: var(--light-cream);
       border-bottom: 1px solid var(--border-gold);
     }
 
@@ -731,7 +736,7 @@
     }
 
     .faq-item {
-      background: rgba(63, 18, 16, 0.55);
+      background: #FFFFFF;
       border: 1px solid var(--border-gold);
       margin-bottom: 1.2rem;
       border-radius: 4px;
@@ -746,17 +751,18 @@
       align-items: center;
       font-family: 'Cinzel', serif;
       font-size: 1.3rem;
-      color: var(--harvest-gold);
+      color: var(--dark-bronze);
       user-select: none;
       transition: background 0.3s;
     }
 
     .faq-question:hover {
-      background: rgba(233, 190, 116, 0.08);
+      background: rgba(197, 155, 39, 0.08);
     }
 
     .faq-icon {
       font-size: 1.5rem;
+      color: var(--warm-gold);
       transition: transform 0.3s;
     }
 
@@ -774,7 +780,7 @@
     .faq-item.active .faq-answer {
       padding: 1.4rem 2rem;
       max-height: 350px;
-      border-top: 1px solid rgba(233, 190, 116, 0.15);
+      border-top: 1px solid rgba(197, 155, 39, 0.15);
     }
 
     .faq-item.active .faq-icon {
@@ -783,7 +789,8 @@
 
     /* FOOTER */
     footer {
-      background: #040202;
+      background: var(--dark-bronze);
+      color: #FFFFFF;
       padding: 5rem 2rem 3rem 2rem;
       text-align: center;
     }
@@ -807,7 +814,7 @@
       width: auto;
       opacity: 0.95;
       transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
     }
 
     .partners-grid img:hover {
@@ -816,14 +823,14 @@
     }
 
     .venue-info {
-      color: var(--text-muted);
+      color: var(--parchment);
       margin-bottom: 2rem;
       font-size: 1.25rem;
       line-height: 1.7;
     }
 
     .venue-info strong {
-      color: var(--harvest-gold);
+      color: var(--warm-gold);
       font-size: 1.4rem;
       display: inline-block;
       margin-bottom: 0.4rem;
@@ -831,7 +838,7 @@
 
     .copyright {
       font-size: 1rem;
-      color: #8c7e75;
+      color: #A39690;
       border-top: 1px dashed rgba(255,255,255,0.15);
       padding-top: 2rem;
     }
@@ -881,7 +888,7 @@
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
     </div>
 
-    <!-- RIGHT CONTROLS (ΕΝΑ ΚΟΥΜΠΙ ΕΙΣΙΤΗΡΙΩΝ + HAMBURGER ΣΕ MOBILE) -->
+    <!-- RIGHT CONTROLS -->
     <div class="nav-right-controls">
       <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
       <button class="hamburger-btn" id="hamburgerToggle" onclick="toggleMobileMenu()" aria-label="Open Menu">☰</button>
@@ -926,11 +933,11 @@
     <div class="block-inner intro-grid">
       <div>
         <span class="sub-badge badge-font" data-el="200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ" data-en="200 YEARS OF ADVENTURE">200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ</span>
-        <h2 style="font-size: 2.7rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης" data-en="The Pioneer of Science and Imagination">
+        <h2 style="font-size: 2.7rem; color: var(--dark-bronze); margin-bottom: 1.2rem;" data-el="Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης" data-en="The Pioneer of Science and Imagination">
           Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης
         </h2>
         
-        <p style="margin-bottom: 1.2rem;" data-el="Με αφορμή τη συμπλήρωση 200 χρόνων από τη γέννηση του Ιουλίου Βερν, ενός από τους σημαντικότερους συγγραφείς όλων των εποχών και πρωτοπόρου της επιστημονικής φαντασίας, το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» παρουσιάζει τη διεθνή διαδραστική έκθεση «ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία». Η Αθήνα αποτελεί έναν από τους σημαντικούς σταθμούς της παγκόσμιας περιοδείας της έκθεσης, η οποία έχει ήδη παρουσιαστεί διεθνώς και θα ολοκληρωθεί με την εγκατάστασή της στο Παρίσι το 2028. Πρόκειται για μια πρωτότυπη εμπειρία που συνδυάζει τεχνολογία, φαντασία και περιπέτεια, προσκαλώντας μικρούς και μεγάλους να γνωρίσουν το εκπληκτικό σύμπαν του συγγραφέα που ενέπνευσε γενιές εξερευνητών, επιστημόνων και δημιουργών." data-en="Celebrating the 200th anniversary of the birth of Jules Verne, one of the greatest authors of all time and a true pioneer of science fiction, the Hellenic Cosmos Cultural Centre presents the international interactive exhibition 'JULES VERNE 200: An Immersive Extraordinary Journey'. Athens is a major stop on the exhibition's world tour, which has been acclaimed internationally and will conclude with its Paris installation in 2028. It is an original experience blending cutting-edge technology, imagination, and adventure, inviting visitors of all ages to explore the astonishing universe of the author who inspired generations of explorers, scientists, and creators.">
+        <p style="margin-bottom: 1.2rem; color: var(--text-main);" data-el="Με αφορμή τη συμπλήρωση 200 χρόνων από τη γέννηση του Ιουλίου Βερν, ενός από τους σημαντικότερους συγγραφείς όλων των εποχών και πρωτοπόρου της επιστημονικής φαντασίας, το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» παρουσιάζει τη διεθνή διαδραστική έκθεση «ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία». Η Αθήνα αποτελεί έναν από τους σημαντικούς σταθμούς της παγκόσμιας περιοδείας της έκθεσης, η οποία έχει ήδη παρουσιαστεί διεθνώς και θα ολοκληρωθεί με την εγκατάστασή της στο Παρίσι το 2028. Πρόκειται για μια πρωτότυπη εμπειρία που συνδυάζει τεχνολογία, φαντασία και περιπέτεια, προσκαλώντας μικρούς και μεγάλους να γνωρίσουν το εκπληκτικό σύμπαν του συγγραφέα που ενέπνευσε γενιές εξερευνητών, επιστημόνων και δημιουργών." data-en="Celebrating the 200th anniversary of the birth of Jules Verne, one of the greatest authors of all time and a true pioneer of science fiction, the Hellenic Cosmos Cultural Centre presents the international interactive exhibition 'JULES VERNE 200: An Immersive Extraordinary Journey'. Athens is a major stop on the exhibition's world tour, which has been acclaimed internationally and will conclude with its Paris installation in 2028. It is an original experience blending cutting-edge technology, imagination, and adventure, inviting visitors of all ages to explore the astonishing universe of the author who inspired generations of explorers, scientists, and creators.">
           Με αφορμή τη συμπλήρωση 200 χρόνων από τη γέννηση του Ιουλίου Βερν, ενός από τους σημαντικότερους συγγραφείς όλων των εποχών και πρωτοπόρου της επιστημονικής φαντασίας, το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» παρουσιάζει τη διεθνή διαδραστική έκθεση «ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία». Η Αθήνα αποτελεί έναν από τους σημαντικούς σταθμούς της παγκόσμιας περιοδείας της έκθεσης, η οποία έχει ήδη παρουσιαστεί διεθνώς και θα ολοκληρωθεί με την εγκατάστασή της στο Παρίσι το 2028. Πρόκειται για μια πρωτότυπη εμπειρία που συνδυάζει τεχνολογία, φαντασία και περιπέτεια, προσκαλώντας μικρούς και μεγάλους να γνωρίσουν το εκπληκτικό σύμπαν του συγγραφέα που ενέπνευσε γενιές εξερευνητών, επιστημόνων και δημιουργών.
         </p>
 
@@ -1202,7 +1209,7 @@
     <div class="block-inner schools-grid">
       <div>
         <span class="sub-badge badge-font" data-el="ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027" data-en="EDUCATIONAL PROGRAM 2026-2027">ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027</span>
-        <h2 style="font-size: 2.8rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
+        <h2 style="font-size: 2.8rem; margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
           Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις
         </h2>
         <p data-el="Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM." data-en="Jules Verne 200 is specifically curated for Kindergarten, Primary, and Secondary school students, connecting Physics, Geography, History, and Literature through experiential STEAM learning.">
@@ -1300,7 +1307,7 @@
               </tr>
               <tr>
                 <td data-el="Σχολικές Ομάδες (ανά μαθητή)" data-en="School Groups (per student)">Σχολικές Ομάδες (ανά μαθητή)</td>
-                <td class="price" colspan="2" style="color: var(--elf-green); font-size: 1.35rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
+                <td class="price" colspan="2" style="color: #0D9269; font-size: 1.35rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
               </tr>
             </tbody>
           </table>
@@ -1397,7 +1404,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    // 1. YouTube API Player Setup (Start & Loop at 5 seconds)
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -1437,19 +1443,16 @@
       }
     }
 
-    // 2. Mobile Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('active');
     }
 
-    // 3. FAQ Toggle
     function toggleFaq(element) {
       const item = element.parentElement;
       item.classList.toggle('active');
     }
 
-    // 4. Language Toggle (Desktop & Mobile)
     let currentLang = 'el';
     function toggleLanguage() {
       currentLang = currentLang === 'el' ? 'en' : 'el';

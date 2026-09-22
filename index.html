@@ -32,7 +32,7 @@
       --text-muted: #5C504A;
       --card-bg: #FFFFFF;
       --border-gold: rgba(197, 155, 39, 0.35);
-      --red-accent: #8A1C14;
+      --bg-pattern: radial-gradient(circle at 50% 15%, rgba(97, 18, 5, 0.35) 0%, rgba(8, 5, 4, 0.92) 80%), url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,7 +63,7 @@
       font-weight: 700;
     }
 
-    /* NAVIGATION (LIGHT & CLEAN) */
+    /* NAVIGATION (ΣΚΟΥΡΟ ΜΕ ΤΟ BACKGROUND ΜΟΤΙΒΟ) */
     nav {
       position: fixed;
       top: 0;
@@ -75,10 +75,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 3.5rem;
-      background: rgba(247, 244, 238, 0.95);
+      background-image: var(--bg-pattern);
+      background-size: cover;
+      background-position: center;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
     /* OVERHANGING LOGO */
@@ -94,14 +96,14 @@
     .nav-logo-link img {
       height: 158px;
       width: auto;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+      filter: drop-shadow(0 12px 25px rgba(0,0,0,0.95));
       transition: transform 0.35s ease-out, filter 0.35s ease;
       transform-origin: center top;
     }
 
     .nav-logo-link:hover img {
       transform: translateY(8px) scale(1.02);
-      filter: drop-shadow(0 14px 25px rgba(197, 155, 39, 0.4));
+      filter: drop-shadow(0 16px 30px rgba(197, 155, 39, 0.45));
     }
 
     .nav-menu {
@@ -111,7 +113,7 @@
     }
 
     .nav-menu a {
-      color: var(--dark-bronze);
+      color: #FFFCFC;
       text-decoration: none;
       font-size: 1.25rem;
       font-family: 'Barlow Condensed', sans-serif;
@@ -125,7 +127,7 @@
     .lang-btn {
       background: transparent;
       border: 1px solid var(--warm-gold);
-      color: var(--dark-bronze);
+      color: var(--warm-gold);
       padding: 0.3rem 0.8rem;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -152,7 +154,7 @@
       display: none;
       background: transparent;
       border: 1px solid var(--warm-gold);
-      color: var(--dark-bronze);
+      color: var(--warm-gold);
       font-size: 1.6rem;
       padding: 0.2rem 0.6rem;
       border-radius: 3px;
@@ -161,14 +163,15 @@
       justify-content: center;
     }
 
-    /* MOBILE OVERLAY MENU */
+    /* MOBILE OVERLAY MENU (ΣΚΟΥΡΟ) */
     .mobile-menu-overlay {
       position: fixed;
       top: 75px;
       left: 0;
       width: 100%;
       height: calc(100vh - 75px);
-      background: rgba(247, 244, 238, 0.98);
+      background-image: var(--bg-pattern);
+      background-size: cover;
       backdrop-filter: blur(16px);
       display: flex;
       flex-direction: column;
@@ -187,7 +190,7 @@
     }
 
     .mobile-menu-overlay a {
-      color: var(--dark-bronze);
+      color: #FFFCFC;
       text-decoration: none;
       font-size: 1.6rem;
       font-family: 'Barlow Condensed', sans-serif;
@@ -203,7 +206,7 @@
     .mobile-lang-btn {
       background: transparent;
       border: 1px solid var(--warm-gold);
-      color: var(--dark-bronze);
+      color: var(--warm-gold);
       padding: 0.5rem 1.5rem;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -256,7 +259,7 @@
       transform: translateY(-2px);
     }
 
-    /* HERO */
+    /* HERO (ΧΩΡΙΣ ΚΟΥΜΠΙΑ ΚΡΑΤΗΣΗΣ/ΣΧΟΛΕΙΩΝ) */
     .hero {
       position: relative;
       height: 100vh;
@@ -300,7 +303,7 @@
     }
 
     .hero-title {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       color: #FFFFFF;
       margin-bottom: 0.8rem;
       text-shadow: 0 4px 20px rgba(0,0,0,0.85);
@@ -309,19 +312,11 @@
     }
 
     .hero-date {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: var(--parchment);
-      margin-bottom: 2rem;
       letter-spacing: 2.5px;
       text-shadow: 0 3px 12px rgba(0,0,0,0.8);
       font-weight: 700;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
     /* FULL WIDTH BLOCK STRUCTURE */
@@ -422,9 +417,12 @@
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
     }
 
+    /* CARD HEADER ΜΕ ΤΟ ΣΚΟΥΡΟ BACKGROUND ΜΟΤΙΒΟ */
     .room-card-header {
-      background: linear-gradient(90deg, var(--dark-bronze) 0%, #3D302B 100%);
-      padding: 0.85rem 1.2rem;
+      background-image: var(--bg-pattern);
+      background-size: cover;
+      background-position: center;
+      padding: 0.9rem 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.9rem;
@@ -564,10 +562,11 @@
       display: block;
     }
 
-    /* 4. SCHOOLS BLOCK */
+    /* 4. SCHOOLS BLOCK (ΣΚΟΥΡΟ ΜΕ ΤΟ BACKGROUND ΜΟΤΙΒΟ) */
     .block-schools {
-      background: linear-gradient(135deg, #4A1A14 0%, #2A0E0B 100%);
-      color: #FFFFFF;
+      background-image: var(--bg-pattern);
+      background-size: cover;
+      color: #FFFCFC;
       border-top: 2px solid var(--warm-gold);
       border-bottom: 2px solid var(--warm-gold);
     }
@@ -581,7 +580,7 @@
     }
 
     .block-schools p {
-      color: #EFE9DE;
+      color: var(--text-muted);
     }
 
     .schools-grid {
@@ -595,7 +594,7 @@
       width: 100%;
       border-radius: 4px;
       border: 1px solid rgba(197, 155, 39, 0.4);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
     .school-features {
@@ -621,7 +620,7 @@
 
     .contact-box {
       margin-top: 1.8rem;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.45);
       border: 1px solid var(--border-gold);
       padding: 1.4rem;
       border-radius: 4px;
@@ -630,6 +629,7 @@
     .contact-box p {
       margin-bottom: 0.5rem;
       font-size: 1.25rem;
+      color: #FFFCFC;
     }
 
     .contact-box a {
@@ -787,12 +787,14 @@
       transform: rotate(45deg);
     }
 
-    /* FOOTER */
+    /* FOOTER (ΣΚΟΥΡΟ ΜΕ ΤΟ BACKGROUND ΜΟΤΙΒΟ) */
     footer {
-      background: var(--dark-bronze);
-      color: #FFFFFF;
+      background-image: var(--bg-pattern);
+      background-size: cover;
+      color: #FFFCFC;
       padding: 5rem 2rem 3rem 2rem;
       text-align: center;
+      border-top: 2px solid var(--warm-gold);
     }
 
     .footer-inner {
@@ -814,7 +816,7 @@
       width: auto;
       opacity: 0.95;
       transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
     }
 
     .partners-grid img:hover {
@@ -906,7 +908,7 @@
     <button class="mobile-lang-btn" onclick="toggleLanguage(); toggleMobileMenu();" id="mobileLangToggle">EN / ENGLISH</button>
   </div>
 
-  <!-- BLOCK: HERO -->
+  <!-- BLOCK: HERO (ΧΩΡΙΣ ΚΟΥΜΠΙΑ ΚΡΑΤΗΣΗΣ/ΣΧΟΛΕΙΩΝ) -->
   <header class="hero">
     <div class="video-background">
       <div id="yt-player"></div>
@@ -920,11 +922,6 @@
       <p class="hero-date badge-font" data-el="ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ" data-en="IN ATHENS FROM FRIDAY 25 SEPTEMBER">
         ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ
       </p>
-      
-      <div class="hero-buttons">
-        <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ" data-en="BOOK TICKETS">ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ</a>
-        <a href="#schools" class="btn btn-outline" data-el="ΣΧΟΛΙΚΕΣ ΕΠΙΣΚΕΨΕΙΣ &amp; ΟΔΗΓΟΣ" data-en="SCHOOL VISITS &amp; GUIDE">ΣΧΟΛΙΚΕΣ ΕΠΙΣΚΕΨΕΙΣ &amp; ΟΔΗΓΟΣ</a>
-      </div>
     </div>
   </header>
 
@@ -1204,7 +1201,7 @@
     </div>
   </section>
 
-  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ -->
+  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ (ΣΚΟΥΡΟ ΜΕ ΤΟ BACKGROUND ΜΟΤΙΒΟ) -->
   <section id="schools" class="block-section block-schools">
     <div class="block-inner schools-grid">
       <div>
@@ -1382,7 +1379,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (ΣΚΟΥΡΟ ΜΕ ΤΟ BACKGROUND ΜΟΤΙΒΟ) -->
   <footer>
     <div class="footer-inner">
       <div class="partners-grid">

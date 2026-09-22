@@ -85,7 +85,7 @@
       border-bottom: 1px solid rgba(233, 190, 116, 0.25);
     }
 
-    /* OVERHANGING LOGO (+20% -> 158px) */
+    /* OVERHANGING LOGO */
     .nav-logo-link {
       position: relative;
       top: 48px;
@@ -144,7 +144,14 @@
       color: var(--seal-brown);
     }
 
-    /* HAMBURGER TOGGLE BUTTON (MOBILE) */
+    /* RIGHT CONTROLS CONTAINER */
+    .nav-right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    /* HAMBURGER TOGGLE BUTTON */
     .hamburger-btn {
       display: none;
       background: transparent;
@@ -830,10 +837,13 @@
     }
 
     /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 980px) {
-      nav { padding: 0 1.5rem; }
+    @media (max-width: 1100px) {
       .nav-menu { display: none; }
       .hamburger-btn { display: flex; }
+    }
+
+    @media (max-width: 980px) {
+      nav { padding: 0 1.5rem; }
       .nav-logo-link { top: 30px; }
       .nav-logo-link img { height: 120px; }
       .hero-title { font-size: 1.9rem; }
@@ -869,12 +879,11 @@
       <a href="#info" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
       <a href="#faqs" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
-      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.2rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
     </div>
 
-    <!-- MOBILE CONTROLS -->
-    <div style="display: flex; gap: 0.8rem; align-items: center;">
-      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.4rem 1rem; font-size: 1.1rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
+    <!-- RIGHT CONTROLS (ΕΝΑ ΚΟΥΜΠΙ ΕΙΣΙΤΗΡΙΩΝ + HAMBURGER ΣΕ MOBILE) -->
+    <div class="nav-right-controls">
+      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
       <button class="hamburger-btn" id="hamburgerToggle" onclick="toggleMobileMenu()" aria-label="Open Menu">☰</button>
     </div>
   </nav>
@@ -912,7 +921,7 @@
     </div>
   </header>
 
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ΜΕ ΤΟ ΝΕΟ balloon_gr_fr ΑΣΣΕΤ) -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>

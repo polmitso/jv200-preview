@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία | Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</title>
   
+  <!-- FAVICON ΣΤΟ TAB ΤΟΥ BROWSER -->
+  <link rel="icon" type="image/png" href="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png">
+  <link rel="shortcut icon" href="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png">
+
   <!-- GOOGLE ANALYTICS PLACEHOLDER -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -81,9 +85,10 @@
       border-bottom: 1px solid rgba(233, 190, 116, 0.25);
     }
 
+    /* OVERHANGING LOGO (+20% -> 158px) */
     .nav-logo-link {
       position: relative;
-      top: 38px;
+      top: 48px;
       display: inline-block;
       text-decoration: none;
       z-index: 1010;
@@ -91,16 +96,16 @@
     }
 
     .nav-logo-link img {
-      height: 132px;
+      height: 158px;
       width: auto;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.9));
+      filter: drop-shadow(0 12px 25px rgba(0,0,0,0.95));
       transition: transform 0.35s ease-out, filter 0.35s ease;
       transform-origin: center top;
     }
 
     .nav-logo-link:hover img {
       transform: translateY(8px) scale(1.02);
-      filter: drop-shadow(0 14px 28px rgba(233, 190, 116, 0.45));
+      filter: drop-shadow(0 16px 30px rgba(233, 190, 116, 0.45));
     }
 
     .nav-menu {
@@ -137,6 +142,72 @@
     .lang-btn:hover {
       background: var(--harvest-gold);
       color: var(--seal-brown);
+    }
+
+    /* HAMBURGER TOGGLE BUTTON (MOBILE) */
+    .hamburger-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--harvest-gold);
+      color: var(--harvest-gold);
+      font-size: 1.6rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* MOBILE OVERLAY MENU */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 75px);
+      background: rgba(8, 5, 4, 0.98);
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-overlay a {
+      color: var(--snow-white);
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      transition: color 0.3s;
+    }
+
+    .mobile-menu-overlay a:hover {
+      color: var(--harvest-gold);
+    }
+
+    .mobile-lang-btn {
+      background: transparent;
+      border: 1px solid var(--harvest-gold);
+      color: var(--harvest-gold);
+      padding: 0.5rem 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-top: 1rem;
     }
 
     /* BUTTONS */
@@ -710,22 +781,26 @@
       text-align: center;
     }
 
+    .footer-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
     .partners-grid {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 5rem;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
     }
 
     .partners-grid img {
-      height: 68px;
-      max-width: 200px;
+      height: 78px;
+      max-width: 220px;
       width: auto;
       opacity: 0.95;
       transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7));
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
     }
 
     .partners-grid img:hover {
@@ -737,11 +812,14 @@
       color: var(--text-muted);
       margin-bottom: 2rem;
       font-size: 1.25rem;
+      line-height: 1.7;
     }
 
     .venue-info strong {
       color: var(--harvest-gold);
       font-size: 1.4rem;
+      display: inline-block;
+      margin-bottom: 0.4rem;
     }
 
     .copyright {
@@ -751,15 +829,20 @@
       padding-top: 2rem;
     }
 
+    /* RESPONSIVE BREAKPOINTS */
     @media (max-width: 980px) {
       nav { padding: 0 1.5rem; }
       .nav-menu { display: none; }
-      .nav-logo-link { top: 25px; }
-      .nav-logo-link img { height: 105px; }
+      .hamburger-btn { display: flex; }
+      .nav-logo-link { top: 30px; }
+      .nav-logo-link img { height: 120px; }
       .hero-title { font-size: 1.9rem; }
       .hero-date { font-size: 1.1rem; }
-      .partners-grid { gap: 2.5rem; }
-      .partners-grid img { height: 50px; }
+      .partners-grid { 
+        flex-direction: column; 
+        gap: 2rem; 
+      }
+      .partners-grid img { height: 60px; }
       .intro-grid, .schools-grid, .venue-grid, .info-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -777,6 +860,7 @@
       <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
     </a>
 
+    <!-- DESKTOP MENU -->
     <div class="nav-menu">
       <a href="#about" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
       <a href="#experience" data-el="Η ΕΜΠΕΙΡΙΑ" data-en="THE EXPERIENCE">Η ΕΜΠΕΙΡΙΑ</a>
@@ -787,16 +871,29 @@
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
       <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.2rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
     </div>
+
+    <!-- MOBILE CONTROLS -->
+    <div style="display: flex; gap: 0.8rem; align-items: center;">
+      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.4rem 1rem; font-size: 1.1rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
+      <button class="hamburger-btn" id="hamburgerToggle" onclick="toggleMobileMenu()" aria-label="Open Menu">☰</button>
+    </div>
   </nav>
+
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <a href="#about" onclick="toggleMobileMenu()" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
+    <a href="#experience" onclick="toggleMobileMenu()" data-el="Η ΕΜΠΕΙΡΙΑ" data-en="THE EXPERIENCE">Η ΕΜΠΕΙΡΙΑ</a>
+    <a href="#venue" onclick="toggleMobileMenu()" data-el="Ο ΧΩΡΟΣ" data-en="THE VENUE">Ο ΧΩΡΟΣ</a>
+    <a href="#schools" onclick="toggleMobileMenu()" data-el="ΣΧΟΛΕΙΑ" data-en="SCHOOLS">ΣΧΟΛΕΙΑ</a>
+    <a href="#info" onclick="toggleMobileMenu()" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+    <a href="#faqs" onclick="toggleMobileMenu()" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
+    <button class="mobile-lang-btn" onclick="toggleLanguage(); toggleMobileMenu();" id="mobileLangToggle">EN / ENGLISH</button>
+  </div>
 
   <!-- BLOCK: HERO -->
   <header class="hero">
     <div class="video-background">
-      <iframe 
-        src="https://www.youtube-nocookie.com/embed/_DLV2fUaArU?autoplay=1&mute=1&loop=1&playlist=_DLV2fUaArU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        tabindex="-1">
-      </iframe>
+      <div id="yt-player"></div>
     </div>
     <div class="hero-overlay"></div>
 
@@ -815,7 +912,7 @@
     </div>
   </header>
 
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ΜΕ ΤΟ ΚΑΘΕΤΟ ΑΕΡΟΣΤΑΤΟ ΠΟΥ ΦΑΙΝΕΤΑΙ ΟΛΟΚΛΗΡΟ) -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ΜΕ ΤΟ ΝΕΟ balloon_gr_fr ΑΣΣΕΤ) -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>
@@ -835,7 +932,7 @@
         <a href="#experience" class="btn btn-outline" data-el="ΟΙ 10 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ" data-en="EXPLORE THE 10 STATIONS">ΟΙ 10 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ</a>
       </div>
       <div class="intro-balloon-wrap">
-        <img src="https://admin.videotheatre.gr/api/files/media/r30tx2b56b5i3cq/balloon_jules_vern_8ajjaywzzm.jpeg" alt="Το Αερόστατο του Ιουλίου Βερν">
+        <img src="https://admin.videotheatre.gr/api/files/media/jhpzs15inrjfd4u/balloon_gr_fr_zoe3l52ckm.png" alt="Το Αερόστατο του Ιουλίου Βερν">
       </div>
     </div>
   </section>
@@ -1223,7 +1320,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer" data-el="Η μέση διάρκεια της εμπειρίας είναι 60 με 75 λεπτά. Περιλαμβάνει 25 λεπτά στην αίθουσα εμβύθισης 360°, 10 λεπτά στο VR, χρόνο στο διαδραστικό εργαστήριο Sketch &amp; Post και περιήγηση στις προθήκες κειμηλίων." data-en="The estimated visit time is 60 to 75 minutes, encompassing the 25-minute 360° immersive screening, 10-minute VR stations, the Sketch &amp; Post workshop, and historical showcases.">
-          Η μέση διάρκεια της εμπειρίας είναι 60 με 75 λεπτά. Περιλαμβάνει 25 λεπτά στην αίθουσα εμβύθισης 360°, 10 λεπτά στο VR, χρόνο στο διαδραστικό εργαστήριο Sketch &amp; Post και περιήγηση στις προθήκες κειμηλίων."
+          Η μέση διάρκεια της εμπειρίας είναι 60 με 75 λεπτά. Περιλαμβάνει 25 λεπτά στην αίθουσα εμβύθισης 360°, 10 λεπτά στο VR, χρόνο στο διαδραστικό εργαστήριο Sketch &amp; Post και περιήγηση στις προθήκες κειμηλίων.
         </div>
       </div>
 
@@ -1271,35 +1368,84 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="partners-grid">
-      <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
-      <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
-      <img src="https://admin.videotheatre.gr/api/files/media/vqnv01decw0nxed/vt_logo_white_9qjm1mm18a.png" alt="Video Theatre">
+    <div class="footer-inner">
+      <div class="partners-grid">
+        <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
+        <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
+        <img src="https://admin.videotheatre.gr/api/files/media/vqnv01decw0nxed/vt_logo_white_9qjm1mm18a.png" alt="Video Theatre">
+      </div>
+
+      <p class="venue-info">
+        <strong>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ - AN IMMERSIVE JOURNEY</strong><br>
+        Κέντρο Πολιτισμού «Ελληνικός Κόσμος» — Πειραιώς 254, 177 78 Ταύρος
+      </p>
+
+      <p class="copyright">
+        &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος.
+      </p>
     </div>
-
-    <p class="venue-info">
-      <strong>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ - AN IMMERSIVE JOURNEY</strong><br>
-      Κέντρο Πολιτισμού «Ελληνικός Κόσμος» — Πειραιώς 254, 177 78 Ταύρος
-    </p>
-
-    <p class="copyright">
-      &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος.
-    </p>
   </footer>
 
-  <!-- SCRIPT FOR FAQS & MULTI-LANGUAGE SWITCHER -->
+  <!-- SCRIPTS -->
   <script>
-    // FAQ Toggle
+    // 1. YouTube API Player Setup (Start & Loop at 5 seconds)
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-player', {
+        videoId: '_DLV2fUaArU',
+        playerVars: {
+          'autoplay': 1,
+          'controls': 0,
+          'showinfo': 0,
+          'rel': 0,
+          'modestbranding': 1,
+          'playsinline': 1,
+          'mute': 1,
+          'start': 5
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.mute();
+      event.target.seekTo(5);
+      event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        player.seekTo(5);
+        player.playVideo();
+      }
+    }
+
+    // 2. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+
+    // 3. FAQ Toggle
     function toggleFaq(element) {
       const item = element.parentElement;
       item.classList.toggle('active');
     }
 
-    // Language Toggle
+    // 4. Language Toggle (Desktop & Mobile)
     let currentLang = 'el';
     function toggleLanguage() {
       currentLang = currentLang === 'el' ? 'en' : 'el';
       document.getElementById('langToggle').textContent = currentLang === 'el' ? 'EN' : 'EL';
+      document.getElementById('mobileLangToggle').textContent = currentLang === 'el' ? 'EN / ENGLISH' : 'EL / ΕΛΛΗΝΙΚΑ';
 
       const translatableElements = document.querySelectorAll('[data-el]');
       translatableElements.forEach(el => {

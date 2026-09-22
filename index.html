@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jules Verne 200 | An Immersive Extraordinary Journey | Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</title>
+  <title>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία | Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</title>
   
   <!-- GOOGLE ANALYTICS PLACEHOLDER -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -27,9 +27,8 @@
       --snow-white: #FFFCFC;
       --dark-green: #003B2A;
       --bg-dark: #080504;
-      --bg-panel: rgba(63, 18, 16, 0.45);
-      --border-gold: rgba(233, 190, 116, 0.25);
-      --text-muted: #d8cec5;
+      --border-gold: rgba(233, 190, 116, 0.3);
+      --text-muted: #e8ded4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,10 +41,10 @@
       background-color: var(--bg-dark);
       color: var(--snow-white);
       font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1.18rem;
-      line-height: 1.75;
+      font-size: 1.24rem;
+      line-height: 1.8;
       background-image: 
-        radial-gradient(circle at 50% 20%, rgba(97, 18, 5, 0.45) 0%, rgba(8, 5, 4, 0.98) 80%),
+        radial-gradient(circle at 50% 15%, rgba(97, 18, 5, 0.3) 0%, rgba(8, 5, 4, 0.88) 80%),
         url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
       background-attachment: fixed;
       background-size: cover;
@@ -60,7 +59,7 @@
 
     .badge-font {
       font-family: 'Bebas Neue', Impact, sans-serif;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
@@ -70,21 +69,21 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 72px;
+      height: 75px;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 3.5rem;
-      background: rgba(8, 5, 4, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(233, 190, 116, 0.2);
+      background: rgba(8, 5, 4, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(233, 190, 116, 0.25);
     }
 
-    /* OVERHANGING LOGO (+15% ΜΕΓΑΛΥΤΕΡΟ & ΚΑΤΑΚΟΡΥΦΟ ΠΑΤΗΜΑ ΣΤΟ HOVER) */
+    /* OVERHANGING LOGO (+20% ΜΕΓΑΛΥΤΕΡΟ ~132px) */
     .nav-logo-link {
       position: relative;
-      top: 32px;
+      top: 38px;
       display: inline-block;
       text-decoration: none;
       z-index: 1010;
@@ -92,16 +91,16 @@
     }
 
     .nav-logo-link img {
-      height: 110px;
+      height: 132px;
       width: auto;
-      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.85));
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.9));
       transition: transform 0.35s ease-out, filter 0.35s ease;
       transform-origin: center top;
     }
 
     .nav-logo-link:hover img {
-      transform: translateY(6px) scale(1.02);
-      filter: drop-shadow(0 12px 25px rgba(233, 190, 116, 0.35));
+      transform: translateY(8px) scale(1.02);
+      filter: drop-shadow(0 14px 28px rgba(233, 190, 116, 0.45));
     }
 
     .nav-menu {
@@ -113,7 +112,7 @@
     .nav-menu a {
       color: var(--snow-white);
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1.5px;
       transition: color 0.3s;
@@ -127,7 +126,7 @@
       color: var(--harvest-gold);
       padding: 0.3rem 0.8rem;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       cursor: pointer;
       border-radius: 2px;
       transition: all 0.3s;
@@ -141,9 +140,9 @@
     /* BUTTONS */
     .btn {
       display: inline-block;
-      padding: 0.9rem 2.2rem;
+      padding: 0.95rem 2.4rem;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       letter-spacing: 1.5px;
       text-decoration: none;
       border-radius: 2px;
@@ -164,19 +163,19 @@
     .btn-gold:hover {
       background-color: #f7d18e;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(233, 190, 116, 0.5);
+      box-shadow: 0 6px 20px rgba(233, 190, 116, 0.55);
     }
 
     .btn-outline {
       background-color: transparent;
       color: var(--snow-white);
-      border: 1px solid rgba(233, 190, 116, 0.6);
+      border: 1px solid rgba(233, 190, 116, 0.65);
     }
 
     .btn-outline:hover {
       border-color: var(--harvest-gold);
       color: var(--harvest-gold);
-      background: rgba(233, 190, 116, 0.1);
+      background: rgba(233, 190, 116, 0.12);
       transform: translateY(-2px);
     }
 
@@ -190,7 +189,7 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding-top: 72px;
+      padding-top: 75px;
     }
 
     .video-background {
@@ -204,7 +203,7 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
@@ -212,43 +211,37 @@
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.25) 0%, rgba(8, 5, 4, 0.75) 85%);
+      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.2) 0%, rgba(8, 5, 4, 0.7) 85%);
       z-index: 2;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 950px;
+      max-width: 1000px;
       padding: 0 1.5rem;
     }
 
     .hero-title {
       font-size: 3.8rem;
       color: var(--harvest-gold);
-      margin-bottom: 0.6rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 25px rgba(0,0,0,0.95);
+      line-height: 1.15;
     }
 
-    .hero-tagline {
+    .hero-date {
       font-size: 1.6rem;
       color: var(--snow-white);
-      margin-bottom: 0.8rem;
-      letter-spacing: 3px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    }
-
-    .hero-location {
-      font-size: 1.3rem;
-      color: var(--harvest-gold);
       margin-bottom: 2.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      letter-spacing: 3.5px;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+      font-weight: 600;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1.4rem;
+      gap: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -257,7 +250,6 @@
     .block-section {
       width: 100%;
       padding: 6.5rem 2rem;
-      border-bottom: 1px solid rgba(233, 190, 116, 0.15);
       position: relative;
     }
 
@@ -273,14 +265,14 @@
 
     .block-header .sub-badge {
       color: var(--harvest-gold);
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       letter-spacing: 3px;
       display: block;
       margin-bottom: 0.4rem;
     }
 
     .block-header h2 {
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       color: var(--harvest-gold);
       margin-bottom: 1rem;
     }
@@ -290,12 +282,14 @@
       height: 2px;
       border-top: 2px dashed var(--harvest-gold);
       margin: 1.2rem auto;
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
     /* 1. INTRO BLOCK */
     .block-intro {
-      background: linear-gradient(180deg, rgba(8, 5, 4, 0.4) 0%, rgba(63, 18, 16, 0.3) 100%);
+      background: rgba(63, 18, 16, 0.55);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-gold);
     }
 
     .intro-grid {
@@ -309,12 +303,14 @@
       width: 100%;
       border-radius: 4px;
       border: 1px solid var(--border-gold);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.85);
     }
 
     /* 2. THE 8 STATIONS */
     .block-rooms {
-      background: rgba(12, 8, 7, 0.85);
+      background: rgba(12, 8, 7, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-gold);
     }
 
     .rooms-grid {
@@ -324,7 +320,7 @@
     }
 
     .room-card {
-      background: var(--bg-panel);
+      background: rgba(63, 18, 16, 0.55);
       border: 1px solid var(--border-gold);
       border-radius: 4px;
       overflow: hidden;
@@ -337,12 +333,12 @@
     .room-card:hover {
       border-color: var(--harvest-gold);
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.75);
     }
 
     .room-card-img {
       position: relative;
-      height: 230px;
+      height: 240px;
     }
 
     .room-card-img img {
@@ -358,31 +354,33 @@
       background: var(--red-oxide);
       color: var(--harvest-gold);
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      padding: 0.25rem 0.8rem;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.9rem;
       border: 1px solid var(--harvest-gold);
     }
 
     .room-body {
-      padding: 2rem;
+      padding: 2.2rem;
       flex-grow: 1;
     }
 
     .room-body h3 {
       color: var(--harvest-gold);
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       margin-bottom: 0.8rem;
     }
 
     .room-body p {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.65;
+      font-size: 1.2rem;
+      line-height: 1.75;
     }
 
     /* 3. VENUE & ACCESS BLOCK */
     .block-venue {
-      background: rgba(12, 8, 7, 0.9);
+      background: rgba(20, 10, 8, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-gold);
     }
 
     .venue-grid {
@@ -393,7 +391,7 @@
     }
 
     .venue-card {
-      background: var(--bg-panel);
+      background: rgba(63, 18, 16, 0.55);
       border: 1px solid var(--border-gold);
       border-radius: 4px;
       overflow: hidden;
@@ -403,32 +401,33 @@
 
     .venue-card img {
       width: 100%;
-      height: 280px;
+      height: 300px;
       object-fit: cover;
       border-bottom: 1px solid var(--border-gold);
     }
 
     .venue-card-body {
-      padding: 2.2rem;
+      padding: 2.4rem;
       flex-grow: 1;
     }
 
     .venue-card-body h3 {
       color: var(--harvest-gold);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
     }
 
     .access-list {
       list-style: none;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
     }
 
     .access-list li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
       color: var(--text-muted);
       position: relative;
-      padding-left: 1.6rem;
+      padding-left: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .access-list li::before {
@@ -436,13 +435,13 @@
       position: absolute;
       left: 0;
       color: var(--harvest-gold);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       line-height: 1;
     }
 
     /* 4. SCHOOLS BLOCK */
     .block-schools {
-      background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.98) 100%);
+      background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.95) 100%);
       border-top: 2px solid var(--harvest-gold);
       border-bottom: 2px solid var(--harvest-gold);
     }
@@ -469,8 +468,9 @@
     .school-features li {
       position: relative;
       padding-left: 2rem;
-      margin-bottom: 0.9rem;
+      margin-bottom: 1rem;
       color: var(--text-muted);
+      font-size: 1.2rem;
     }
 
     .school-features li::before {
@@ -478,19 +478,20 @@
       position: absolute;
       left: 0;
       color: var(--harvest-gold);
+      font-size: 1.3rem;
     }
 
     .contact-box {
-      margin-top: 1.5rem;
-      background: rgba(0, 0, 0, 0.35);
+      margin-top: 1.8rem;
+      background: rgba(0, 0, 0, 0.45);
       border: 1px solid var(--border-gold);
-      padding: 1.2rem;
+      padding: 1.4rem;
       border-radius: 4px;
     }
 
     .contact-box p {
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.22rem;
     }
 
     .contact-box a {
@@ -499,9 +500,10 @@
       font-weight: bold;
     }
 
-    /* 5. INFO BLOCK (ΩΡΑΡΙΟ & ΤΙΜΕΣ) */
+    /* 5. INFO BLOCK (ΦΩΤΕΙΝΟΤΕΡΟ BLOCK ΓΙΑ ΝΑ ΣΠΑΕΙ Η ΣΚΟΥΡΙΛΑ) */
     .block-info {
-      background: linear-gradient(180deg, rgba(8, 5, 4, 0.9) 0%, rgba(63, 18, 16, 0.35) 100%);
+      background: linear-gradient(180deg, rgba(233, 190, 116, 0.14) 0%, rgba(20, 12, 10, 0.85) 100%);
+      border-bottom: 1px solid var(--border-gold);
     }
 
     .info-grid {
@@ -511,44 +513,45 @@
     }
 
     .schedule-box {
-      background: var(--bg-panel);
-      border: 1px solid var(--border-gold);
+      background: rgba(35, 12, 10, 0.7);
+      border: 1px solid var(--harvest-gold);
       padding: 2.5rem;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .schedule-box h3 {
       color: var(--harvest-gold);
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin-bottom: 1.5rem;
     }
 
     .schedule-item {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px dashed rgba(233, 190, 116, 0.2);
-      padding: 0.9rem 0;
+      border-bottom: 1px dashed rgba(233, 190, 116, 0.3);
+      padding: 1rem 0;
+      font-size: 1.22rem;
     }
 
     .schedule-item:last-child { border-bottom: none; }
-
     .schedule-day { font-weight: 600; color: var(--snow-white); }
-    .schedule-hours { color: var(--harvest-gold); }
+    .schedule-hours { color: var(--harvest-gold); font-weight: bold; }
 
-    /* PRICING TABLE */
     .pricing-box {
-      background: var(--bg-panel);
-      border: 1px solid var(--border-gold);
+      background: rgba(35, 12, 10, 0.7);
+      border: 1px solid var(--harvest-gold);
       padding: 2.5rem;
       border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .pricing-box h3 {
       color: var(--harvest-gold);
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin-bottom: 1.5rem;
     }
 
@@ -559,15 +562,16 @@
     }
 
     .pricing-table th, .pricing-table td {
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid rgba(233, 190, 116, 0.15);
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid rgba(233, 190, 116, 0.2);
+      font-size: 1.2rem;
     }
 
     .pricing-table th {
       font-family: 'Cinzel', serif;
       color: var(--harvest-gold);
-      font-size: 1.05rem;
-      background: rgba(97, 18, 5, 0.3);
+      font-size: 1.15rem;
+      background: rgba(97, 18, 5, 0.4);
     }
 
     .pricing-table td {
@@ -578,22 +582,23 @@
       color: var(--snow-white);
       font-weight: bold;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       letter-spacing: 1px;
     }
 
     /* 6. FAQS BLOCK */
     .block-faqs {
-      background: var(--bg-dark);
+      background: rgba(8, 5, 4, 0.85);
+      border-bottom: 1px solid var(--border-gold);
     }
 
     .faq-container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
     .faq-item {
-      background: var(--bg-panel);
+      background: rgba(63, 18, 16, 0.55);
       border: 1px solid var(--border-gold);
       margin-bottom: 1.2rem;
       border-radius: 4px;
@@ -607,7 +612,7 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--harvest-gold);
       user-select: none;
       transition: background 0.3s;
@@ -618,7 +623,7 @@
     }
 
     .faq-icon {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       transition: transform 0.3s;
     }
 
@@ -628,13 +633,14 @@
       overflow: hidden;
       transition: max-height 0.4s ease, padding 0.4s ease;
       color: var(--text-muted);
-      font-size: 1.08rem;
+      font-size: 1.22rem;
+      line-height: 1.8;
       border-top: 1px solid transparent;
     }
 
     .faq-item.active .faq-answer {
       padding: 1.4rem 2rem;
-      max-height: 300px;
+      max-height: 350px;
       border-top: 1px solid rgba(233, 190, 116, 0.15);
     }
 
@@ -645,7 +651,6 @@
     /* FOOTER */
     footer {
       background: #040202;
-      border-top: 1px solid var(--border-gold);
       padding: 4.5rem 2rem 2.5rem 2rem;
       text-align: center;
     }
@@ -654,30 +659,49 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 4rem;
+      gap: 4.5rem;
       flex-wrap: wrap;
-      margin: 2rem 0 3.5rem 0;
+      margin-bottom: 3.5rem;
     }
 
     .partners-grid img {
-      height: 46px;
-      opacity: 0.85;
+      height: 48px;
+      opacity: 0.9;
       transition: opacity 0.3s;
     }
 
     .partners-grid img:hover { opacity: 1; }
 
+    .venue-info {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.22rem;
+    }
+
+    .venue-info strong {
+      color: var(--harvest-gold);
+      font-size: 1.35rem;
+    }
+
+    .copyright {
+      font-size: 0.98rem;
+      color: #8c7e75;
+      border-top: 1px dashed rgba(255,255,255,0.15);
+      padding-top: 1.8rem;
+    }
+
     @media (max-width: 980px) {
       nav { padding: 0 1.5rem; }
       .nav-menu { display: none; }
-      .nav-logo-link { top: 22px; }
-      .nav-logo-link img { height: 90px; }
-      .hero-title { font-size: 2.5rem; }
+      .nav-logo-link { top: 25px; }
+      .nav-logo-link img { height: 105px; }
+      .hero-title { font-size: 2.6rem; }
+      .hero-date { font-size: 1.25rem; }
       .intro-grid, .schools-grid, .venue-grid, .info-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-      .block-section { padding: 4rem 1.5rem; }
+      .block-section { padding: 4.5rem 1.5rem; }
     }
   </style>
 </head>
@@ -685,8 +709,8 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <!-- OVERHANGING INTERACTIVE LOGO LINK (+15% SIZE & GROUNDING EFFECT) -->
-    <a href="#" class="nav-logo-link" title="Jules Verne 200 - Αρχική">
+    <!-- OVERHANGING INTERACTIVE LOGO LINK (+20% SIZE) -->
+    <a href="#" class="nav-logo-link" title="Ιούλιος Βερν 200 - Αρχική">
       <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
     </a>
 
@@ -714,12 +738,11 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h1 class="hero-title">JULES VERNE 200</h1>
-      <p class="hero-tagline badge-font" data-el="ΕΝΑ ΠΟΛΥΑΙΣΘΗΤΗΡΙΑΚΟ &amp; ΕΜΒΥΘΙΣΤΙΚΟ ΤΑΞΙΔΙ" data-en="AN IMMERSIVE EXTRAORDINARY JOURNEY">
-        ΕΝΑ ΠΟΛΥΑΙΣΘΗΤΗΡΙΑΚΟ &amp; ΕΜΒΥΘΙΣΤΙΚΟ ΤΑΞΙΔΙ
-      </p>
-      <p class="hero-location" data-el="Κέντρο Πολιτισμού «Ελληνικός Κόσμος» | Ίδρυμα Μείζονος Ελληνισμού" data-en="Hellenic Cosmos Cultural Centre | Foundation of the Hellenic World">
-        Κέντρο Πολιτισμού «Ελληνικός Κόσμος» | Ίδρυμα Μείζονος Ελληνισμού
+      <h1 class="hero-title" data-el="ΙΟΥΛΙΟΣ ΒΕΡΝ 200<br>Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ" data-en="JULES VERNE 200<br>THE EXTRAORDINARY JOURNEY">
+        ΙΟΥΛΙΟΣ ΒΕΡΝ 200<br>Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ
+      </h1>
+      <p class="hero-date badge-font" data-el="ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ" data-en="IN ATHENS FROM FRIDAY 25 SEPTEMBER">
+        ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ
       </p>
       
       <div class="hero-buttons">
@@ -729,12 +752,12 @@
     </div>
   </header>
 
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ABOUT) -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ABOUT ME THN EIKONA GATE) -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>
         <span class="sub-badge badge-font" data-el="200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ" data-en="200 YEARS OF ADVENTURE">200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ</span>
-        <h2 style="font-size: 2.5rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης" data-en="The Pioneer of Science and Imagination">
+        <h2 style="font-size: 2.7rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης" data-en="The Pioneer of Science and Imagination">
           Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης
         </h2>
         <p style="margin-bottom: 1.2rem;" data-el="Το 2028 συμπληρώνονται 200 χρόνια από τη γέννηση του Ιουλίου Βερν: 200 χρόνια περιπέτειας και 200 χρόνια «Θαυμαστών Ταξιδιών». Ο Βερν υπήρξε ο θεμελιωτής του επιστημονικού μυθιστορήματος, προβλέποντας τα υποβρύχια, την κατάκτηση της Σελήνης, τα ελικόπτερα και τη σύγχρονη τεχνολογία." data-en="2028 marks the 200th anniversary of Jules Verne's birth: 200 years of adventure and 200 years of 'Extraordinary Journeys'. Verne was the visionary father of scientific adventure, prophesying submarines, lunar conquest, helicopters, and modern technological wonders.">
@@ -746,34 +769,34 @@
         <a href="#experience" class="btn btn-outline" data-el="ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ" data-en="EXPLORE THE 8 STATIONS">ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ</a>
       </div>
       <div>
-        <img src="https://admin.videotheatre.gr/api/files/media/fdenjnrpbagv8cd/nautilus_qiwhzdvc2h.png" alt="Γλυπτό Ναυτίλος">
+        <img src="https://admin.videotheatre.gr/api/files/media/lxevnlunmz370hy/jv200_gate_q84bciea4n.png" alt="Πύλη Έκθεσης Jules Verne">
       </div>
     </div>
   </section>
 
-  <!-- 2. BLOCK: Η ΕΜΠΕΙΡΙΑ (EXPERIENCE / THE 8 STATIONS) -->
+  <!-- 2. BLOCK: Η ΕΜΠΕΙΡΙΑ (EXPERIENCE / OI 8 ΣΤΑΘΜΟΙ ME NAUTILO STON 01) -->
   <section id="experience" class="block-section block-rooms">
     <div class="block-inner">
       <div class="block-header">
         <span class="sub-badge badge-font" data-el="Η ΔΙΑΔΡΟΜΗ" data-en="THE EXHIBITION FLOW">Η ΔΙΑΔΡΟΜΗ</span>
         <h2 data-el="Οι 8 Σταθμοί της Εμπειρίας" data-en="The 8 Exhibition Stations">Οι 8 Σταθμοί της Εμπειρίας</h2>
         <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;" data-el="Μια ολοκληρωμένη ροή που συνδυάζει αφήγηση, τεχνολογία και ιστορική τεκμηρίωση." data-en="A seamlessly designed walk-through blending narrative, cutting-edge technology, and authentic historical heritage.">
+        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-el="Μια ολοκληρωμένη ροή που συνδυάζει αφήγηση, τεχνολογία και ιστορική τεκμηρίωση." data-en="A seamlessly designed walk-through blending narrative, cutting-edge technology, and authentic historical heritage.">
           Μια ολοκληρωμένη ροή που συνδυάζει αφήγηση, τεχνολογία και ιστορική τεκμηρίωση.
         </p>
       </div>
 
       <div class="rooms-grid">
-        <!-- Room 1 -->
+        <!-- Room 1 (NAUTILUS PHOTO) -->
         <div class="room-card">
           <div class="room-card-img">
-            <span class="room-num">01. ΕΙΣΟΔΟΣ</span>
-            <img src="https://admin.videotheatre.gr/api/files/media/9crtc6aym7qgkl2/paris_1800_collage_287ekxzg0k.jpg?thumb=800x0" alt="Ένα Ανήσυχο Πνεύμα">
+            <span class="room-num">01. ΕΙΣΟΔΟΣ &amp; ΒΙΟΓΡΑΦΙΑ</span>
+            <img src="https://admin.videotheatre.gr/api/files/media/fdenjnrpbagv8cd/nautilus_qiwhzdvc2h.png" alt="Ναυτίλος & Ένα Ανήσυχο Πνεύμα">
           </div>
           <div class="room-body">
             <h3 data-el="Ένα Ανήσυχο Πνεύμα" data-en="A Curious Spirit">Ένα Ανήσυχο Πνεύμα</h3>
-            <p data-el="Περνώντας τη σκηνική πύλη με τα γρανάζια και το γλυπτό του Ναυτίλου, γνωρίστε τα παιδικά χρόνια στη Ναντ, τον εκδότη Χέτζελ, το γραφείο στον πύργο της Αμιένης και το διαδραστικό χρονολόγιο των εφευρέσεων του 19ου αιώνα." data-en="Step through the steampunk archway and past the Nautilus sculpture to explore Verne's youth in Nantes, his publisher Hetzel, his tower desk in Amiens, and 19th-century technological milestones.">
-              Περνώντας τη σκηνική πύλη με τα γρανάζια και το γλυπτό του Ναυτίλου, γνωρίστε τα παιδικά χρόνια στη Ναντ, τον εκδότη Χέτζελ, το γραφείο στον πύργο της Αμιένης και το διαδραστικό χρονολόγιο των εφευρέσεων του 19ου αιώνα.
+            <p data-el="Περνώντας τη σκηνική πύλη με τα γρανάζια και το επιβλητικό γλυπτό του Ναυτίλου, γνωρίστε τα παιδικά χρόνια στη Ναντ, τον εκδότη Χέτζελ, το γραφείο στον πύργο της Αμιένης και το διαδραστικό χρονολόγιο των εφευρέσεων του 19ου αιώνα." data-en="Step through the steampunk archway and past the grand Nautilus sculpture to explore Verne's youth in Nantes, his publisher Hetzel, his tower desk in Amiens, and 19th-century technological milestones.">
+              Περνώντας τη σκηνική πύλη με τα γρανάζια και το επιβλητικό γλυπτό του Ναυτίλου, γνωρίστε τα παιδικά χρόνια στη Ναντ, τον εκδότη Χέτζελ, το γραφείο στον πύργο της Αμιένης και το διαδραστικό χρονολόγιο των εφευρέσεων του 19ου αιώνα.
             </p>
           </div>
         </div>
@@ -886,7 +909,7 @@
         <span class="sub-badge badge-font" data-el="Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ" data-en="VENUE &amp; ACCESS">Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ</span>
         <h2 data-el="Κέντρο Πολιτισμού «Ελληνικός Κόσμος»" data-en="Hellenic Cosmos Cultural Centre">Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</h2>
         <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); font-size: 1.25rem;">
+        <p style="color: var(--text-muted); font-size: 1.3rem;">
           <strong>Ίδρυμα Μείζονος Ελληνισμού</strong> — Πειραιώς 254, 177 78 Ταύρος, Αθήνα
         </p>
       </div>
@@ -932,7 +955,7 @@
     <div class="block-inner schools-grid">
       <div>
         <span class="sub-badge badge-font" data-el="ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027" data-en="EDUCATIONAL PROGRAM 2026-2027">ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027</span>
-        <h2 style="font-size: 2.6rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
+        <h2 style="font-size: 2.8rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
           Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις
         </h2>
         <p data-el="Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM." data-en="Jules Verne 200 is specifically curated for Kindergarten, Primary, and Secondary school students, connecting Physics, Geography, History, and Literature through experiential STEAM learning.">
@@ -961,20 +984,19 @@
     </div>
   </section>
 
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (INFO - ΩΡΑΡΙΟ & ΤΙΜΕΣ) -->
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (INFO - ΑΝΟΙΧΤΟΤΕΡΟ & ΦΩΤΕΙΝΟ) -->
   <section id="info" class="block-section block-info">
     <div class="block-inner">
       <div class="block-header">
         <span class="sub-badge badge-font" data-el="ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ" data-en="VISIT INFORMATION">ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ</span>
         <h2 data-el="Ωράριο &amp; Τιμές Εισιτηρίων" data-en="Opening Hours &amp; Prices">Ωράριο &amp; Τιμές Εισιτηρίων</h2>
         <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;" data-el="Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200." data-en="All the essential details for your visit to the Jules Verne 200 exhibition.">
+        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-el="Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200." data-en="All the essential details for your visit to the Jules Verne 200 exhibition.">
           Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200.
         </p>
       </div>
 
       <div class="info-grid">
-        <!-- Ωράριο Λειτουργίας -->
         <div class="schedule-box">
           <h3 data-el="Ωράριο Λειτουργίας" data-en="Opening Hours">Ωράριο Λειτουργίας</h3>
           <div class="schedule-item">
@@ -993,12 +1015,11 @@
             <span class="schedule-day" data-el="Τελευταία Είσοδος" data-en="Last Entrance">Τελευταία Είσοδος</span>
             <span class="schedule-hours">20:00</span>
           </div>
-          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.98rem;" data-el="* Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης." data-en="* Special morning timeslots available for pre-booked school groups.">
+          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem;" data-el="* Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης." data-en="* Special morning timeslots available for pre-booked school groups.">
             * Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης.
           </div>
         </div>
 
-        <!-- Πίνακας Τιμών -->
         <div class="pricing-box">
           <h3 data-el="Πίνακας Εισιτηρίων" data-en="Ticket Prices">Πίνακας Εισιτηρίων</h3>
           <table class="pricing-table">
@@ -1032,11 +1053,11 @@
               </tr>
               <tr>
                 <td data-el="Σχολικές Ομάδες (ανά μαθητή)" data-en="School Groups (per student)">Σχολικές Ομάδες (ανά μαθητή)</td>
-                <td class="price" colspan="2" style="color: var(--elf-green); font-size: 1.2rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
+                <td class="price" colspan="2" style="color: var(--elf-green); font-size: 1.3rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
               </tr>
             </tbody>
           </table>
-          <div style="margin-top: 1.8rem; text-align: center;">
+          <div style="margin-top: 2rem; text-align: center;">
             <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
               ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE (MORE.COM)
             </a>
@@ -1109,7 +1130,6 @@
 
   <!-- FOOTER & ORGANIZERS -->
   <footer>
-    <div class="partners-title badge-font" data-el="ΜΙΑ ΣΥΝΔΙΟΡΓΑΝΩΣΗ ΤΩΝ" data-en="PRESENTED BY">ΜΙΑ ΣΥΝΔΙΟΡΓΑΝΩΣΗ ΤΩΝ</div>
     <div class="partners-grid">
       <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
       <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
@@ -1117,12 +1137,12 @@
     </div>
 
     <p class="venue-info">
-      <strong>JULES VERNE 200: AN IMMERSIVE EXTRAORDINARY JOURNEY</strong><br>
+      <strong>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ - AN IMMERSIVE JOURNEY</strong><br>
       Κέντρο Πολιτισμού «Ελληνικός Κόσμος» — Πειραιώς 254, 177 78 Ταύρος
     </p>
 
     <p class="copyright">
-      &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος. Μια συμπαραγωγή των Layers of Reality, Ιδρύματος Μείζονος Ελληνισμού &amp; Video Theatre.
+      &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος.
     </p>
   </footer>
 

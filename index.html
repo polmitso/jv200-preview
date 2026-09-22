@@ -370,28 +370,44 @@
       align-items: center;
     }
 
-    /* VERN QUOTE ΣΤΥΛ */
-    .vern-quote {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--dark-bronze);
-      line-height: 1.6;
+    /* VERN QUOTE ΠΛΑΙΣΙΟ (ΜΕ ΕΛΛΗΝΙΚΑ/ΑΓΓΛΙΚΑ & ΓΑΛΛΙΚΑ) */
+    .vern-quote-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-gold);
+      border-left: 4px solid var(--warm-gold);
+      padding: 1.5rem 1.8rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
       margin-bottom: 2rem;
-      padding: 1.2rem 1.5rem;
-      border-left: 3px solid var(--warm-gold);
-      background: rgba(166, 124, 30, 0.06);
-      border-radius: 0 4px 4px 0;
       width: 100%;
       text-align: left;
     }
 
-    .vern-quote .quote-author {
-      display: block;
-      margin-top: 0.5rem;
+    .vern-quote-native {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--dark-bronze);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .vern-quote-french {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      border-top: 1px dashed rgba(166, 124, 30, 0.25);
+      padding-top: 0.8rem;
+    }
+
+    .quote-author {
+      display: inline-block;
+      margin-top: 0.4rem;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--warm-gold);
       letter-spacing: 1px;
@@ -401,6 +417,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-end;
       height: 100%;
     }
 
@@ -977,11 +994,16 @@
         </p>
       </div>
 
-      <!-- ΑΕΡΟΣΤΑΤΟ ΜΕ ΤΟ ΕΛΛΗΝΙΚΟ/ΓΑΛΛΙΚΟ ΑΠΟΦΘΕΓΜΑ -->
+      <!-- ΑΕΡΟΣΤΑΤΟ ΜΕ ΤΟ ΔΙΓΛΩΣΣΟ ΑΠΟΦΘΕΓΜΑ ΑΠΟ ΠΑΝΩ -->
       <div class="intro-balloon-wrap">
-        <div class="vern-quote" data-el="&ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;<span class=&quot;quote-author&quot;>Ιούλιος Βερν</span>" data-en="&ldquo;Tout ce qu’un homme est capable d’imaginer, d’autres hommes seront capables de le réaliser.&rdquo;<span class=&quot;quote-author&quot;>Jules Verne</span>">
-          &ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;
-          <span class="quote-author">Ιούλιος Βερν</span>
+        <div class="vern-quote-box">
+          <div class="vern-quote-native" data-el="&ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;" data-en="&ldquo;Whatever one man can imagine, other men can make a reality.&rdquo;">
+            &ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;
+          </div>
+          <div class="vern-quote-french">
+            &ldquo;Tout ce qu’un homme est capable d’imaginer, d’autres hommes seront capables de le réaliser.&rdquo;
+            <span class="quote-author">Jules Verne</span>
+          </div>
         </div>
         <img src="https://admin.videotheatre.gr/api/files/media/imb2ensnw5bw3fl/balloon_transparents_7g3h1e4z5w.png" alt="Το Αερόστατο του Ιουλίου Βερν">
       </div>

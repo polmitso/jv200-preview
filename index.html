@@ -1,209 +1,581 @@
 <!DOCTYPE html>
-<html lang="el" class="scroll-smooth">
+<html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jules Verne 200 | An Immersive Extraordinary Journey</title>
-  <meta name="description" content="Η διεθνής ψηφιακή έκθεση για τα 200 χρόνια από τη γέννηση του Ιουλίου Βερν. Μια μοναδική immersive εμπειρία στην Αθήνα.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Jules Verne 200 | An Immersive Extraordinary Journey | Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</title>
+  
+  <!-- GOOGLE ANALYTICS (Αντικατάστησε το G-XXXXXXXXXX με το δικό σου Tag μόλις το φτιάξεις) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-    .font-cinzel { font-family: 'Cinzel', serif; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .bg-steampunk {
-      background-color: #0b0f19;
-      background-image: radial-gradient(at 0% 0%, rgba(217, 119, 6, 0.12) 0px, transparent 50%),
-                        radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+    :root {
+      --red-oxide: #611205;
+      --harvest-gold: #E9BE74;
+      --elf-green: #0D9269;
+      --seal-brown: #3F1210;
+      --snow-white: #FFFCFC;
+      --dark-green: #003B2A;
+      --bg-black: #0c0807;
+      --text-muted: #e2d8cf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--snow-white);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      background-image: radial-gradient(circle at center, rgba(97, 18, 5, 0.45) 0%, rgba(12, 8, 7, 0.95) 100%),
+                        url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand-font {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .badge-font {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 2px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background: linear-gradient(180deg, rgba(12, 8, 7, 0.9) 0%, rgba(12, 8, 7, 0) 100%);
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--snow-white);
+      text-decoration: none;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--harvest-gold);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .btn-gold {
+      background-color: var(--harvest-gold);
+      color: var(--seal-brown);
+      border: 1px solid var(--harvest-gold);
+      box-shadow: 0 4px 15px rgba(233, 190, 116, 0.3);
+    }
+
+    .btn-gold:hover {
+      background-color: #f7d18e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(233, 190, 116, 0.45);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--snow-white);
+      border: 1px solid var(--snow-white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--harvest-gold);
+      color: var(--harvest-gold);
+      background-color: rgba(233, 190, 116, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 56.25vw;
+      min-height: 100vh;
+      min-width: 177.77vh;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .video-background iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(97, 18, 5, 0.45) 0%, rgba(12, 8, 7, 0.88) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      padding: 0 1.5rem;
+    }
+
+    .hero-logo-img {
+      max-width: 440px;
+      width: 85%;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
+    }
+
+    .hero-tagline {
+      font-size: 1.4rem;
+      color: var(--harvest-gold);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero-location {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* SECTIONS */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header .sub-badge {
+      color: var(--elf-green);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--harvest-gold);
+      margin-bottom: 1rem;
+    }
+
+    .dashed-divider {
+      width: 80px;
+      height: 2px;
+      border-top: 2px dashed var(--harvest-gold);
+      margin: 1rem auto;
+      opacity: 0.6;
+    }
+
+    /* EXPERIENCE GRID */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(63, 18, 16, 0.4);
+      border: 1px solid rgba(233, 190, 116, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--harvest-gold);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(233, 190, 116, 0.15);
+    }
+
+    .card-body {
+      padding: 1.8rem;
+      flex-grow: 1;
+    }
+
+    .card-body h3 {
+      color: var(--harvest-gold);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-body p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* EDUCATION / SCHOOLS SECTION */
+    .schools-container {
+      background: linear-gradient(135deg, rgba(97, 18, 5, 0.6) 0%, rgba(63, 18, 16, 0.8) 100%);
+      border: 1px solid var(--harvest-gold);
+      border-radius: 6px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+
+    .schools-text h2 {
+      color: var(--harvest-gold);
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .schools-text p {
+      color: var(--snow-white);
+      margin-bottom: 1.2rem;
+      font-size: 1.15rem;
+    }
+
+    .school-features {
+      list-style: none;
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    .school-features li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .school-features li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--harvest-gold);
+    }
+
+    .schools-poster img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+      border: 1px solid rgba(233, 190, 116, 0.3);
+    }
+
+    /* FOOTER & LOGOS */
+    footer {
+      background-color: #050303;
+      border-top: 1px solid rgba(233, 190, 116, 0.2);
+      padding: 4rem 2rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .partners-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .partners-grid img {
+      height: 44px;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+      filter: grayscale(10%) contrast(110%);
+    }
+
+    .partners-grid img:hover {
+      opacity: 1;
+    }
+
+    .venue-info {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .venue-info strong {
+      color: var(--harvest-gold);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #665c58;
+      border-top: 1px dashed rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .schools-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-logo-img {
+        max-width: 320px;
+      }
     }
   </style>
 </head>
-<body class="bg-steampunk text-slate-100 min-h-screen selection:bg-amber-500 selection:text-black">
+<body>
 
-  <!-- Header / Navigation -->
-  <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-500/10 text-amber-400 font-cinzel font-bold text-xl">JV</div>
-        <div>
-          <span class="block font-cinzel font-bold text-lg text-amber-400 tracking-wider leading-none">JULES VERNE 200</span>
-          <span class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">An Immersive Journey</span>
-        </div>
-      </a>
-      
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-amber-400 transition-colors">Η Έκθεση</a>
-        <a href="#experience" class="hover:text-amber-400 transition-colors">Εμπειρία & VR</a>
-        <a href="#schools" class="hover:text-amber-400 transition-colors">Σχολεία & Ομάδες</a>
-        <a href="#info" class="hover:text-amber-400 transition-colors">Πληροφορίες</a>
-      </div>
-
-      <div class="flex items-center gap-4">
-        <a href="#booking" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-amber-500/20">
-          Εισιτηρια
-        </a>
-      </div>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">
+      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200 Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#experience">Η Εμπειρία</a>
+      <a href="#schools">Σχολεία</a>
+      <a href="#venue">Τοποθεσία</a>
+      <a href="#tickets" class="btn btn-gold" style="padding: 0.5rem 1.4rem; font-size: 1.1rem;">Εισιτήρια</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="relative pt-24 pb-32 overflow-hidden border-b border-slate-800/50">
-    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-widest mb-8">
-        <i class="fa-solid fa-compass animate-spin text-amber-400" style="animation-duration: 10s;"></i>
-        200 Χρονια απο τη γεννηση του οραματιστη
-      </div>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-cinzel font-black tracking-tight text-white mb-6 leading-tight">
-        Ενα Αξεπεραστο <br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Ταξιδι στη Φαντασια</span>
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
-        Από τα βάθη των ωκεανών με τον Ναυτίλο μέχρι τη σκοτεινή πλευρά της Σελήνης. Η μεγαλύτερη διαδραστική έκθεση ψηφιακής τεχνολογίας, 3D projection mapping και Virtual Reality.
-      </p>
+  <!-- HERO SECTION WITH BACKGROUND YOUTUBE VIDEO -->
+  <header class="hero">
+    <div class="video-background">
+      <iframe 
+        src="https://www.youtube-nocookie.com/embed/_DLV2fUaArU?autoplay=1&mute=1&loop=1&playlist=_DLV2fUaArU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        tabindex="-1">
+      </iframe>
+    </div>
+    <div class="hero-overlay"></div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#booking" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-amber-500/25">
-          Κρατηση Εισιτηριων
-        </a>
-        <a href="#schools" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-sm uppercase tracking-wider transition-all">
-          Εκπαιδευτικες Επισκεψεις
-        </a>
+    <div class="hero-content">
+      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Ιούλιος Βερν 200 - Ένα Θαυμαστό Ταξίδι" class="hero-logo-img">
+      <p class="hero-tagline badge-font">Ένα Πολυαισθητηριακό &amp; Εμβυθιστικό Ταξίδι</p>
+      <p class="hero-location">Κέντρο Πολιτισμού «Ελληνικός Κόσμος» | Ίδρυμα Μείζονος Ελληνισμού</p>
+      
+      <div class="hero-buttons">
+        <a href="#tickets" class="btn btn-gold">Κράτηση Εισιτηρίων</a>
+        <a href="#schools" class="btn btn-outline">Σχολικές Επισκέψεις</a>
       </div>
     </div>
   </header>
 
-  <!-- Core Highlights / Numbers -->
-  <section class="py-16 border-b border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">1.200+ m²</div>
-        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Εκθεσιακος Χωρος</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">360°</div>
-        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Projection Mapping</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">VR Metaverse</div>
-        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Διαδραστικη Εμπειρια</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-cinzel font-bold text-amber-400 mb-1">5 Εμβληματικα</div>
-        <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Εργα του Βερν</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About & Thematic Worlds -->
-  <section id="experience" class="py-24 max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-xs uppercase tracking-widest text-amber-400 font-bold mb-3">Θεματικες Ζωνες</h2>
-      <p class="text-3xl md:text-4xl font-cinzel font-bold text-white mb-4">Ζηστε τους Μυθους του Ιουλιου Βερν</p>
-      <p class="text-slate-400 text-sm md:text-base leading-relaxed">
-        Ένα πολυαισθητηριακό ταξίδι μέσα από τα σπουδαιότερα μυθιστορήματα που προέβλεψαν το μέλλον της επιστήμης και της ανθρώπινης εξερεύνησης.
+  <!-- MAIN EXPERIENCE HIGHLIGHTS -->
+  <section id="experience" class="section-wrap">
+    <div class="section-header">
+      <span class="sub-badge badge-font">Η ΕΚΘΕΣΗ ΜΕ ΜΙΑ ΜΑΤΙΑ</span>
+      <h2>Εξερευνήστε τους Κόσμους του Ιουλίου Βερν</h2>
+      <div class="dashed-divider"></div>
+      <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+        Μια πρωτοποριακή διεθνής παραγωγή που συνδυάζει 360° projections, εικονική πραγματικότητα, διαδραστικά εργαστήρια και αυθεντικά ιστορικά κειμήλια.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-water"></i>
+    <div class="grid-cards">
+      <!-- Card 1: Immersive Projections -->
+      <div class="card">
+        <img src="https://admin.videotheatre.gr/api/files/media/lrvfy1r9w2q7a6l/immersive_1_nub3otw9cn.jpeg?thumb=800x0" alt="Immersive Projection Room">
+        <div class="card-body">
+          <h3>Αίθουσα Immersive 360°</h3>
+          <p>
+            Μια εντυπωσιακή προβολή 25 λεπτών σε τοίχους και δάπεδο, που μεταφέρει τους θεατές στα εξωτικά τοπία, στα βάθη των θαλασσών και στα άστρα των «Θαυμαστών Ταξιδιών».
+          </p>
         </div>
-        <h3 class="text-xl font-cinzel font-bold text-white mb-2">20.000 Λευγες κατω απο τη Θαλασσα</h3>
-        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-          Μπείτε στο θρυλικό υποβρύχιο Ναυτίλος του Πλοιάρχου Νέμο. Εξερευνήστε τον μυστηριώδη βυθό μέσα από 360° προβολές και ηχοτοπία.
-        </p>
       </div>
 
-      <!-- Card 2 -->
-      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-globe"></i>
+      <!-- Card 2: VR Experience -->
+      <div class="card">
+        <img src="https://admin.videotheatre.gr/api/files/media/d69su2ohd4nie7u/vr_empty_360_9hy19cimn6.jpg?thumb=800x0" alt="VR 360 Experience">
+        <div class="card-body">
+          <h3>Εικονική Πραγματικότητα (VR)</h3>
+          <p>
+            Φορέστε τα VR headsets και περιηγηθείτε στις τρεις πόλεις-σταθμούς του συγγραφέα (Νάντη, Παρίσι, Αμιένη) καθώς και στον φαντασμαγορικό κόσμο του Metaverne.
+          </p>
         </div>
-        <h3 class="text-xl font-cinzel font-bold text-white mb-2">Ο Γυρος του Κοσμου σε 80 Ημερες</h3>
-        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-          Ακολουθήστε τα βήματα του Φιλέα Φογκ μέσα από εξωτικές διαδρομές, ατμοκίνητα τρένα, αερόστατα και διαδραστικούς σταθμούς εποχής.
-        </p>
       </div>
 
-      <!-- Card 3 -->
-      <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:border-amber-500/40 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-rocket"></i>
+      <!-- Card 3: Sketch & Post / Machines -->
+      <div class="card">
+        <img src="https://admin.videotheatre.gr/api/files/media/97cj0gqnkw3iebu/machine_verne_jp_64yqbqzte8.jpg?thumb=800x0" alt="Sketch and Post Room">
+        <div class="card-body">
+          <h3>Εργαστήριο Sketch &amp; Post</h3>
+          <p>
+            Μικροί και μεγάλοι ζωγραφίζουν τις θρυλικές μηχανές (Ναυτίλος, Άλμπατρος, Μπέχεμωθ) και τις βλέπουν να ζωντανεύουν ψηφιακά στον τοίχο της εγκατάστασης.
+          </p>
         </div>
-        <h3 class="text-xl font-cinzel font-bold text-white mb-2">Απο τη Γη στη Σεληνη</h3>
-        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-          Φορέστε τα VR headsets και επιβιβαστείτε στην κάψουλα της διαστημικής πρωτοπορίας, δεκαετίες πριν την ιστορική αποστολή Apollo 11.
-        </p>
+      </div>
+
+      <!-- Card 4: Relics & Greece -->
+      <div class="card">
+        <img src="https://admin.videotheatre.gr/api/files/media/a8qntssoga2s0fk/vitrina_m7s1acz5lt.jpeg?thumb=800x0" alt="Vintage Showcases">
+        <div class="card-body">
+          <h3>Ιστορικά Εκθέματα &amp; Ελλάδα</h3>
+          <p>
+            Πάνω από 30 αυθεντικά ναυτικά και επιστημονικά όργανα εποχής, σπάνιες ελληνικές εκδόσεις και ο ειδικός δεσμός του Βερν με την Ελλάδα και το 1821.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Schools & Groups Section -->
-  <section id="schools" class="py-20 bg-slate-900/40 border-y border-slate-800">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Εκπαιδευτικο Προγραμμα</span>
-        <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-white mt-2 mb-6">Σχολικες Επισκεψεις & Ομαδικες Κρατησεις</h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-          Η έκθεση αποτελεί έναν ιδανικό εκπαιδευτικό προορισμό για μαθητές Πρωτοβάθμιας και Δευτεροβάθμιας εκπαίδευσης. Συνδυάζει τη λογοτεχνία, την επιστήμη, την ιστορία και την τεχνολογία του μέλλοντος μέσα από ειδικά σχεδιασμένες ξεναγήσεις.
+  <!-- SCHOOL VISITS & EDUCATIONAL GUIDE SECTION -->
+  <section id="schools" class="section-wrap">
+    <div class="schools-container">
+      <div class="schools-text">
+        <span class="sub-badge badge-font" style="color: var(--harvest-gold);">ΕΙΔΙΚΟ ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ</span>
+        <h2>Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις</h2>
+        <p>
+          Η έκθεση <strong>Jules Verne 200</strong> αποτελεί μια ολοκληρωμένη βιωματική εκπαιδευτική εμπειρία, ιδανική για μαθητές Πρωτοβάθμιας και Δευτεροβάθμιας Εκπαίδευσης.
         </p>
-        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-check text-amber-400"></i> Εγκεκριμένος εκπαιδευτικός οδηγός για εκπαιδευτικούς
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-check text-amber-400"></i> Ειδικές προνομιακές τιμές για οργανωμένα σχολικά γκρουπ
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-check text-amber-400"></i> Πλήρως προσβάσιμος χώρος με συνεχή επίβλεψη
-          </li>
+        <ul class="school-features">
+          <li><strong>Σύνδεση με τη Φυσική, τη Γεωγραφία &amp; τη Λογοτεχνία:</strong> Ανακαλύψτε πώς οι επιστημονικές προβλέψεις του Βερν έγιναν πραγματικότητα.</li>
+          <li><strong>Διαδραστικότητα &amp; Δημιουργική Έκφραση:</strong> Βιωματική μάθηση μέσω του εργαστηρίου Sketch &amp; Post και των VR προβολών.</li>
+          <li><strong>Προσαρμοσμένη Ροή &amp; Ασφάλεια:</strong> Ειδικά σχεδιασμένο πρόγραμμα επισκέψεων χωρίς καθυστερήσεις, υπό την καθοδήγηση εξειδικευμένου προσωπικού.</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all">
-          <i class="fa-solid fa-file-arrow-down"></i> Αιτηση Κρατησης Σχολειου
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <!-- ΚΟΥΜΠΙ DROPBOX ΓΙΑ ΑΜΕΣΟ ΚΑΤΕΒΑΣΜΑ ΟΔΗΓΟΥ -->
+          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            Κατεβαστε τον Εκπαιδευτικο Οδηγο (PDF)
+          </a>
+          <a href="tel:+302122540000" class="btn btn-outline">Κρατησεις Σχολειων: 212 254 0000</a>
+        </div>
+      </div>
+      <div class="schools-poster">
+        <img src="https://admin.videotheatre.gr/api/files/media/b5oyapliot8pho5/jules_vern_poster_july_2026_jsij98axcf.jpg?thumb=800x0" alt="Αφίσα Jules Verne 200">
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE & TICKETS -->
+  <section id="venue" class="section-wrap" style="text-align: center;">
+    <div class="section-header">
+      <span class="sub-badge badge-font">ΧΩΡΟΣ ΔΙΕΞΑΓΩΓΗΣ</span>
+      <h2>Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</h2>
+      <div class="dashed-divider"></div>
+      <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 2.5rem auto;">
+        Πειραιώς 254, Ταύρος (Ίδρυμα Μείζονος Ελληνισμού)<br>
+        Διατίθεται δωρεάν υπόγειος χώρος στάθμευσης για τους επισκέπτες.
+      </p>
+      <div id="tickets">
+        <a href="https://www.more.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size: 1.5rem; padding: 1.1rem 3rem;">
+          Αγορα Εισιτηριων Online
         </a>
       </div>
-
-      <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-2xl">
-        <h3 class="text-xl font-cinzel font-bold text-white mb-4">Εκδηλωση Ενδιαφεροντος</h3>
-        <form id="contactForm" class="space-y-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Ονομα / Σχολειο / Φορεας</label>
-            <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Τηλεφωνο</label>
-              <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Email</label>
-              <input type="email" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
-            </div>
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1 uppercase">Εκτιμωμενος Αριθμος Μαθητων / Ατομων</label>
-            <input type="number" placeholder="π.χ. 45" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
-          </div>
-          <button type="submit" class="w-full py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all">
-            Αποστολη Αιτηματος
-          </button>
-        </form>
-      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="info" class="py-12 border-t border-slate-800 text-slate-500 text-xs">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <span class="font-cinzel font-bold text-amber-400 text-sm">VIDEO THEATRE</span>
-        <span>•</span>
-        <span>Jules Verne 200 Athens</span>
-      </div>
-      <p>© 2026 Video Theatre. Όλα τα δικαιώματα διατηρούνται.</p>
+  <!-- FOOTER & ORGANIZERS -->
+  <footer>
+    <div class="partners-title badge-font">ΣΥΝΔΙΟΡΓΑΝΩΣΗ &amp; ΠΑΡΑΓΩΓΗ</div>
+    <div class="partners-grid">
+      <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
+      <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
+      <img src="https://admin.videotheatre.gr/api/files/media/vqnv01decw0nxed/vt_logo_white_9qjm1mm18a.png" alt="Video Theatre">
     </div>
+
+    <p class="venue-info">
+      <strong>JULES VERNE 200: AN IMMERSIVE EXTRAORDINARY JOURNEY</strong><br>
+      Κέντρο Πολιτισμού «Ελληνικός Κόσμος» — Πειραιώς 254, Ταύρος
+    </p>
+
+    <p class="copyright">
+      &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος. Μια συμπαραγωγή των Layers of Reality, Ιδρύματος Μείζονος Ελληνισμού &amp; Video Theatre.
+    </p>
   </footer>
 
 </body>

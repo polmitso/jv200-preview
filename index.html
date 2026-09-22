@@ -70,7 +70,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 70px;
+      height: 72px;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
@@ -81,30 +81,32 @@
       border-bottom: 1px solid rgba(233, 190, 116, 0.2);
     }
 
-    /* OVERHANGING LOGO */
+    /* OVERHANGING LOGO (+15% ΜΕΓΑΛΥΤΕΡΟ & ΚΑΤΑΚΟΡΥΦΟ ΠΑΤΗΜΑ ΣΤΟ HOVER) */
     .nav-logo-link {
       position: relative;
-      top: 25px;
+      top: 32px;
       display: inline-block;
       text-decoration: none;
       z-index: 1010;
-      transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-logo-link img {
-      height: 95px;
+      height: 110px;
       width: auto;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.85));
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.85));
+      transition: transform 0.35s ease-out, filter 0.35s ease;
+      transform-origin: center top;
     }
 
     .nav-logo-link:hover img {
-      transform: translateY(-4px) rotate(-3deg) scale(1.05);
+      transform: translateY(6px) scale(1.02);
+      filter: drop-shadow(0 12px 25px rgba(233, 190, 116, 0.35));
     }
 
     .nav-menu {
       display: flex;
-      gap: 2rem;
+      gap: 1.8rem;
       align-items: center;
     }
 
@@ -188,7 +190,7 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding-top: 70px;
+      padding-top: 72px;
     }
 
     .video-background {
@@ -202,12 +204,11 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.85; /* Φωτεινότερο βίντεο */
+      opacity: 0.85;
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
 
-    /* Αραιότερο overlay για να αναπνέει το βίντεο */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -292,7 +293,7 @@
       opacity: 0.6;
     }
 
-    /* INTRO BLOCK */
+    /* 1. INTRO BLOCK */
     .block-intro {
       background: linear-gradient(180deg, rgba(8, 5, 4, 0.4) 0%, rgba(63, 18, 16, 0.3) 100%);
     }
@@ -311,7 +312,7 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.8);
     }
 
-    /* ROOMS BLOCK */
+    /* 2. THE 8 STATIONS */
     .block-rooms {
       background: rgba(12, 8, 7, 0.85);
     }
@@ -379,137 +380,7 @@
       line-height: 1.65;
     }
 
-    /* MACHINES BLOCK */
-    .block-machines {
-      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.4) 0%, rgba(8, 5, 4, 0.9) 100%);
-    }
-
-    .machines-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .machine-card {
-      background: rgba(8, 5, 4, 0.85);
-      border: 1px solid var(--border-gold);
-      border-left: 4px solid var(--harvest-gold);
-      padding: 2.2rem;
-      border-radius: 2px;
-    }
-
-    .machine-card h4 {
-      color: var(--harvest-gold);
-      font-size: 1.35rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .machine-novel {
-      font-style: italic;
-      color: var(--elf-green);
-      font-size: 0.95rem;
-      margin-bottom: 0.9rem;
-      display: block;
-    }
-
-    .machine-card p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-
-    .did-you-know {
-      background: rgba(97, 18, 5, 0.3);
-      border: 1px dashed rgba(233, 190, 116, 0.35);
-      padding: 0.8rem 1rem;
-      font-size: 0.95rem;
-      color: var(--snow-white);
-    }
-
-    .did-you-know strong { color: var(--harvest-gold); }
-
-    /* GREECE BLOCK */
-    .block-greece {
-      background: linear-gradient(135deg, rgba(13, 146, 105, 0.15) 0%, rgba(97, 18, 5, 0.4) 100%);
-    }
-
-    .greece-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .greece-grid img {
-      width: 100%;
-      border-radius: 4px;
-      border: 1px solid var(--elf-green);
-    }
-
-    /* SCHOOLS BLOCK */
-    .block-schools {
-      background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.98) 100%);
-      border-top: 2px solid var(--harvest-gold);
-      border-bottom: 2px solid var(--harvest-gold);
-    }
-
-    .schools-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .schools-poster img {
-      width: 100%;
-      border-radius: 4px;
-      border: 1px solid rgba(233, 190, 116, 0.4);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
-    }
-
-    .school-features {
-      list-style: none;
-      margin: 1.8rem 0 2.2rem 0;
-    }
-
-    .school-features li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .school-features li::before {
-      content: "✦";
-      position: absolute;
-      left: 0;
-      color: var(--harvest-gold);
-    }
-
-    .contact-box {
-      margin-top: 1.5rem;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid var(--border-gold);
-      padding: 1.2rem;
-      border-radius: 4px;
-    }
-
-    .contact-box p {
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
-    }
-
-    .contact-box a {
-      color: var(--harvest-gold);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
-
-    /* VENUE & ACCESS BLOCK */
+    /* 3. VENUE & ACCESS BLOCK */
     .block-venue {
       background: rgba(12, 8, 7, 0.9);
     }
@@ -569,7 +440,149 @@
       line-height: 1;
     }
 
-    /* FAQS BLOCK */
+    /* 4. SCHOOLS BLOCK */
+    .block-schools {
+      background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.98) 100%);
+      border-top: 2px solid var(--harvest-gold);
+      border-bottom: 2px solid var(--harvest-gold);
+    }
+
+    .schools-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .schools-poster img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid rgba(233, 190, 116, 0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+    }
+
+    .school-features {
+      list-style: none;
+      margin: 1.8rem 0 2.2rem 0;
+    }
+
+    .school-features li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .school-features li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--harvest-gold);
+    }
+
+    .contact-box {
+      margin-top: 1.5rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-gold);
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-box a {
+      color: var(--harvest-gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* 5. INFO BLOCK (ΩΡΑΡΙΟ & ΤΙΜΕΣ) */
+    .block-info {
+      background: linear-gradient(180deg, rgba(8, 5, 4, 0.9) 0%, rgba(63, 18, 16, 0.35) 100%);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3.5rem;
+    }
+
+    .schedule-box {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      padding: 2.5rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .schedule-box h3 {
+      color: var(--harvest-gold);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .schedule-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(233, 190, 116, 0.2);
+      padding: 0.9rem 0;
+    }
+
+    .schedule-item:last-child { border-bottom: none; }
+
+    .schedule-day { font-weight: 600; color: var(--snow-white); }
+    .schedule-hours { color: var(--harvest-gold); }
+
+    /* PRICING TABLE */
+    .pricing-box {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      padding: 2.5rem;
+      border-radius: 4px;
+    }
+
+    .pricing-box h3 {
+      color: var(--harvest-gold);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .pricing-table th, .pricing-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(233, 190, 116, 0.15);
+    }
+
+    .pricing-table th {
+      font-family: 'Cinzel', serif;
+      color: var(--harvest-gold);
+      font-size: 1.05rem;
+      background: rgba(97, 18, 5, 0.3);
+    }
+
+    .pricing-table td {
+      color: var(--text-muted);
+    }
+
+    .pricing-table td.price {
+      color: var(--snow-white);
+      font-weight: bold;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+    }
+
+    /* 6. FAQS BLOCK */
     .block-faqs {
       background: var(--bg-dark);
     }
@@ -657,12 +670,12 @@
     @media (max-width: 980px) {
       nav { padding: 0 1.5rem; }
       .nav-menu { display: none; }
-      .nav-logo-link { top: 15px; }
-      .nav-logo-link img { height: 75px; }
+      .nav-logo-link { top: 22px; }
+      .nav-logo-link img { height: 90px; }
       .hero-title { font-size: 2.5rem; }
-      .intro-grid, .greece-grid, .schools-grid, .venue-grid {
+      .intro-grid, .schools-grid, .venue-grid, .info-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
       }
       .block-section { padding: 4rem 1.5rem; }
     }
@@ -672,19 +685,18 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <!-- OVERHANGING INTERACTIVE LOGO LINK -->
+    <!-- OVERHANGING INTERACTIVE LOGO LINK (+15% SIZE & GROUNDING EFFECT) -->
     <a href="#" class="nav-logo-link" title="Jules Verne 200 - Αρχική">
       <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
     </a>
 
     <div class="nav-menu">
       <a href="#about" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
-      <a href="#rooms" data-el="ΟΙ ΣΤΑΘΜΟΙ" data-en="THE STATIONS">ΟΙ ΣΤΑΘΜΟΙ</a>
-      <a href="#machines" data-el="ΟΙ ΜΗΧΑΝΕΣ" data-en="MACHINES">ΟΙ ΜΗΧΑΝΕΣ</a>
-      <a href="#greece" data-el="Η ΕΛΛΑΔΑ" data-en="GREECE">Η ΕΛΛΑΔΑ</a>
+      <a href="#experience" data-el="Η ΕΜΠΕΙΡΙΑ" data-en="THE EXPERIENCE">Η ΕΜΠΕΙΡΙΑ</a>
+      <a href="#venue" data-el="Ο ΧΩΡΟΣ" data-en="THE VENUE">Ο ΧΩΡΟΣ</a>
       <a href="#schools" data-el="ΣΧΟΛΕΙΑ" data-en="SCHOOLS">ΣΧΟΛΕΙΑ</a>
-      <a href="#venue" data-el="ΠΡΟΣΒΑΣΗ" data-en="VENUE">ΠΡΟΣΒΑΣΗ</a>
-      <a href="#faqs" data-el="FAQS" data-en="FAQS">FAQS</a>
+      <a href="#info" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+      <a href="#faqs" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
       <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
     </div>
@@ -717,7 +729,7 @@
     </div>
   </header>
 
-  <!-- BLOCK: INTRO -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ABOUT) -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>
@@ -731,7 +743,7 @@
         <p style="color: var(--text-muted); margin-bottom: 1.8rem;" data-el="Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια." data-en="The international blockbuster Jules Verne 200 arrives in Greece, delivering a multi-sensory digital art experience featuring 360° projections, VR stations, interactive labs, and rare authentic 19th-century artifacts.">
           Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια.
         </p>
-        <a href="#rooms" class="btn btn-outline" data-el="ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΚΘΕΣΗΣ" data-en="EXPLORE THE 8 STATIONS">ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΚΘΕΣΗΣ</a>
+        <a href="#experience" class="btn btn-outline" data-el="ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ" data-en="EXPLORE THE 8 STATIONS">ΟΙ 8 ΣΤΑΘΜΟΙ ΤΗΣ ΕΜΠΕΙΡΙΑΣ</a>
       </div>
       <div>
         <img src="https://admin.videotheatre.gr/api/files/media/fdenjnrpbagv8cd/nautilus_qiwhzdvc2h.png" alt="Γλυπτό Ναυτίλος">
@@ -739,12 +751,12 @@
     </div>
   </section>
 
-  <!-- BLOCK: THE 8 ROOMS -->
-  <section id="rooms" class="block-section block-rooms">
+  <!-- 2. BLOCK: Η ΕΜΠΕΙΡΙΑ (EXPERIENCE / THE 8 STATIONS) -->
+  <section id="experience" class="block-section block-rooms">
     <div class="block-inner">
       <div class="block-header">
         <span class="sub-badge badge-font" data-el="Η ΔΙΑΔΡΟΜΗ" data-en="THE EXHIBITION FLOW">Η ΔΙΑΔΡΟΜΗ</span>
-        <h2 data-el="Οι 8 Σταθμοί της Έκθεσης" data-en="The 8 Exhibition Stations">Οι 8 Σταθμοί της Έκθεσης</h2>
+        <h2 data-el="Οι 8 Σταθμοί της Εμπειρίας" data-en="The 8 Exhibition Stations">Οι 8 Σταθμοί της Εμπειρίας</h2>
         <div class="dashed-divider"></div>
         <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;" data-el="Μια ολοκληρωμένη ροή που συνδυάζει αφήγηση, τεχνολογία και ιστορική τεκμηρίωση." data-en="A seamlessly designed walk-through blending narrative, cutting-edge technology, and authentic historical heritage.">
           Μια ολοκληρωμένη ροή που συνδυάζει αφήγηση, τεχνολογία και ιστορική τεκμηρίωση.
@@ -867,140 +879,11 @@
     </div>
   </section>
 
-  <!-- BLOCK: THE 6 MACHINES -->
-  <section id="machines" class="block-section block-machines">
-    <div class="block-inner">
-      <div class="block-header">
-        <span class="sub-badge badge-font" data-el="ΒΙΟΜΗΧΑΝΙΚΗ ΦΑΝΤΑΣΙΑ" data-en="STEAM INDUSTRIAL GENIUS">ΒΙΟΜΗΧΑΝΙΚΗ ΦΑΝΤΑΣΙΑ</span>
-        <h2 data-el="Οι 6 Θρυλικές Μηχανές" data-en="The 6 Legendary Machines">Οι 6 Θρυλικές Μηχανές</h2>
-        <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;" data-el="Τα τεχνολογικά επιτεύγματα που επινόησε ο Βερν δεκαετίες πριν από την εποχή τους." data-en="The visionary technological vehicles conceptualized by Verne decades before their actual invention.">
-          Τα τεχνολογικά επιτεύγματα που επινόησε ο Βερν δεκαετίες πριν από την εποχή τους.
-        </p>
-      </div>
-
-      <div class="machines-grid">
-        <div class="machine-card">
-          <h4>Ναυτίλος (Nautilus)</h4>
-          <span class="machine-novel">20.000 Λεύγες κάτω από τη θάλασσα (1870)</span>
-          <p>Το θρυλικό ηλεκτροκίνητο υποβρύχιο του Κάπταιν Νέμο με μπαταρίες νατρίου-υδραργύρου, διπλό ατσάλινο κύτος, κριό εμβολισμού και πανοραμικά παράθυρα βυθού.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Το πρώτο πυρηνοκίνητο υποβρύχιο των ΗΠΑ (USS Nautilus, 1954) πήρε το όνομά του προς τιμήν του σκάφους του Νέμο!
-          </div>
-        </div>
-
-        <div class="machine-card">
-          <h4>Άλμπατρος (Albatross)</h4>
-          <span class="machine-novel">Ροβήρος ο Κατακτητής (1886)</span>
-          <p>Ιπτάμενο σκάφος από συμπιεσμένο χαρτοπολτό με 37 κατακόρυφους ιστούς ελίκων, απόδειξη ότι το μέλλον ανήκει στις μηχανές βαρύτερες από τον αέρα.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Ο πρωτοπόρος των ελικοπτέρων Ιγκόρ Σικόρσκι ανέφερε τον Ροβήρο ως την κύρια παιδική του έμπνευση.
-          </div>
-        </div>
-
-        <div class="machine-card">
-          <h4>Μπέχεμωθ (Behemoth)</h4>
-          <span class="machine-novel">Το Ατμοκίνητο Σπίτι (1880)</span>
-          <p>Γιγαντιαίος αμφίβιος μηχανικός ελέφαντας με ατμομηχανή, προβολείς στα μάτια και προβοσκίδα-αντλία νερού, που έσερνε πολυτελές τρένο δρόμου στην Ινδία.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Ενέπνευσε τον διάσημο μηχανικό ελέφαντα 12 μέτρων στο θεματικό πάρκο της Νάντης.
-          </div>
-        </div>
-
-        <div class="machine-card">
-          <h4>Βλήμα Τηλεβόλου (Projectile)</h4>
-          <span class="machine-novel">Από τη Γη στη Σελήνη (1865)</span>
-          <p>Αλουμινένια επανδρωμένη κάψουλα εκτοξευόμενη από υπόγειο κανόνι 270 μέτρων στη Φλόριντα, με ανακύκλωση οξυγόνου και υδραυλικά αμορτισέρ.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Η τοποθεσία εκτόξευσης, το 3μελές πλήρωμα και η προσθαλασσώση στον Ειρηνικό ταυτίστηκαν με το Apollo 11 (1969)!
-          </div>
-        </div>
-
-        <div class="machine-card">
-          <h4>Φόργουορντ (Forward)</h4>
-          <span class="machine-novel">Πλοίαρχος Χάτερας (1866)</span>
-          <p>Υβριδικό ιστιοφόρο-ατμόπλοιο με ενισχυμένο σκαρί βελανιδιάς και σιδήρου και αιχμηρή μεταλλική πλώρη για να σπάει τα παγόβουνα της Αρκτικής.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Αποτέλεσε τον πρώτο θεωρητικό πρόδρομο των σύγχρονων πολικών παγοθραυστικών σκαφών.
-          </div>
-        </div>
-
-        <div class="machine-card">
-          <h4>Βικτώρια (Victoria)</h4>
-          <span class="machine-novel">Πέντε εβδομάδες με αερόστατο (1863)</span>
-          <p>Πρωτοποριακό αερόστατο υδρογόνου με καυστήρα ρύθμισης θερμοκρασίας χωρίς απώλεια αερίου, που διέσχισε την ανεξερεύνητη Αφρική.</p>
-          <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Η τεχνική περιγραφή ήταν τόσο ρεαλιστική που οι επιστήμονες του 1863 πίστεψαν πως το ταξίδι έγινε στην πραγματικότητα!
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: GREECE -->
-  <section id="greece" class="block-section block-greece">
-    <div class="block-inner greece-grid">
-      <div>
-        <span class="sub-badge badge-font" style="color: var(--elf-green);" data-el="ΕΙΔΙΚΟ ΑΦΙΕΡΩΜΑ" data-en="SPECIAL FOCUS">ΕΙΔΙΚΟ ΑΦΙΕΡΩΜΑ</span>
-        <h2 style="font-size: 2.5rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Ο Ιούλιος Βερν και η Ελλάδα" data-en="Jules Verne &amp; Greece">
-          Ο Ιούλιος Βερν και η Ελλάδα
-        </h2>
-        <p style="margin-bottom: 1rem;" data-el="Η σχέση του Ιουλίου Βερν με την Ελλάδα διαμορφώθηκε μέσα από τον κλασικό φιλελληνισμό, τη γοητεία της αρχαίας ελληνικής επιστήμης και τα πραγματικά θαλάσσια ταξίδια του στη Μεσόγειο με το σκάφος του, Saint-Michel III." data-en="Verne's bond with Greece was built upon deep Philhellenism, fascination with ancient Greek engineering, and his voyages across the Mediterranean on his yacht, Saint-Michel III.">
-          Η σχέση του Ιουλίου Βερν με την Ελλάδα διαμορφώθηκε μέσα από τον κλασικό φιλελληνισμό, τη γοητεία της αρχαίας ελληνικής επιστήμης και τα πραγματικά θαλάσσια ταξίδια του στη Μεσόγειο με το σκάφος του, Saint-Michel III.
-        </p>
-        <p style="margin-bottom: 1rem;" data-el="Στο «20.000 Λεύγες κάτω από τη Θάλασσα», ο Νέμο επισκέπτεται το ηφαίστειο της Σαντορίνης και χρηματοδοτεί μυστικά την Κρητική Επανάσταση (1866–1869) με χρυσό από ναυάγια. Παράλληλα, στο «Αρχιπέλαγος στις Φλόγες» (1884), αφιερώνει όλη την πλοκή στην Ελληνική Επανάσταση του 1821." data-en="In '20,000 Leagues Under the Sea', Captain Nemo visits Santorini's caldera and covertly finances the Cretan Uprising (1866–1869) with sunken treasure. In 'The Archipelago on Fire' (1884), he dedicates an entire novel to the 1821 Greek War of Independence.">
-          Στο «20.000 Λεύγες κάτω από τη Θάλασσα», ο Νέμο επισκέπτεται το ηφαίστειο της Σαντορίνης και χρηματοδοτεί μυστικά την Κρητική Επανάσταση (1866–1869) με χρυσό από ναυάγια. Παράλληλα, στο «Αρχιπέλαγος στις Φλόγες» (1884), αφιερώνει όλη την πλοκή στην Ελληνική Επανάσταση του 1821.
-        </p>
-        <div class="did-you-know" style="background: rgba(0, 59, 42, 0.4); border-color: var(--elf-green);">
-          <strong>Η Ομηρική καταγωγή του «Νέμο»:</strong> Στα λατινικά σημαίνει <em>«Κανένας»</em> — άμεση αναφορά στον <strong>Ούτιδα</strong> του Οδυσσέα απέναντι στον Κύκλωπα Πολύφημο.
-        </div>
-      </div>
-      <div>
-        <img src="https://admin.videotheatre.gr/api/files/media/lxevnlunmz370hy/jv200_gate_q84bciea4n.png" alt="Πύλη Jules Verne">
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: SCHOOLS -->
-  <section id="schools" class="block-section block-schools">
-    <div class="block-inner schools-grid">
-      <div>
-        <span class="sub-badge badge-font" data-el="ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027" data-en="EDUCATIONAL PROGRAM 2026-2027">ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027</span>
-        <h2 style="font-size: 2.6rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
-          Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις
-        </h2>
-        <p data-el="Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM." data-en="Jules Verne 200 is specifically curated for Kindergarten, Primary, and Secondary school students, connecting Physics, Geography, History, and Literature through experiential STEAM learning.">
-          Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM.
-        </p>
-        <ul class="school-features">
-          <li data-el="Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά." data-en="Interactive Sketch &amp; Post workshop where students actively create and animate vehicles.">Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά.</li>
-          <li data-el="Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών." data-en="Optimized visit flow guided by trained museum educators.">Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών.</li>
-          <li data-el="Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη." data-en="Comprehensive Educational Guide with classroom activities for before and after the visit.">Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη.</li>
-        </ul>
-
-        <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
-            ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)
-          </a>
-        </div>
-
-        <!-- ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΣΧΟΛΕΙΩΝ -->
-        <div class="contact-box">
-          <p><strong>Τηλέφωνα Κρατήσεων Σχολείων:</strong> <a href="tel:6977407217">6977 407217</a> &bull; <a href="tel:6980267672">6980 267672</a></p>
-          <p><strong>Email Επικοινωνίας:</strong> <a href="mailto:jv200greece@gmail.com">jv200greece@gmail.com</a></p>
-        </div>
-      </div>
-      <div class="schools-poster">
-        <img src="https://admin.videotheatre.gr/api/files/media/b5oyapliot8pho5/jules_vern_poster_july_2026_jsij98axcf.jpg?thumb=800x0" alt="Αφίσα Έκθεσης">
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: VENUE & ACCESS -->
+  <!-- 3. BLOCK: Ο ΧΩΡΟΣ (VENUE & ACCESS) -->
   <section id="venue" class="block-section block-venue">
     <div class="block-inner">
       <div class="block-header">
-        <span class="sub-badge badge-font" data-el="Ο ΧΩΡΟΣ" data-en="THE VENUE">Ο ΧΩΡΟΣ</span>
+        <span class="sub-badge badge-font" data-el="Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ" data-en="VENUE &amp; ACCESS">Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ</span>
         <h2 data-el="Κέντρο Πολιτισμού «Ελληνικός Κόσμος»" data-en="Hellenic Cosmos Cultural Centre">Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</h2>
         <div class="dashed-divider"></div>
         <p style="color: var(--text-muted); font-size: 1.25rem;">
@@ -1044,12 +927,131 @@
     </div>
   </section>
 
-  <!-- BLOCK: FAQS -->
+  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ (SCHOOLS) -->
+  <section id="schools" class="block-section block-schools">
+    <div class="block-inner schools-grid">
+      <div>
+        <span class="sub-badge badge-font" data-el="ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027" data-en="EDUCATIONAL PROGRAM 2026-2027">ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027</span>
+        <h2 style="font-size: 2.6rem; color: var(--harvest-gold); margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
+          Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις
+        </h2>
+        <p data-el="Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM." data-en="Jules Verne 200 is specifically curated for Kindergarten, Primary, and Secondary school students, connecting Physics, Geography, History, and Literature through experiential STEAM learning.">
+          Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM.
+        </p>
+        <ul class="school-features">
+          <li data-el="Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά." data-en="Interactive Sketch &amp; Post workshop where students actively create and animate vehicles.">Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά.</li>
+          <li data-el="Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών." data-en="Optimized visit flow guided by trained museum educators.">Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών.</li>
+          <li data-el="Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη." data-en="Comprehensive Educational Guide with classroom activities for before and after the visit.">Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη.</li>
+        </ul>
+
+        <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
+            ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)
+          </a>
+        </div>
+
+        <div class="contact-box">
+          <p><strong>Τηλέφωνα Κρατήσεων Σχολείων:</strong> <a href="tel:6977407217">6977 407217</a> &bull; <a href="tel:6980267672">6980 267672</a></p>
+          <p><strong>Email Επικοινωνίας:</strong> <a href="mailto:jv200greece@gmail.com">jv200greece@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="schools-poster">
+        <img src="https://admin.videotheatre.gr/api/files/media/b5oyapliot8pho5/jules_vern_poster_july_2026_jsij98axcf.jpg?thumb=800x0" alt="Αφίσα Έκθεσης">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (INFO - ΩΡΑΡΙΟ & ΤΙΜΕΣ) -->
+  <section id="info" class="block-section block-info">
+    <div class="block-inner">
+      <div class="block-header">
+        <span class="sub-badge badge-font" data-el="ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ" data-en="VISIT INFORMATION">ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ</span>
+        <h2 data-el="Ωράριο &amp; Τιμές Εισιτηρίων" data-en="Opening Hours &amp; Prices">Ωράριο &amp; Τιμές Εισιτηρίων</h2>
+        <div class="dashed-divider"></div>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;" data-el="Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200." data-en="All the essential details for your visit to the Jules Verne 200 exhibition.">
+          Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <!-- Ωράριο Λειτουργίας -->
+        <div class="schedule-box">
+          <h3 data-el="Ωράριο Λειτουργίας" data-en="Opening Hours">Ωράριο Λειτουργίας</h3>
+          <div class="schedule-item">
+            <span class="schedule-day" data-el="Δευτέρα – Πέμπτη" data-en="Monday – Thursday">Δευτέρα – Πέμπτη</span>
+            <span class="schedule-hours">10:00 – 21:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-day" data-el="Παρασκευή" data-en="Friday">Παρασκευή</span>
+            <span class="schedule-hours">10:00 – 22:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-day" data-el="Σάββατο &amp; Κυριακή" data-en="Saturday &amp; Sunday">Σάββατο &amp; Κυριακή</span>
+            <span class="schedule-hours">10:00 – 22:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-day" data-el="Τελευταία Είσοδος" data-en="Last Entrance">Τελευταία Είσοδος</span>
+            <span class="schedule-hours">20:00</span>
+          </div>
+          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.98rem;" data-el="* Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης." data-en="* Special morning timeslots available for pre-booked school groups.">
+            * Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης.
+          </div>
+        </div>
+
+        <!-- Πίνακας Τιμών -->
+        <div class="pricing-box">
+          <h3 data-el="Πίνακας Εισιτηρίων" data-en="Ticket Prices">Πίνακας Εισιτηρίων</h3>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th data-el="Κατηγορία Εισιτηρίου" data-en="Ticket Type">Κατηγορία Εισιτηρίου</th>
+                <th data-el="Καθημερινές" data-en="Weekdays">Καθημερινές</th>
+                <th data-el="Σαββατοκύριακα" data-en="Weekends">Σαββατοκύριακα</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-el="Γενική Είσοδος (Ενήλικες)" data-en="General Admission (Adults)">Γενική Είσοδος (Ενήλικες)</td>
+                <td class="price">14,50 €</td>
+                <td class="price">18,50 €</td>
+              </tr>
+              <tr>
+                <td data-el="Μειωμένο (Φοιτητές, 65+, ΑμεΑ)" data-en="Reduced (Students, 65+, Disabled)">Μειωμένο (Φοιτητές, 65+, ΑμεΑ)</td>
+                <td class="price">11,50 €</td>
+                <td class="price">14,00 €</td>
+              </tr>
+              <tr>
+                <td data-el="Παιδικό / Junior (έως 12 ετών)" data-en="Junior / Kids (up to 12 yrs)">Παιδικό / Junior (έως 12 ετών)</td>
+                <td class="price">9,50 €</td>
+                <td class="price">12,00 €</td>
+              </tr>
+              <tr>
+                <td data-el="Οικογενειακό Πακέτο (4 άτομα)" data-en="Family Pack (4 persons)">Οικογενειακό Πακέτο (4 άτομα)</td>
+                <td class="price">38,00 €</td>
+                <td class="price">48,00 €</td>
+              </tr>
+              <tr>
+                <td data-el="Σχολικές Ομάδες (ανά μαθητή)" data-en="School Groups (per student)">Σχολικές Ομάδες (ανά μαθητή)</td>
+                <td class="price" colspan="2" style="color: var(--elf-green); font-size: 1.2rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 1.8rem; text-align: center;">
+            <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
+              ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE (MORE.COM)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BLOCK: ΕΡΩΤΗΣΕΙΣ (FAQS) -->
   <section id="faqs" class="block-section block-faqs">
     <div class="block-inner faq-container">
       <div class="block-header">
-        <span class="sub-badge badge-font">FAQS</span>
-        <h2 data-el="Συχνές Ερωτήσεις" data-en="Frequently Asked Questions">Συχνές Ερωτήσεις</h2>
+        <span class="sub-badge badge-font">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</span>
+        <h2 data-el="Ερωτήσεις &amp; Απαντήσεις" data-en="Questions &amp; Answers">Ερωτήσεις &amp; Απαντήσεις</h2>
         <div class="dashed-divider"></div>
       </div>
 

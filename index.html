@@ -24,7 +24,6 @@
       --sky-blue-dark: #1B365D; 
       --sky-blue-hover: #0F243E;
       --border-blue: rgba(27, 54, 93, 0.35);
-      --bg-dark-pattern: radial-gradient(circle at 50% 15%, rgba(27, 54, 93, 0.4) 0%, rgba(15, 36, 62, 0.95) 80%), url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -666,13 +665,13 @@
       display: flex;
       justify-content: space-between;
       border-bottom: 1px dashed rgba(27, 54, 93, 0.3);
-      padding: 1rem 0;
-      font-size: 1.15rem;
+      padding: 0.8rem 0;
+      font-size: 1.05rem;
     }
 
     .schedule-item:last-child { border-bottom: none; }
     .schedule-day { font-weight: 600; color: var(--text-dark); }
-    .schedule-hours { color: var(--sky-blue-dark); font-weight: bold; }
+    .schedule-hours { color: var(--sky-blue-dark); font-weight: bold; text-align: right; }
 
     .pricing-box {
       background: var(--cloud-white);
@@ -913,7 +912,7 @@
     <button class="mobile-lang-btn" onclick="toggleLanguage(); toggleMobileMenu();" id="mobileLangToggle">EN / ENGLISH</button>
   </div>
 
-  <!-- BLOCK: HERO (ΦΩΤΕΙΝΟ, ΛΕΥΚΑ ΓΡΑΜΜΑΤΑ) -->
+  <!-- BLOCK: HERO -->
   <header class="hero">
     <div class="video-background">
       <div id="yt-player"></div>
@@ -1250,7 +1249,7 @@
     </div>
   </section>
 
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ -->
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (ΜΕ ΝΕΟ ΩΡΑΡΙΟ ΚΑΙ ΤΙΜΕΣ) -->
   <section id="info" class="block-section block-info">
     <div class="block-inner">
       <div class="block-header">
@@ -1264,25 +1263,27 @@
 
       <div class="info-grid">
         <div class="schedule-box">
-          <h3 data-el="Ωράριο Λειτουργίας" data-en="Opening Hours">Ωράριο Λειτουργίας</h3>
+          <h3 data-el="Ωράριο Λειτουργίας (με σχολεία)" data-en="Opening Hours (with schools)">Ωράριο Λειτουργίας (με σχολεία)</h3>
+          
           <div class="schedule-item">
-            <span class="schedule-day" data-el="Δευτέρα – Πέμπτη" data-en="Monday – Thursday">Δευτέρα – Πέμπτη</span>
-            <span class="schedule-hours">10:00 – 21:00</span>
+            <span class="schedule-day" data-el="ΔΕΥΤΕΡΑ" data-en="MONDAY">ΔΕΥΤΕΡΑ</span>
+            <span class="schedule-hours" data-el="ΚΛΕΙΣΤΑ για το κοινό (κατ’ εξαίρεση σχολεία)" data-en="CLOSED to the public (schools by exception)">ΚΛΕΙΣΤΑ για το κοινό (κατ’ εξαίρεση σχολεία)</span>
           </div>
           <div class="schedule-item">
-            <span class="schedule-day" data-el="Παρασκευή" data-en="Friday">Παρασκευή</span>
-            <span class="schedule-hours">10:00 – 22:00</span>
+            <span class="schedule-day" data-el="ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ" data-el="TUE - WED - THU">ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ</span>
+            <span class="schedule-hours">9.30 - 15.00</span>
           </div>
           <div class="schedule-item">
-            <span class="schedule-day" data-el="Σάββατο &amp; Κυριακή" data-en="Saturday &amp; Sunday">Σάββατο &amp; Κυριακή</span>
-            <span class="schedule-hours">10:00 – 22:00</span>
+            <span class="schedule-day" data-el="ΠΑΡΑΣΚΕΥΗ" data-en="FRIDAY">ΠΑΡΑΣΚΕΥΗ</span>
+            <span class="schedule-hours" data-el="9.30 - 21.00 (19.00 Τελευταία είσοδος)" data-en="9.30 - 21.00 (19.00 Last entry)">9.30 - 21.00 (19.00 Τελευταία είσοδος)</span>
           </div>
           <div class="schedule-item">
-            <span class="schedule-day" data-el="Τελευταία Είσοδος" data-en="Last Entrance">Τελευταία Είσοδος</span>
-            <span class="schedule-hours">20:00</span>
+            <span class="schedule-day" data-el="ΣΑΒΒΑΤΟ - ΚΥΡΙΑΚΗ" data-en="SATURDAY - SUNDAY">ΣΑΒΒΑΤΟ - ΚΥΡΙΑΚΗ</span>
+            <span class="schedule-hours" data-el="10.00 - 21.00 (19.00 Τελευταία είσοδος)" data-en="10.00 - 21.00 (19.00 Last entry)">10.00 - 21.00 (19.00 Τελευταία είσοδος)</span>
           </div>
-          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem;" data-el="* Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης." data-en="* Special morning timeslots available for pre-booked school groups.">
-            * Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης.
+
+          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed rgba(27,54,93,0.2); padding-top: 1rem;" data-el="* Τρίτη έως Παρασκευή: Οι σχολικές επισκέψεις τελειώνουν 12.30μ μ." data-en="* Tuesday to Friday: School visits end at 12:30 PM.">
+            * Τρίτη έως Παρασκευή: Οι σχολικές επισκέψεις τελειώνουν 12.30μ.μ.
           </div>
         </div>
 

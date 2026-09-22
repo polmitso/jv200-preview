@@ -16,14 +16,16 @@
   <style>
     :root {
       --sky-main: #EBF8FF;
-      --sky-gradient: linear-gradient(180deg, #EBF8FF 0%, #D6EEFF 100%);
+      --sky-gradient: linear-gradient(180deg, #EBF8FF 0%, #D2E9FF 100%);
       --cloud-white: #FFFFFF;
       --text-dark: #1A202C;
       --text-muted: #4A5568;
-      --warm-gold: #C59F49;
-      --accent-gold-hover: #A67C1E;
-      --border-gold: rgba(197, 159, 73, 0.45);
-      --bg-pattern: radial-gradient(circle at 50% 15%, rgba(97, 18, 5, 0.35) 0%, rgba(8, 5, 4, 0.92) 80%), url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
+      
+      /* ΝΕΑ ΜΠΛΕ ΠΑΛΕΤΑ ΟΥΡΑΝΟΥ (Αντί για κίτρινο/χρυσό) */
+      --sky-blue-dark: #1B365D; 
+      --sky-blue-hover: #0F243E;
+      --border-blue: rgba(27, 54, 93, 0.35);
+      --bg-dark-pattern: radial-gradient(circle at 50% 15%, rgba(27, 54, 93, 0.4) 0%, rgba(15, 36, 62, 0.95) 80%), url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +71,7 @@
       padding: 0 3.5rem;
       background-color: var(--cloud-white);
       box-shadow: 0 2px 15px rgba(0,0,0,0.06);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .nav-logo-link {
@@ -108,9 +110,9 @@
       transition: color 0.3s;
     }
 
-    .nav-menu a:hover { color: var(--warm-gold); }
+    .nav-menu a:hover { color: var(--sky-blue-dark); }
 
-    /* RIGHT CONTROLS (Εισιτήρια & Γλώσσα τέρμα δεξιά) */
+    /* RIGHT CONTROLS */
     .nav-right-controls {
       display: flex;
       align-items: center;
@@ -119,8 +121,8 @@
 
     .lang-btn {
       background: transparent;
-      border: 1px solid var(--warm-gold);
-      color: var(--warm-gold);
+      border: 1px solid var(--sky-blue-dark);
+      color: var(--sky-blue-dark);
       padding: 0.35rem 0.65rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -131,7 +133,7 @@
     }
 
     .lang-btn:hover {
-      background: var(--warm-gold);
+      background: var(--sky-blue-dark);
       color: #FFFFFF;
     }
 
@@ -178,12 +180,12 @@
       transition: color 0.3s;
     }
 
-    .mobile-menu-overlay a:hover { color: var(--warm-gold); }
+    .mobile-menu-overlay a:hover { color: var(--sky-blue-dark); }
 
     .mobile-lang-btn {
       background: transparent;
-      border: 1px solid var(--warm-gold);
-      color: var(--warm-gold);
+      border: 1px solid var(--sky-blue-dark);
+      color: var(--sky-blue-dark);
       padding: 0.6rem 2rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -193,7 +195,7 @@
       margin-top: 1rem;
     }
 
-    /* BUTTONS */
+    /* BUTTONS (Μπλε Ουρανού) */
     .btn {
       display: inline-block;
       padding: 0.8rem 2rem;
@@ -209,23 +211,23 @@
       text-align: center;
     }
 
-    .btn-gold {
-      background-color: var(--warm-gold);
+    .btn-blue {
+      background-color: var(--sky-blue-dark);
       color: #FFFFFF;
-      border: 1px solid var(--warm-gold);
+      border: 1px solid var(--sky-blue-dark);
     }
 
-    .btn-gold:hover {
-      background-color: var(--accent-gold-hover);
-      border-color: var(--accent-gold-hover);
+    .btn-blue:hover {
+      background-color: var(--sky-blue-hover);
+      border-color: var(--sky-blue-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .btn-outline {
       background-color: transparent;
       color: var(--text-dark);
-      border: 1px solid var(--warm-gold);
+      border: 1px solid var(--sky-blue-dark);
     }
 
     .btn-outline:hover {
@@ -235,7 +237,7 @@
       transform: translateY(-2px);
     }
 
-    /* HERO */
+    /* HERO (ΑΝΟΙΧΤΟΚΡΙΤΟ - ΑΝΟΙΓΜΑ ΘΟΛΟΥ & ΛΕΥΚΑ ΓΡΑΜΜΑΤΑ) */
     .hero {
       position: relative;
       height: 100vh;
@@ -256,7 +258,7 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.85;
+      opacity: 0.95; /* Πιο καθαρό βίντεο */
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
@@ -264,7 +266,7 @@
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(235, 248, 255, 0.2) 0%, rgba(214, 238, 255, 0.75) 100%);
+      background: radial-gradient(circle at center, rgba(27, 54, 93, 0.1) 0%, rgba(15, 36, 62, 0.45) 100%); /* Πολύ πιο ανοιχτός θόλος */
       z-index: 2;
     }
 
@@ -277,20 +279,20 @@
 
     .hero-title {
       font-size: 3.2rem;
-      color: var(--text-dark);
+      color: #FFFFFF; /* Λευκά γράμματα */
       margin-bottom: 1rem;
       line-height: 1.2;
       letter-spacing: 1.5px;
       font-weight: 800;
-      text-shadow: 0 2px 12px rgba(255,255,255,0.9);
+      text-shadow: 0 3px 12px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.5);
     }
 
     .hero-date {
       font-size: 1.4rem;
-      color: var(--text-dark);
+      color: #FFFFFF; /* Λευκά γράμματα */
       letter-spacing: 2.5px;
       font-weight: 700;
-      text-shadow: 0 2px 10px rgba(255,255,255,0.9);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.85);
     }
 
     /* BLOCK STRUCTURE */
@@ -305,7 +307,7 @@
     .block-header { text-align: center; margin-bottom: 4rem; }
 
     .block-header .sub-badge {
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       font-size: 1.2rem;
       letter-spacing: 2.5px;
       display: block;
@@ -321,15 +323,15 @@
     .dashed-divider {
       width: 90px;
       height: 2px;
-      border-top: 2px dashed var(--warm-gold);
+      border-top: 2px dashed var(--sky-blue-dark);
       margin: 1.2rem auto;
       opacity: 0.7;
     }
 
-    /* 1. INTRO BLOCK (SKY BACKGROUND) */
+    /* 1. INTRO BLOCK */
     .block-intro {
       background-image: var(--sky-gradient);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
       padding-top: 10rem;
     }
 
@@ -340,11 +342,11 @@
       align-items: start;
     }
 
-    /* VERN QUOTE ΠΛΑΙΣΙΟ */
+    /* VERN QUOTE ΠΛΑΙΣΙΟ (Μπλε πινελιές) */
     .vern-quote-box {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--border-gold);
-      border-left: 4px solid var(--warm-gold);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-blue);
+      border-left: 4px solid var(--sky-blue-dark);
       padding: 1.6rem;
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
@@ -369,7 +371,7 @@
       font-size: 1.1rem;
       color: var(--text-muted);
       line-height: 1.6;
-      border-top: 1px dashed rgba(197, 159, 73, 0.3);
+      border-top: 1px dashed rgba(27, 54, 93, 0.25);
       padding-top: 0.6rem;
     }
 
@@ -380,7 +382,7 @@
       font-style: normal;
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       letter-spacing: 1px;
     }
 
@@ -404,7 +406,7 @@
     /* 2. THE 10 STATIONS BLOCK */
     .block-rooms {
       background-color: var(--cloud-white);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .rooms-grid {
@@ -415,7 +417,7 @@
 
     .room-card {
       background: var(--sky-main);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       border-radius: 5px;
       overflow: hidden;
       display: flex;
@@ -424,23 +426,23 @@
     }
 
     .room-card:hover {
-      border-color: var(--warm-gold);
+      border-color: var(--sky-blue-dark);
       transform: translateY(-4px);
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
     }
 
     .room-card-header {
-      background: var(--cloud-white);
+      background: var(--sky-blue-dark); /* Σκούρο μπλε αντί για κίτρινο */
       padding: 0.9rem 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.9rem;
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .room-num-badge {
-      background: var(--warm-gold);
-      color: #FFFFFF;
+      background: #FFFFFF;
+      color: var(--sky-blue-dark);
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: 1.1rem;
@@ -454,7 +456,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: #FFFFFF;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       line-height: 1.2;
@@ -497,7 +499,7 @@
     /* 3. VENUE & ACCESS BLOCK */
     .block-venue {
       background-image: var(--sky-gradient);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .venue-grid {
@@ -509,7 +511,7 @@
 
     .venue-card {
       background: var(--cloud-white);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       border-radius: 4px;
       overflow: hidden;
       display: flex;
@@ -520,7 +522,7 @@
       width: 100%;
       height: 300px;
       object-fit: cover;
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .venue-card-body {
@@ -551,14 +553,14 @@
       content: "•";
       position: absolute;
       left: 0;
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       font-size: 1.6rem;
       line-height: 1;
     }
 
     .map-preview-wrap {
       margin-top: 1.5rem;
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       border-radius: 4px;
       overflow: hidden;
       background: #000;
@@ -571,11 +573,11 @@
       display: block;
     }
 
-    /* 4. SCHOOLS BLOCK (Light Sky Version) */
+    /* 4. SCHOOLS BLOCK */
     .block-schools {
       background-color: var(--cloud-white);
-      border-top: 2px solid var(--warm-gold);
-      border-bottom: 2px solid var(--warm-gold);
+      border-top: 2px solid var(--sky-blue-dark);
+      border-bottom: 2px solid var(--sky-blue-dark);
     }
 
     .schools-grid {
@@ -588,7 +590,7 @@
     .schools-poster img {
       width: 100%;
       border-radius: 4px;
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
 
@@ -609,14 +611,14 @@
       content: "✦";
       position: absolute;
       left: 0;
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       font-size: 1.3rem;
     }
 
     .contact-box {
       margin-top: 1.8rem;
       background: var(--sky-main);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       padding: 1.4rem;
       border-radius: 4px;
     }
@@ -628,7 +630,7 @@
     }
 
     .contact-box a {
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       text-decoration: none;
       font-weight: bold;
     }
@@ -636,7 +638,7 @@
     /* 5. INFO BLOCK */
     .block-info {
       background-image: var(--sky-gradient);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .info-grid {
@@ -647,7 +649,7 @@
 
     .schedule-box {
       background: var(--cloud-white);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       padding: 2.5rem;
       border-radius: 4px;
       display: flex;
@@ -665,18 +667,18 @@
     .schedule-item {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px dashed rgba(197, 159, 73, 0.3);
+      border-bottom: 1px dashed rgba(27, 54, 93, 0.3);
       padding: 1rem 0;
       font-size: 1.15rem;
     }
 
     .schedule-item:last-child { border-bottom: none; }
     .schedule-day { font-weight: 600; color: var(--text-dark); }
-    .schedule-hours { color: var(--warm-gold); font-weight: bold; }
+    .schedule-hours { color: var(--sky-blue-dark); font-weight: bold; }
 
     .pricing-box {
       background: var(--cloud-white);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       padding: 2.5rem;
       border-radius: 4px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
@@ -696,7 +698,7 @@
 
     .pricing-table th, .pricing-table td {
       padding: 1rem 1.1rem;
-      border-bottom: 1px solid rgba(197, 159, 73, 0.2);
+      border-bottom: 1px solid rgba(27, 54, 93, 0.2);
       font-size: 1.15rem;
     }
 
@@ -722,7 +724,7 @@
     /* 6. FAQS BLOCK */
     .block-faqs {
       background-color: var(--cloud-white);
-      border-bottom: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-blue);
     }
 
     .faq-container {
@@ -732,7 +734,7 @@
 
     .faq-item {
       background: var(--sky-main);
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--border-blue);
       margin-bottom: 1.2rem;
       border-radius: 4px;
       overflow: hidden;
@@ -752,12 +754,12 @@
     }
 
     .faq-question:hover {
-      background: rgba(197, 159, 73, 0.08);
+      background: rgba(27, 54, 93, 0.08);
     }
 
     .faq-icon {
       font-size: 1.5rem;
-      color: var(--warm-gold);
+      color: var(--sky-blue-dark);
       transition: transform 0.3s;
     }
 
@@ -775,20 +777,20 @@
     .faq-item.active .faq-answer {
       padding: 1.4rem 2rem;
       max-height: 350px;
-      border-top: 1px solid rgba(197, 159, 73, 0.15);
+      border-top: 1px solid rgba(27, 54, 93, 0.15);
     }
 
     .faq-item.active .faq-icon {
       transform: rotate(45deg);
     }
 
-    /* FOOTER (Light Sky Version) */
+    /* FOOTER */
     footer {
-      background-color: #1A202C; /* Σκούρο διακριτικό footer για να ξεχωρίζουν τα λευκά logos */
+      background-color: var(--sky-blue-dark);
       color: #FFFCFC;
       padding: 5rem 2rem 3rem 2rem;
       text-align: center;
-      border-top: 2px solid var(--warm-gold);
+      border-top: 2px solid rgba(255,255,255,0.2);
     }
 
     .footer-inner {
@@ -826,7 +828,7 @@
     }
 
     .venue-info strong {
-      color: var(--warm-gold);
+      color: #93C5FD;
       font-size: 1.3rem;
       display: inline-block;
       margin-bottom: 0.4rem;
@@ -894,9 +896,9 @@
       <a href="#faqs" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
     </div>
 
-    <!-- RIGHT CONTROLS (Εισιτήρια + Γλώσσα τέρμα δεξιά) -->
+    <!-- RIGHT CONTROLS -->
     <div class="nav-right-controls">
-      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.4rem 1.1rem; font-size: 1.05rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
+      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="padding: 0.4rem 1.1rem; font-size: 1.05rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
       <button class="hamburger-btn" id="hamburgerToggle" onclick="toggleMobileMenu()" aria-label="Open Menu">☰</button>
     </div>
@@ -913,7 +915,7 @@
     <button class="mobile-lang-btn" onclick="toggleLanguage(); toggleMobileMenu();" id="mobileLangToggle">EN / ENGLISH</button>
   </div>
 
-  <!-- BLOCK: HERO -->
+  <!-- BLOCK: HERO (ΦΩΤΕΙΝΟ, ΛΕΥΚΑ ΓΡΑΜΜΑΤΑ) -->
   <header class="hero">
     <div class="video-background">
       <div id="yt-player"></div>
@@ -948,7 +950,7 @@
         </p>
       </div>
 
-      <!-- ΑΕΡΟΣΤΑΤΟ ΜΕ ΤΟ ΔΙΓΛΩΣΣΟ ΑΠΟΦΘΕΓΜΑ (ΕΛ/ΕΝ + ΓΑΛΛΙΚΑ ΜΕ ΥΠΟΓΡΑΦΗ) -->
+      <!-- ΑΕΡΟΣΤΑΤΟ & ΑΠΟΦΘΕΓΜΑ -->
       <div class="intro-balloon-wrap">
         <div class="vern-quote-box">
           <div class="vern-quote-native" data-el="&ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;<span class=&quot;quote-author&quot;>Ιούλιος Βερν</span>" data-en="&ldquo;Whatever one man can imagine, other men can make a reality.&rdquo;<span class=&quot;quote-author&quot;>Jules Verne</span>">
@@ -1197,7 +1199,7 @@
             </ul>
 
             <div style="margin-top: 1.5rem; text-align: center;">
-              <a href="https://maps.app.goo.gl/QAspfTbA8cZcZ6oN6" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; font-size: 1.1rem; padding: 0.75rem 1rem;">
+              <a href="https://maps.app.goo.gl/QAspfTbA8cZcZ6oN6" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="width: 100%; font-size: 1.1rem; padding: 0.75rem 1rem;">
                 📍 Άνοιγμα στο Google Maps
               </a>
             </div>
@@ -1234,7 +1236,7 @@
         </ul>
 
         <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
+          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-blue" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
             ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)
           </a>
         </div>
@@ -1324,7 +1326,7 @@
             </tbody>
           </table>
           <div style="margin-top: 2rem; text-align: center;">
-            <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
+            <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-blue" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
               ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE (MORE.COM)
             </a>
           </div>

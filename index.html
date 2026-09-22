@@ -34,6 +34,10 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg-dark);
       color: var(--snow-white);
@@ -60,23 +64,43 @@
       text-transform: uppercase;
     }
 
-    /* NAV */
+    /* NAVIGATION */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      height: 70px;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 3.5rem;
+      padding: 0 3.5rem;
       background: rgba(8, 5, 4, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(233, 190, 116, 0.2);
     }
 
-    .nav-logo img { height: 44px; width: auto; }
+    /* OVERHANGING LOGO */
+    .nav-logo-link {
+      position: relative;
+      top: 25px;
+      display: inline-block;
+      text-decoration: none;
+      z-index: 1010;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo-link img {
+      height: 95px;
+      width: auto;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.85));
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nav-logo-link:hover img {
+      transform: translateY(-4px) rotate(-3deg) scale(1.05);
+    }
 
     .nav-menu {
       display: flex;
@@ -164,7 +188,7 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding-top: 60px;
+      padding-top: 70px;
     }
 
     .video-background {
@@ -178,15 +202,16 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.5;
+      opacity: 0.85; /* Φωτεινότερο βίντεο */
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
 
+    /* Αραιότερο overlay για να αναπνέει το βίντεο */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.55) 0%, rgba(8, 5, 4, 0.92) 85%);
+      background: radial-gradient(circle at center, rgba(97, 18, 5, 0.25) 0%, rgba(8, 5, 4, 0.75) 85%);
       z-index: 2;
     }
 
@@ -197,25 +222,27 @@
       padding: 0 1.5rem;
     }
 
-    .hero-logo-img {
-      max-width: 480px;
-      width: 90%;
-      height: auto;
-      margin-bottom: 1.2rem;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.9));
+    .hero-title {
+      font-size: 3.8rem;
+      color: var(--harvest-gold);
+      margin-bottom: 0.6rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+      letter-spacing: 2px;
     }
 
     .hero-tagline {
-      font-size: 1.5rem;
-      color: var(--harvest-gold);
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      color: var(--snow-white);
+      margin-bottom: 0.8rem;
       letter-spacing: 3px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .hero-location {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      margin-bottom: 2.2rem;
+      font-size: 1.3rem;
+      color: var(--harvest-gold);
+      margin-bottom: 2.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .hero-buttons {
@@ -265,7 +292,7 @@
       opacity: 0.6;
     }
 
-    /* 1. INTRO BLOCK */
+    /* INTRO BLOCK */
     .block-intro {
       background: linear-gradient(180deg, rgba(8, 5, 4, 0.4) 0%, rgba(63, 18, 16, 0.3) 100%);
     }
@@ -284,7 +311,7 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.8);
     }
 
-    /* 2. ROOMS BLOCK */
+    /* ROOMS BLOCK */
     .block-rooms {
       background: rgba(12, 8, 7, 0.85);
     }
@@ -352,7 +379,7 @@
       line-height: 1.65;
     }
 
-    /* 3. MACHINES BLOCK */
+    /* MACHINES BLOCK */
     .block-machines {
       background: radial-gradient(circle at center, rgba(97, 18, 5, 0.4) 0%, rgba(8, 5, 4, 0.9) 100%);
     }
@@ -401,7 +428,7 @@
 
     .did-you-know strong { color: var(--harvest-gold); }
 
-    /* 4. GREECE BLOCK */
+    /* GREECE BLOCK */
     .block-greece {
       background: linear-gradient(135deg, rgba(13, 146, 105, 0.15) 0%, rgba(97, 18, 5, 0.4) 100%);
     }
@@ -419,7 +446,7 @@
       border: 1px solid var(--elf-green);
     }
 
-    /* 5. SCHOOLS BLOCK */
+    /* SCHOOLS BLOCK */
     .block-schools {
       background: linear-gradient(135deg, rgba(97, 18, 5, 0.85) 0%, rgba(30, 8, 7, 0.98) 100%);
       border-top: 2px solid var(--harvest-gold);
@@ -459,7 +486,30 @@
       color: var(--harvest-gold);
     }
 
-    /* 6. VENUE & ACCESS BLOCK */
+    .contact-box {
+      margin-top: 1.5rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-gold);
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-box a {
+      color: var(--harvest-gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* VENUE & ACCESS BLOCK */
     .block-venue {
       background: rgba(12, 8, 7, 0.9);
     }
@@ -519,7 +569,7 @@
       line-height: 1;
     }
 
-    /* 7. FAQS ACCORDION BLOCK */
+    /* FAQS BLOCK */
     .block-faqs {
       background: var(--bg-dark);
     }
@@ -605,8 +655,11 @@
     .partners-grid img:hover { opacity: 1; }
 
     @media (max-width: 980px) {
-      nav { padding: 1rem 1.5rem; }
+      nav { padding: 0 1.5rem; }
       .nav-menu { display: none; }
+      .nav-logo-link { top: 15px; }
+      .nav-logo-link img { height: 75px; }
+      .hero-title { font-size: 2.5rem; }
       .intro-grid, .greece-grid, .schools-grid, .venue-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -619,9 +672,11 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <div class="nav-logo">
-      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200 Logo">
-    </div>
+    <!-- OVERHANGING INTERACTIVE LOGO LINK -->
+    <a href="#" class="nav-logo-link" title="Jules Verne 200 - Αρχική">
+      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
+    </a>
+
     <div class="nav-menu">
       <a href="#about" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
       <a href="#rooms" data-el="ΟΙ ΣΤΑΘΜΟΙ" data-en="THE STATIONS">ΟΙ ΣΤΑΘΜΟΙ</a>
@@ -631,7 +686,7 @@
       <a href="#venue" data-el="ΠΡΟΣΒΑΣΗ" data-en="VENUE">ΠΡΟΣΒΑΣΗ</a>
       <a href="#faqs" data-el="FAQS" data-en="FAQS">FAQS</a>
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
-      <a href="https://www.more.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
+      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
     </div>
   </nav>
 
@@ -647,7 +702,7 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200" class="hero-logo-img">
+      <h1 class="hero-title">JULES VERNE 200</h1>
       <p class="hero-tagline badge-font" data-el="ΕΝΑ ΠΟΛΥΑΙΣΘΗΤΗΡΙΑΚΟ &amp; ΕΜΒΥΘΙΣΤΙΚΟ ΤΑΞΙΔΙ" data-en="AN IMMERSIVE EXTRAORDINARY JOURNEY">
         ΕΝΑ ΠΟΛΥΑΙΣΘΗΤΗΡΙΑΚΟ &amp; ΕΜΒΥΘΙΣΤΙΚΟ ΤΑΞΙΔΙ
       </p>
@@ -656,7 +711,7 @@
       </p>
       
       <div class="hero-buttons">
-        <a href="https://www.more.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ" data-en="BOOK TICKETS">ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ</a>
+        <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ" data-en="BOOK TICKETS">ΚΡΑΤΗΣΗ ΕΙΣΙΤΗΡΙΩΝ</a>
         <a href="#schools" class="btn btn-outline" data-el="ΣΧΟΛΙΚΕΣ ΕΠΙΣΚΕΨΕΙΣ &amp; ΟΔΗΓΟΣ" data-en="SCHOOL VISITS &amp; GUIDE">ΣΧΟΛΙΚΕΣ ΕΠΙΣΚΕΨΕΙΣ &amp; ΟΔΗΓΟΣ</a>
       </div>
     </div>
@@ -857,7 +912,7 @@
           <span class="machine-novel">Από τη Γη στη Σελήνη (1865)</span>
           <p>Αλουμινένια επανδρωμένη κάψουλα εκτοξευόμενη από υπόγειο κανόνι 270 μέτρων στη Φλόριντα, με ανακύκλωση οξυγόνου και υδραυλικά αμορτισέρ.</p>
           <div class="did-you-know">
-            <strong>Γνωρίζατε ότι;</strong> Η τοποθεσία εκτόξευσης, το 3μελές πλήρωμα και η προσθαλάσσωση στον Ειρηνικό ταυτίστηκαν με το Apollo 11 (1969)!
+            <strong>Γνωρίζατε ότι;</strong> Η τοποθεσία εκτόξευσης, το 3μελές πλήρωμα και η προσθαλασσώση στον Ειρηνικό ταυτίστηκαν με το Apollo 11 (1969)!
           </div>
         </div>
 
@@ -922,11 +977,17 @@
           <li data-el="Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών." data-en="Optimized visit flow guided by trained museum educators.">Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών.</li>
           <li data-el="Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη." data-en="Comprehensive Educational Guide with classroom activities for before and after the visit.">Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη.</li>
         </ul>
-        <div style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+
+        <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
           <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
             ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)
           </a>
-          <a href="tel:+302122540000" class="btn btn-outline" data-el="ΚΡΑΤΗΣΕΙΣ: 212 254 0000" data-en="CALL: +30 212 254 0000">ΚΡΑΤΗΣΕΙΣ: 212 254 0000</a>
+        </div>
+
+        <!-- ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΣΧΟΛΕΙΩΝ -->
+        <div class="contact-box">
+          <p><strong>Τηλέφωνα Κρατήσεων Σχολείων:</strong> <a href="tel:6977407217">6977 407217</a> &bull; <a href="tel:6980267672">6980 267672</a></p>
+          <p><strong>Email Επικοινωνίας:</strong> <a href="mailto:jv200greece@gmail.com">jv200greece@gmail.com</a></p>
         </div>
       </div>
       <div class="schools-poster">
@@ -948,7 +1009,6 @@
       </div>
 
       <div class="venue-grid">
-        <!-- Building & Overview -->
         <div class="venue-card">
           <img src="https://admin.videotheatre.gr/api/files/media/cqdrf1an4dded5c/ek_01b_cij8mo7j2t.jpg" alt="Κέντρο Πολιτισμού Ελληνικός Κόσμος">
           <div class="venue-card-body">
@@ -963,7 +1023,6 @@
           </div>
         </div>
 
-        <!-- Map & Access -->
         <div class="venue-card">
           <img src="https://admin.videotheatre.gr/api/files/media/0tifotp3xkvsf0g/map_dye8q9e7y2.jpg" alt="Χάρτης Πρόσβασης Ελληνικός Κόσμος">
           <div class="venue-card-body">
@@ -1039,8 +1098,8 @@
           <span data-el="Πώς κλείνουμε επίσκεψη για σχολική ομάδα ή σύλλογο;" data-en="How do we book group or school reservations?">Πώς κλείνουμε επίσκεψη για σχολική ομάδα ή σύλλογο;</span>
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-answer" data-el="Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται κατόπιν τηλεφωνικής συνεννόησης στο 212 254 0000 ή μέσω email στο info@videotheatre.gr για εξασφάλιση της επιθυμητής ώρας ξενάγησης." data-en="School and large group bookings can be coordinated by phone (+30 212 254 0000) or email (info@videotheatre.gr) to schedule an exclusive timeslot.">
-          Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται κατόπιν τηλεφωνικής συνεννόησης στο 212 254 0000 ή μέσω email στο info@videotheatre.gr για εξασφάλιση της επιθυμητής ώρας ξενάγησης.
+        <div class="faq-answer" data-el="Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται στα τηλέφωνα 6977 407217 &bull; 6980 267672 ή μέσω email στο jv200greece@gmail.com." data-en="School and group bookings can be coordinated at +30 6977 407217 &bull; +30 6980 267672 or via email at jv200greece@gmail.com.">
+          Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται στα τηλέφωνα 6977 407217 &bull; 6980 267672 ή μέσω email στο jv200greece@gmail.com.
         </div>
       </div>
     </div>

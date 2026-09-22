@@ -5,18 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία | Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</title>
   
-  <!-- FAVICON ΣΤΟ TAB ΤΟΥ BROWSER -->
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png">
-  <link rel="shortcut icon" href="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png">
-
-  <!-- GOOGLE ANALYTICS PLACEHOLDER -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 
   <!-- ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,15 +15,20 @@
 
   <style>
     :root {
-      --light-cream: #F7F4EE;
-      --parchment: #EFE9DE;
-      --warm-gold: #A67C1E;
-      --dark-bronze: #2C221E;
-      --text-main: #231B17;
-      --text-muted: #5C504A;
-      --card-bg: #FFFFFF;
-      --border-gold: rgba(166, 124, 30, 0.4);
-      --bg-pattern: radial-gradient(circle at 50% 15%, rgba(97, 18, 5, 0.35) 0%, rgba(8, 5, 4, 0.92) 80%), url('https://admin.videotheatre.gr/api/files/media/rkyb17jucem7o73/bakground_htqccuqlbm.jpg');
+      /* -- SKY PALETTE -- */
+      --sky-main: #EBF8FF; /* Πολύ απαλό γαλάζιο ουρανού */
+      --sky-gradient: linear-gradient(180deg, #EBF8FF 0%, #D6EEFF 100%);
+      --cloud-white: #FFFFFF;
+      --text-dark: #1A202C;
+      --text-muted: #4A5568;
+      
+      /* Gold Accents (προσαρμοσμένα για ανοιχτό φόντο) */
+      --warm-gold: #C59F49; 
+      --accent-gold-hover: #A67C1E;
+      --border-gold: rgba(197, 159, 73, 0.6);
+
+      /* Darker elements where needed (footer overlay) */
+      --dark-overlay-bg: rgba(26, 32, 44, 0.85);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,8 +38,8 @@
     }
 
     body {
-      background-color: var(--light-cream);
-      color: var(--text-main);
+      background-color: var(--sky-main);
+      color: var(--text-dark);
       font-family: 'Lora', Georgia, serif;
       font-size: 1.22rem;
       line-height: 1.8;
@@ -55,6 +50,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       letter-spacing: 0.5px;
       font-weight: 700;
+      color: var(--text-dark);
     }
 
     .badge-font {
@@ -64,7 +60,7 @@
       font-weight: 700;
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION (Light Version) */
     nav {
       position: fixed;
       top: 0;
@@ -76,15 +72,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 3.5rem;
-      background-image: var(--bg-pattern);
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(12px);
+      background-color: var(--cloud-white);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
       border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
-    /* OVERHANGING LOGO */
+    /* OVERHANGING LOGO (No changes needed to shape, just shadow) */
     .nav-logo-link {
       position: relative;
       top: 48px;
@@ -97,14 +90,12 @@
     .nav-logo-link img {
       height: 158px;
       width: auto;
-      filter: drop-shadow(0 12px 25px rgba(0,0,0,0.95));
-      transition: transform 0.35s ease-out, filter 0.35s ease;
-      transform-origin: center top;
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3));
+      transition: transform 0.35s ease-out;
     }
 
     .nav-logo-link:hover img {
       transform: translateY(8px) scale(1.02);
-      filter: drop-shadow(0 16px 30px rgba(166, 124, 30, 0.45));
     }
 
     .nav-menu {
@@ -114,7 +105,7 @@
     }
 
     .nav-menu a {
-      color: #FFFCFC;
+      color: var(--text-dark);
       text-decoration: none;
       font-size: 1.15rem;
       font-family: 'Montserrat', sans-serif;
@@ -125,16 +116,24 @@
 
     .nav-menu a:hover { color: var(--warm-gold); }
 
+    /* RIGHT CONTROLS (Layout Changed) */
+    .nav-right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem; /* Απόσταση μεταξύ εισιτηρίων και γλώσσας */
+    }
+
+    /* LANGUAGE BTN (Symazemeno) */
     .lang-btn {
       background: transparent;
       border: 1px solid var(--warm-gold);
       color: var(--warm-gold);
-      padding: 0.3rem 0.8rem;
+      padding: 0.3rem 0.6rem; /* Πιο μικρό */
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.0rem;
       cursor: pointer;
-      border-radius: 2px;
+      border-radius: 3px;
       transition: all 0.3s;
     }
 
@@ -143,34 +142,23 @@
       color: #FFFFFF;
     }
 
-    .nav-right-controls {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
     .hamburger-btn {
       display: none;
       background: transparent;
-      border: 1px solid var(--warm-gold);
-      color: var(--warm-gold);
-      font-size: 1.6rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
+      border: none;
+      color: var(--text-dark);
+      font-size: 1.8rem;
       cursor: pointer;
-      align-items: center;
-      justify-content: center;
     }
 
+    /* MOBILE MENU OVERLAY (Light Version) */
     .mobile-menu-overlay {
       position: fixed;
       top: 75px;
       left: 0;
       width: 100%;
       height: calc(100vh - 75px);
-      background-image: var(--bg-pattern);
-      background-size: cover;
-      backdrop-filter: blur(16px);
+      background-color: var(--cloud-white);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -179,7 +167,8 @@
       z-index: 999;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     .mobile-menu-overlay.active {
@@ -188,24 +177,23 @@
     }
 
     .mobile-menu-overlay a {
-      color: #FFFCFC;
+      color: var(--text-dark);
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       letter-spacing: 1.5px;
       transition: color 0.3s;
     }
 
-    .mobile-menu-overlay a:hover {
-      color: var(--warm-gold);
-    }
+    .mobile-menu-overlay a:hover { color: var(--warm-gold); }
 
+    /* MOBILE LANG (Symazemeno) */
     .mobile-lang-btn {
       background: transparent;
       border: 1px solid var(--warm-gold);
       color: var(--warm-gold);
-      padding: 0.5rem 1.5rem;
+      padding: 0.6rem 2rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 1.2rem;
@@ -214,7 +202,7 @@
       margin-top: 1rem;
     }
 
-    /* BUTTONS */
+    /* BUTTONS (Light Theme) */
     .btn {
       display: inline-block;
       padding: 0.8rem 2rem;
@@ -223,41 +211,26 @@
       font-size: 1.2rem;
       letter-spacing: 1.2px;
       text-decoration: none;
-      border-radius: 2px;
+      border-radius: 3px;
       transition: all 0.3s ease;
-      cursor: pointer;
       text-transform: uppercase;
-      text-align: center;
+      cursor: pointer;
     }
 
     .btn-gold {
       background-color: var(--warm-gold);
       color: #FFFFFF;
       border: 1px solid var(--warm-gold);
-      font-weight: 800;
-      box-shadow: 0 4px 15px rgba(166, 124, 30, 0.4);
     }
 
     .btn-gold:hover {
-      background-color: #8c6717;
+      background-color: var(--accent-gold-hover);
+      border-color: var(--accent-gold-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(166, 124, 30, 0.6);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    .btn-outline {
-      background-color: transparent;
-      color: var(--dark-bronze);
-      border: 1px solid var(--warm-gold);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--dark-bronze);
-      color: #FFFFFF;
-      background: var(--dark-bronze);
-      transform: translateY(-2px);
-    }
-
-    /* HERO */
+    /* HERO (Image based, no changes needed, blends with sky) */
     .hero {
       position: relative;
       height: 100vh;
@@ -272,16 +245,13 @@
 
     .video-background {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw;
-      height: 56.25vw;
-      min-height: 100vh;
-      min-width: 177.77vh;
+      top: 50%; left: 50%;
+      width: 100vw; height: 56.25vw;
+      min-height: 100vh; min-width: 177.77vh;
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.95;
+      opacity: 0.9; /* Απαλή */
     }
 
     .video-background iframe { width: 100%; height: 100%; border: 0; }
@@ -289,7 +259,7 @@
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(247, 244, 238, 0.15) 0%, rgba(20, 14, 12, 0.75) 85%);
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.6) 100%);
       z-index: 2;
     }
 
@@ -301,39 +271,33 @@
     }
 
     .hero-title {
-      font-size: 3.1rem;
-      color: #FFFFFF;
+      font-size: 3.5rem;
+      color: var(--text-dark);
       margin-bottom: 1rem;
       line-height: 1.2;
       letter-spacing: 1.5px;
       font-weight: 800;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.95), 0 0 35px rgba(0,0,0,0.9), 0 0 70px rgba(0,0,0,0.6);
+      text-shadow: 0 3px 10px rgba(255,255,255,0.8); /* Λάμψη στο φως */
     }
 
     .hero-date {
-      font-size: 1.4rem;
-      color: #F7F4EE;
+      font-size: 1.6rem;
+      color: var(--text-dark);
       letter-spacing: 2.5px;
       font-weight: 700;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 0 25px rgba(0,0,0,0.8);
+      text-shadow: 0 3px 10px rgba(255,255,255,0.8);
     }
 
-    /* FULL WIDTH BLOCK STRUCTURE */
+    /* BLOCK STRUCTURE (Light) */
     .block-section {
       width: 100%;
       padding: 6.5rem 2rem;
       position: relative;
     }
 
-    .block-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
+    .block-inner { max-width: 1240px; margin: 0 auto; }
 
-    .block-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+    .block-header { text-align: center; margin-bottom: 4rem; }
 
     .block-header .sub-badge {
       color: var(--warm-gold);
@@ -341,12 +305,6 @@
       letter-spacing: 2.5px;
       display: block;
       margin-bottom: 0.4rem;
-    }
-
-    .block-header h2 {
-      font-size: 2.7rem;
-      color: var(--dark-bronze);
-      margin-bottom: 1rem;
     }
 
     .dashed-divider {
@@ -357,1175 +315,53 @@
       opacity: 0.7;
     }
 
-    /* 1. INTRO BLOCK */
+    /* 1. INTRO BLOCK (Sky Background + Balloon Placement) */
     .block-intro {
-      background: var(--parchment);
+      background-image: var(--sky-gradient);
       border-bottom: 1px solid var(--border-gold);
+      padding-top: 10rem; /* Χώρος για το overhanging logo */
     }
 
     .intro-grid {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
       gap: 3.5rem;
-      align-items: center;
+      align-items: start; /* Στοίχιση πάνω για να πατάει ωραία το αερόστατο */
     }
 
-    /* VERN QUOTE ΠΛΑΙΣΙΟ (ΜΕ ΕΛΛΗΝΙΚΑ/ΑΓΓΛΙΚΑ & ΓΑΛΛΙΚΑ) */
+    /* VERN QUOTE ΠΛΑΙΣΙΟ (Πιο ελαφρύ για το sky background) */
     .vern-quote-box {
-      background: #FFFFFF;
+      background: rgba(255, 255, 255, 0.7); /* Ημιδιάφανο λευκό/σύννεφο */
       border: 1px solid var(--border-gold);
       border-left: 4px solid var(--warm-gold);
-      padding: 1.5rem 1.8rem;
+      padding: 1.8rem;
       border-radius: 6px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-bottom: 3rem;
       width: 100%;
       text-align: left;
+      backdrop-filter: blur(5px);
     }
 
     .vern-quote-native {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 1.15rem;
-      color: var(--dark-bronze);
+      font-size: 1.3rem;
+      color: var(--text-dark);
       line-height: 1.6;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .vern-quote-french {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: var(--text-muted);
       line-height: 1.6;
-      border-top: 1px dashed rgba(166, 124, 30, 0.25);
-      padding-top: 0.8rem;
+      border-top: 1px dashed rgba(197, 159, 73, 0.4);
+      padding-top: 1rem;
     }
 
     .quote-author {
-      display: inline-block;
-      margin-top: 0.4rem;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--warm-gold);
-      letter-spacing: 1px;
-    }
-
-    .intro-balloon-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      height: 100%;
-    }
-
-    .intro-balloon-wrap img {
-      max-width: 100%;
-      max-height: 480px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.18));
-    }
-
-    /* 2. THE 10 STATIONS BLOCK */
-    .block-rooms {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .rooms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 2.4rem;
-    }
-
-    .room-card {
-      background: var(--light-cream);
-      border: 1px solid var(--border-gold);
-      border-radius: 5px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.3s ease;
-    }
-
-    .room-card:hover {
-      border-color: var(--warm-gold);
-      transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-    }
-
-    .room-card-header {
-      background-image: var(--bg-pattern);
-      background-size: cover;
-      background-position: center;
-      padding: 0.9rem 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .room-num-badge {
-      background: var(--warm-gold);
-      color: #FFFFFF;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      line-height: 1.2;
-      flex-shrink: 0;
-    }
-
-    .room-header-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      line-height: 1.2;
-    }
-
-    .room-card-img {
-      position: relative;
-      height: 230px;
-      overflow: hidden;
-    }
-
-    .room-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .room-card:hover .room-card-img img {
-      transform: scale(1.04);
-    }
-
-    .room-body {
-      padding: 2rem;
-      flex-grow: 1;
-    }
-
-    .room-body h3 {
-      color: var(--dark-bronze);
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .room-body p {
-      color: var(--text-muted);
-      font-size: 1.15rem;
-      line-height: 1.75;
-    }
-
-    /* 3. VENUE & ACCESS BLOCK */
-    .block-venue {
-      background: var(--light-cream);
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .venue-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-
-    .venue-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-gold);
-      border-radius: 4px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .venue-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .venue-card-body {
-      padding: 2.4rem;
-      flex-grow: 1;
-    }
-
-    .venue-card-body h3 {
-      color: var(--dark-bronze);
-      font-size: 1.55rem;
-      margin-bottom: 1rem;
-    }
-
-    .access-list {
-      list-style: none;
-      margin-top: 1.2rem;
-    }
-
-    .access-list li {
-      margin-bottom: 0.9rem;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 1.8rem;
-      font-size: 1.15rem;
-    }
-
-    .access-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--warm-gold);
-      font-size: 1.6rem;
-      line-height: 1;
-    }
-
-    .map-preview-wrap {
-      margin-top: 1.5rem;
-      border: 1px solid var(--border-gold);
-      border-radius: 4px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .map-preview-wrap iframe {
-      width: 100%;
-      height: 200px;
-      border: 0;
-      display: block;
-    }
-
-    /* 4. SCHOOLS BLOCK */
-    .block-schools {
-      background-image: var(--bg-pattern);
-      background-size: cover;
-      color: #FFFCFC;
-      border-top: 2px solid var(--warm-gold);
-      border-bottom: 2px solid var(--warm-gold);
-    }
-
-    .block-schools h2 {
-      color: var(--warm-gold);
-    }
-
-    .block-schools .sub-badge {
-      color: var(--warm-gold);
-    }
-
-    .block-schools p {
-      color: #FFFFFF !important;
-    }
-
-    .schools-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .schools-poster img {
-      width: 100%;
-      border-radius: 4px;
-      border: 1px solid rgba(166, 124, 30, 0.4);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
-
-    .school-features {
-      list-style: none;
-      margin: 1.8rem 0 2.2rem 0;
-    }
-
-    .school-features li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      color: #FFFFFF !important;
-      font-size: 1.15rem;
-    }
-
-    .school-features li::before {
-      content: "✦";
-      position: absolute;
-      left: 0;
-      color: var(--warm-gold);
-      font-size: 1.3rem;
-    }
-
-    .contact-box {
-      margin-top: 1.8rem;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid var(--border-gold);
-      padding: 1.4rem;
-      border-radius: 4px;
-    }
-
-    .contact-box p {
-      margin-bottom: 0.5rem;
-      font-size: 1.15rem;
-      color: #FFFFFF !important;
-    }
-
-    .contact-box a {
-      color: var(--warm-gold);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* 5. INFO BLOCK */
-    .block-info {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 3.5rem;
-    }
-
-    .schedule-box {
-      background: var(--light-cream);
-      border: 1px solid var(--warm-gold);
-      padding: 2.5rem;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .schedule-box h3 {
-      color: var(--dark-bronze);
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .schedule-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed rgba(166, 124, 30, 0.3);
-      padding: 1rem 0;
-      font-size: 1.15rem;
-    }
-
-    .schedule-item:last-child { border-bottom: none; }
-    .schedule-day { font-weight: 600; color: var(--text-main); }
-    .schedule-hours { color: var(--warm-gold); font-weight: bold; }
-
-    .pricing-box {
-      background: var(--light-cream);
-      border: 1px solid var(--warm-gold);
-      padding: 2.5rem;
-      border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .pricing-box h3 {
-      color: var(--dark-bronze);
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .pricing-table th, .pricing-table td {
-      padding: 1rem 1.1rem;
-      border-bottom: 1px solid rgba(166, 124, 30, 0.2);
-      font-size: 1.15rem;
-    }
-
-    .pricing-table th {
-      font-family: 'Playfair Display', serif;
-      color: var(--dark-bronze);
-      font-size: 1.1rem;
-      background: var(--parchment);
-    }
-
-    .pricing-table td {
-      color: var(--text-muted);
-    }
-
-    .pricing-table td.price {
-      color: var(--dark-bronze);
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.5px;
-    }
-
-    /* 6. FAQS BLOCK */
-    .block-faqs {
-      background: var(--light-cream);
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .faq-container {
-      max-width: 950px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: #FFFFFF;
-      border: 1px solid var(--border-gold);
-      margin-bottom: 1.2rem;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      padding: 1.4rem 2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--dark-bronze);
-      user-select: none;
-      transition: background 0.3s;
-    }
-
-    .faq-question:hover {
-      background: rgba(166, 124, 30, 0.08);
-    }
-
-    .faq-icon {
-      font-size: 1.5rem;
-      color: var(--warm-gold);
-      transition: transform 0.3s;
-    }
-
-    .faq-answer {
-      padding: 0 2rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      color: var(--text-muted);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      border-top: 1px solid transparent;
-    }
-
-    .faq-item.active .faq-answer {
-      padding: 1.4rem 2rem;
-      max-height: 350px;
-      border-top: 1px solid rgba(166, 124, 30, 0.15);
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    /* FOOTER */
-    footer {
-      background-image: var(--bg-pattern);
-      background-size: cover;
-      color: #FFFCFC;
-      padding: 5rem 2rem 3rem 2rem;
-      text-align: center;
-      border-top: 2px solid var(--warm-gold);
-    }
-
-    .footer-inner {
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .partners-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .partners-grid img {
-      height: 78px;
-      max-width: 220px;
-      width: auto;
-      opacity: 0.95;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
-    }
-
-    .partners-grid img:hover {
-      opacity: 1;
-      transform: scale(1.06);
-    }
-
-    .venue-info {
-      color: var(--parchment);
-      margin-bottom: 2rem;
-      font-size: 1.15rem;
-      line-height: 1.7;
-    }
-
-    .venue-info strong {
-      color: var(--warm-gold);
-      font-size: 1.3rem;
-      display: inline-block;
-      margin-bottom: 0.4rem;
-    }
-
-    .copyright {
-      font-size: 0.95rem;
-      color: #A39690;
-      border-top: 1px dashed rgba(255,255,255,0.15);
-      padding-top: 2rem;
-    }
-
-    /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 1100px) {
-      .nav-menu { display: none; }
-      .hamburger-btn { display: flex; }
-    }
-
-    @media (max-width: 980px) {
-      body {
-        font-size: 1.05rem;
-        line-height: 1.65;
-      }
-      nav { padding: 0 1.2rem; }
-      .nav-logo-link { top: 25px; }
-      .nav-logo-link img { height: 105px; }
-      .hero-title { font-size: 1.8rem; }
-      .hero-date { font-size: 1.05rem; }
-      .block-header h2 { font-size: 2.1rem; }
-      .partners-grid { 
-        flex-direction: column; 
-        gap: 2rem; 
-      }
-      .partners-grid img { height: 55px; }
-      .intro-grid, .schools-grid, .venue-grid, .info-grid {
-        grid-template-columns: 1fr;
-        gap: 2.2rem;
-      }
-      .block-section { padding: 4rem 1.2rem; }
-      .intro-balloon-wrap img { max-height: 380px; }
-      .room-body h3 { font-size: 1.35rem; }
-      .room-body p { font-size: 1.05rem; }
-      .access-list li, .school-features li, .schedule-item, .pricing-table th, .pricing-table td, .faq-answer, .venue-info {
-        font-size: 1.05rem;
-      }
-      .faq-question { font-size: 1.1rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#" class="nav-logo-link" title="Ιούλιος Βερν 200 - Αρχική">
-      <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
-    </a>
-
-    <!-- DESKTOP MENU -->
-    <div class="nav-menu">
-      <a href="#about" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
-      <a href="#experience" data-el="Η ΕΜΠΕΙΡΙΑ" data-en="THE EXPERIENCE">Η ΕΜΠΕΙΡΙΑ</a>
-      <a href="#venue" data-el="Ο ΧΩΡΟΣ" data-en="THE VENUE">Ο ΧΩΡΟΣ</a>
-      <a href="#schools" data-el="ΣΧΟΛΕΙΑ" data-en="SCHOOLS">ΣΧΟΛΕΙΑ</a>
-      <a href="#info" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
-      <a href="#faqs" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
-      <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
-    </div>
-
-    <!-- RIGHT CONTROLS -->
-    <div class="nav-right-controls">
-      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.4rem 1.1rem; font-size: 1.05rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
-      <button class="hamburger-btn" id="hamburgerToggle" onclick="toggleMobileMenu()" aria-label="Open Menu">☰</button>
-    </div>
-  </nav>
-
-  <!-- MOBILE OVERLAY MENU -->
-  <div class="mobile-menu-overlay" id="mobileMenu">
-    <a href="#about" onclick="toggleMobileMenu()" data-el="Η ΕΚΘΕΣΗ" data-en="ABOUT">Η ΕΚΘΕΣΗ</a>
-    <a href="#experience" onclick="toggleMobileMenu()" data-el="Η ΕΜΠΕΙΡΙΑ" data-en="THE EXPERIENCE">Η ΕΜΠΕΙΡΙΑ</a>
-    <a href="#venue" onclick="toggleMobileMenu()" data-el="Ο ΧΩΡΟΣ" data-en="THE VENUE">Ο ΧΩΡΟΣ</a>
-    <a href="#schools" onclick="toggleMobileMenu()" data-el="ΣΧΟΛΕΙΑ" data-en="SCHOOLS">ΣΧΟΛΕΙΑ</a>
-    <a href="#info" onclick="toggleMobileMenu()" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
-    <a href="#faqs" onclick="toggleMobileMenu()" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
-    <button class="mobile-lang-btn" onclick="toggleLanguage(); toggleMobileMenu();" id="mobileLangToggle">EN / ENGLISH</button>
-  </div>
-
-  <!-- BLOCK: HERO -->
-  <header class="hero">
-    <div class="video-background">
-      <div id="yt-player"></div>
-    </div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <h1 class="hero-title" data-el="ΙΟΥΛΙΟΣ ΒΕΡΝ 200<br>Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ" data-en="JULES VERNE 200<br>THE EXTRAORDINARY JOURNEY">
-        ΙΟΥΛΙΟΣ ΒΕΡΝ 200<br>Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ
-      </h1>
-      <p class="hero-date badge-font" data-el="ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ" data-en="IN ATHENS FROM FRIDAY 25 SEPTEMBER">
-        ΣΤΗΝ ΑΘΗΝΑ ΑΠΟ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 25 ΣΕΠΤΕΜΒΡΙΟΥ
-      </p>
-    </div>
-  </header>
-
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ -->
-  <section id="about" class="block-section block-intro">
-    <div class="block-inner intro-grid">
-      <div>
-        <span class="sub-badge badge-font" data-el="200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ" data-en="200 YEARS OF ADVENTURE">200 ΧΡΟΝΙΑ ΠΕΡΙΠΕΤΕΙΑΣ</span>
-        <h2 style="font-size: 2.5rem; color: var(--dark-bronze); margin-bottom: 1.2rem;" data-el="Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης" data-en="The Pioneer of Science and Imagination">
-          Ο Πρωτοπόρος της Φαντασίας και της Επιστήμης
-        </h2>
-        
-        <p style="margin-bottom: 1.2rem; color: var(--text-main);" data-el="Με αφορμή τη συμπλήρωση 200 χρόνων από τη γέννηση του Ιουλίου Βερν, ενός από τους σημαντικότερους συγγραφείς όλων των εποχών και πρωτοπόρου της επιστημονικής φαντασίας, το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» παρουσιάζει τη διεθνή διαδραστική έκθεση «ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία». Η Αθήνα αποτελεί έναν από τους σημαντικούς σταθμούς της παγκόσμιας περιοδείας της έκθεσης, η οποία έχει ήδη παρουσιαστεί διεθνώς και θα ολοκληρωθεί με την εγκατάστασή της στο Παρίσι το 2028. Πρόκειται για μια πρωτότυπη εμπειρία που συνδυάζει τεχνολογία, φαντασία και περιπέτεια, προσκαλώντας μικρούς και μεγάλους να γνωρίσουν το εκπληκτικό σύμπαν του συγγραφέα που ενέπνευσε γενιές εξερευνητών, επιστημόνων και δημιουργών." data-en="Celebrating the 200th anniversary of the birth of Jules Verne, one of the greatest authors of all time and a true pioneer of science fiction, the Hellenic Cosmos Cultural Centre presents the international interactive exhibition 'JULES VERNE 200: An Immersive Extraordinary Journey'. Athens is a major stop on the exhibition's world tour, which has been acclaimed internationally and will conclude with its Paris installation in 2028. It is an original experience blending cutting-edge technology, imagination, and adventure, inviting visitors of all ages to explore the astonishing universe of the author who inspired generations of explorers, scientists, and creators.">
-          Με αφορμή τη συμπλήρωση 200 χρόνων από τη γέννηση του Ιουλίου Βερν, ενός από τους σημαντικότερους συγγραφείς όλων των εποχών και πρωτοπόρου της επιστημονικής φαντασίας, το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» παρουσιάζει τη διεθνή διαδραστική έκθεση «ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η Συναρπαστική Εμπειρία». Η Αθήνα αποτελεί έναν από τους σημαντικούς σταθμούς της παγκόσμιας περιοδείας της έκθεσης, η οποία έχει ήδη παρουσιαστεί διεθνώς και θα ολοκληρωθεί με την εγκατάστασή της στο Παρίσι το 2028. Πρόκειται για μια πρωτότυπη εμπειρία που συνδυάζει τεχνολογία, φαντασία και περιπέτεια, προσκαλώντας μικρούς και μεγάλους να γνωρίσουν το εκπληκτικό σύμπαν του συγγραφέα που ενέπνευσε γενιές εξερευνητών, επιστημόνων και δημιουργών.
-        </p>
-
-        <p style="color: var(--text-muted); margin-bottom: 1.8rem;" data-el="Ο Βερν υπήρξε ο θεμελιωτής του επιστημονικού μυθιστορήματος, προβλέποντας τα υποβρύχια, την κατάκτηση της Σελήνης, τα ελικόπτερα και τη σύγχρονη τεχνολογία. Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια." data-en="Verne was the founder of the scientific novel, foreseeing submarines, lunar conquest, helicopters, and modern technological wonders. The international blockbuster Jules Verne 200 arrives in Greece, delivering a multi-sensory digital art experience featuring 360° projections, VR stations, interactive labs, and rare authentic 19th-century artifacts.">
-          Ο Βερν υπήρξε ο θεμελιωτής του επιστημονικού μυθιστορήματος, προβλέποντας τα υποβρύχια, την κατάκτηση της Σελήνης, τα ελικόπτερα και τη σύγχρονη τεχνολογία. Η διεθνής έκθεση Jules Verne 200 φέρνει για πρώτη φορά στην Ελλάδα μια υπερπαραγωγή ψηφιακής τέχνης που συνδυάζει εμβυθιστικές προβολές 360°, εμπειρίες Virtual Reality, διαδραστικά εργαστήρια και σπάνια ιστορικά κειμήλια.
-        </p>
-      </div>
-
-      <!-- ΑΕΡΟΣΤΑΤΟ ΜΕ ΤΟ ΔΙΓΛΩΣΣΟ ΑΠΟΦΘΕΓΜΑ ΑΠΟ ΠΑΝΩ -->
-      <div class="intro-balloon-wrap">
-        <div class="vern-quote-box">
-          <div class="vern-quote-native" data-el="&ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;" data-en="&ldquo;Whatever one man can imagine, other men can make a reality.&rdquo;">
-            &ldquo;Ό,τι μπορεί να φανταστεί ένας άνθρωπος, άλλοι άνθρωποι μπορούν να το κάνουν πραγματικότητα.&rdquo;
-          </div>
-          <div class="vern-quote-french">
-            &ldquo;Tout ce qu’un homme est capable d’imaginer, d’autres hommes seront capables de le réaliser.&rdquo;
-            <span class="quote-author">Jules Verne</span>
-          </div>
-        </div>
-        <img src="https://admin.videotheatre.gr/api/files/media/imb2ensnw5bw3fl/balloon_transparents_7g3h1e4z5w.png" alt="Το Αερόστατο του Ιουλίου Βερν">
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. BLOCK: Η ΕΜΠΕΙΡΙΑ (ΟΙ 10 ΣΤΑΘΜΟΙ) -->
-  <section id="experience" class="block-section block-rooms">
-    <div class="block-inner">
-      <div class="block-header">
-        <span class="sub-badge badge-font" data-el="Η ΔΙΑΔΡΟΜΗ" data-en="THE JOURNEY">Η ΔΙΑΔΡΟΜΗ</span>
-        <h2 data-el="Οι 10 Σταθμοί της Εμπειρίας" data-en="The 10 Experience Highlights">Οι 10 Σταθμοί της Εμπειρίας</h2>
-        <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-el="Ένα πολυαισθητηριακό ταξίδι όπου η σύγχρονη τεχνολογία συναντά τη διαχρονική φαντασία." data-en="A multi-sensory journey where cutting-edge technology meets timeless imagination.">
-          Ένα πολυαισθητηριακό ταξίδι όπου η σύγχρονη τεχνολογία συναντά τη διαχρονική φαντασία.
-        </p>
-      </div>
-
-      <div class="rooms-grid">
-        <!-- 1. Γνωριμία με τον Ιούλιο Βερν -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">01</span>
-            <span class="room-header-title" data-el="Γνωριμία με τον Βερν" data-en="Meeting Verne">Γνωριμία με τον Βερν</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/fdenjnrpbagv8cd/nautilus_qiwhzdvc2h.png" alt="Γνωριμία με τον Ιούλιο Βερν">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Το Σύμπαν του Συγγραφέα" data-en="The Author's Universe">Το Σύμπαν του Συγγραφέα</h3>
-            <p data-el="Προσπεράστε τον επιβλητικό Ναυτίλο και αγγίξτε τη μεγάλη διαδραστική οθόνη: ξεφυλλίστε σπάνια χειρόγραφα και κρυμμένα μυστικά από τα ταξίδια του Βερν." data-en="Pass beneath the majestic Nautilus and explore the giant touch-screen archive: uncover rare manuscripts, vintage letters, and secrets from Verne's travels with a swipe of your fingers.">
-              Προσπεράστε τον επιβλητικό Ναυτίλο και αγγίξτε τη μεγάλη διαδραστική οθόνη: ξεφυλλίστε σπάνια χειρόγραφα και κρυμμένα μυστικά από τα ταξίδια του Βερν.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2. Βόλτα στο Παρίσι -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">02</span>
-            <span class="room-header-title" data-el="Βόλτα στο Παρίσι" data-en="Stroll in Paris">Βόλτα στο Παρίσι</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/9crtc6aym7qgkl2/paris_1800_collage_287ekxzg0k.jpg?thumb=800x0" alt="Βόλτα στο Παρίσι">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Παρίσι του 19ου Αιώνα" data-en="19th-Century Paris">Παρίσι του 19ου Αιώνα</h3>
-            <p data-el="Περπατήστε πάνω σε βρεγμένο λιθόστρωτο κάτω από το ζεστό φως των φαναριών και ταξιδέψτε στα παρισινά θεάματα του 1800 μέσα από ένα αυθεντικό κολάζ εποχής." data-en="Step onto a rain-washed cobblestone street under vintage gas lamps, surrounded by genuine Belle Époque theatre posters and the artistic charm of 19th-century Paris.">
-              Περπατήστε πάνω σε βρεγμένο λιθόστρωτο κάτω από το ζεστό φως των φαναριών και ταξιδέψτε στα παρισινά θεάματα του 1800 μέσα από ένα αυθεντικό κολάζ εποχής.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3. VR Βιογραφία -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">03</span>
-            <span class="room-header-title" data-el="VR Βιογραφία" data-en="VR Biography">VR Βιογραφία</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/d69su2ohd4nie7u/vr_empty_360_9hy19cimn6.jpg?thumb=800x0" alt="VR Βιογραφία">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Pages Biographiques VR" data-en="Pages Biographiques VR">Pages Biographiques VR</h3>
-            <p data-el="Φορέστε τα VR headsets και αφεθείτε σε μια καθιστή εικονική πτήση στις τρεις πόλεις που διαμόρφωσαν το ανήσυχο πνεύμα του οραματιστή συγγραφέα." data-en="Put on your VR headset and take flight across the three defining cities that forged the author's extraordinary imagination.">
-              Φορέστε τα VR headsets και αφεθείτε σε μια καθιστή εικονική πτήση στις τρεις πόλεις που διαμόρφωσαν το ανήσυχο πνεύμα του οραματιστή συγγραφέα.
-            </p>
-          </div>
-        </div>
-
-        <!-- 4. Γύρος του Κόσμου σε 80 δεύτερα -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">04</span>
-            <span class="room-header-title" data-el="Γύρος του Κόσμου" data-en="Around the World">Γύρος του Κόσμου</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/t5dyliqt9esddrp/immersive_4_elt1gi9pgh.jpeg?thumb=800x0" alt="Γύρος του Κόσμου σε 80 δεύτερα">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Σε 80 Δευτερόλεπτα" data-en="In 80 Seconds">Σε 80 Δευτερόλεπτα</h3>
-            <p data-el="Μια πρωτοποριακή εικαστική εγκατάσταση των Fontcuberta &amp; Aleu, όπου η τεχνητή νοημοσύνη και η φωτογραφία αποδομούν τον χρόνο, την ταχύτητα και την έννοια του ταξιδιού." data-en="A visionary digital art installation where algorithmic imagery reimagines time, velocity, and future exploration.">
-              Μια πρωτοποριακή εικαστική εγκατάσταση των Fontcuberta &amp; Aleu, όπου η τεχνητή νοημοσύνη και η φωτογραφία αποδομούν τον χρόνο, την ταχύτητα και την έννοια του ταξιδιού.
-            </p>
-          </div>
-        </div>
-
-        <!-- 5. Οι Μηχανές του Βερν -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">05</span>
-            <span class="room-header-title" data-el="Οι Μηχανές του Βερν" data-en="Verne's Machines">Οι Μηχανές του Βερν</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/97cj0gqnkw3iebu/machine_verne_jp_64yqbqzte8.jpg?thumb=800x0" alt="Οι Μηχανές του Βερν">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Sketch &amp; Post Lab" data-en="Sketch &amp; Post Lab">Sketch &amp; Post Lab</h3>
-            <p data-el="Δώστε τα δικά σας χρώματα στις φουτουριστικές μηχανές του συγγραφέα, σκανάρετέ τες και δείτε τες να απογειώνονται ζωντανά στη μεγάλη προβολή." data-en="Color your own visionary Vernian machine, scan it, and watch it instantly launch into a massive dynamic projection.">
-              Δώστε τα δικά σας χρώματα στις φουτουριστικές μηχανές του συγγραφέα, σκανάρετέ τες και δείτε τες να απογειώνονται ζωντανά στη μεγάλη προβολή.
-            </p>
-          </div>
-        </div>
-
-        <!-- 6. Αίθουσα Εμβύθισης -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">06</span>
-            <span class="room-header-title" data-el="Αίθουσα Εμβύθισης" data-en="Immersive Hall">Αίθουσα Εμβύθισης</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/lrvfy1r9w2q7a6l/immersive_1_nub3otw9cn.jpeg?thumb=800x0" alt="Αίθουσα Εμβύθισης">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Μεγάλη Προβολή 360°" data-en="Grand 360° Projections">Μεγάλη Προβολή 360°</h3>
-            <p data-el="25 λεπτά απόλυτης οπτικοακουστικής εμβύθισης σε τοίχους και δάπεδο: βυθιστείτε στην άβυσσο των ωκεανών, πετάξτε στα αστέρια και ταξιδέψτε στα έγκατα της Γης." data-en="25 minutes of 360° projection: dive into oceanic abysses, soar toward the cosmos, and plunge into the Earth's fiery core.">
-              25 λεπτά απόλυτης οπτικοακουστικής εμβύθισης σε τοίχους και δάπεδο: βυθιστείτε στην άβυσσο των ωκεανών, πετάξτε στα αστέρια και ταξιδέψτε στα έγκατα της Γης.
-            </p>
-          </div>
-        </div>
-
-        <!-- 7. Εκδόσεις & Κειμήλια -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">07</span>
-            <span class="room-header-title" data-el="Εκδόσεις &amp; Κειμήλια" data-en="Editions &amp; Relics">Εκδόσεις &amp; Κειμήλια</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/a8qntssoga2s0fk/vitrina_m7s1acz5lt.jpeg?thumb=800x0" alt="Εκδόσεις & Κειμήλια">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Σπάνια Ιστορικά Τεκμήρια" data-en="Rare Historical Relics">Σπάνια Ιστορικά Τεκμήρια</h3>
-            <p data-el="Ανακαλύψτε σπάνια ναυτικά και επιστημονικά όργανα του 19ου αιώνα, ιστορικές πρώτες εκδόσεις και τη συναρπαστική διαδρομή των βιβλίων που άλλαξαν τον κόσμο." data-en="Inspect authentic navigational instruments, rare first editions, and the fascinating secrets of manuscripts that reshaped modern literature.">
-              Ανακαλύψτε σπάνια ναυτικά και επιστημονικά όργανα του 19ου αιώνα, ιστορικές πρώτες εκδόσεις και τη συναρπαστική διαδρομή των βιβλίων που άλλαξαν τον κόσμο.
-            </p>
-          </div>
-        </div>
-
-        <!-- 8. Σημείο Φωτογράφισης -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">08</span>
-            <span class="room-header-title" data-el="Σημείο Φωτογράφισης" data-en="Photo Opportunity">Σημείο Φωτογράφισης</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/c4uiu8po3fz5cb6/photo_op_wghkaqg1ip.jpg" alt="Σημείο Φωτογράφισης">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Αναμνηστικό Ταξιδιού" data-en="Souvenir Photo">Αναμνηστικό Ταξιδιού</h3>
-            <p data-el="Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι." data-en="Step into the basket of the iconic hot-air balloon alongside Jules Verne himself and capture your own unforgettable souvenir photo.">
-              Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι.
-            </p>
-          </div>
-        </div>
-
-        <!-- 9. VR MetaVerne -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">09</span>
-            <span class="room-header-title" data-el="VR MetaVerne" data-en="VR MetaVerne">VR MetaVerne</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/j35qf86zlopy5wb/metaverse_kosmo_05713ta804.png?thumb=800x0" alt="VR MetaVerne">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Περιπατητικό Free-Roam" data-en="Free-Roam VR Experience">Περιπατητικό Free-Roam</h3>
-            <p data-el="Περπατήστε ελεύθερα στον χώρο (free-roam VR) και εξερευνήστε 4 φαντασμαγορικούς κόσμους σε μια πρωτοποριακή εμπειρία που ξεπερνά κάθε φαντασία." data-en="Roam freely in space as you step inside 4 breathtaking worlds in a groundbreaking free-roaming VR adventure.">
-              Περπατήστε ελεύθερα στον χώρο (free-roam VR) και εξερευνήστε 4 φαντασμαγορικούς κόσμους σε μια πρωτοποριακή εμπειρία που ξεπερνά κάθε φαντασία.
-            </p>
-          </div>
-        </div>
-
-        <!-- 10. 20.000 Λεύγες Έμπνευσης -->
-        <div class="room-card">
-          <div class="room-card-header">
-            <span class="room-num-badge">10</span>
-            <span class="room-header-title" data-el="20.000 Λεύγες Έμπνευσης" data-en="20,000 Leagues of Inspiration">20.000 Λεύγες Έμπνευσης</span>
-          </div>
-          <div class="room-card-img">
-            <img src="https://admin.videotheatre.gr/api/files/media/pfls2w5h8s2ejxk/20_lll_s1bxu1tpqc.jpg" alt="20.000 Λεύγες Έμπνευσης">
-          </div>
-          <div class="room-body">
-            <h3 data-el="Η Παγκόσμια Κληρονομιά" data-en="Global Legacy">Η Παγκόσμια Κληρονομιά</h3>
-            <p data-el="Ο επιβλητικός διάδρομος εξόδου αποκαλύπτει πώς το όραμα του Βερν ενέπνευσε τους πρωτοπόρους της ανθρωπότητας, από τον Ζακ Κουστώ μέχρι τις αποστολές στο διάστημα." data-en="The grand exit corridor reveals how Verne's vision inspired trailblazers, from Jacques Cousteau to humanity's greatest missions into outer space.">
-              Ο επιβλητικός διάδρομος εξόδου αποκαλύπτει πώς το όραμα του Βερν ενέπνευσε τους πρωτοπόρους της ανθρωπότητας, από τον Ζακ Κουστώ μέχρι τις αποστολές στο διάστημα.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. BLOCK: Ο ΧΩΡΟΣ -->
-  <section id="venue" class="block-section block-venue">
-    <div class="block-inner">
-      <div class="block-header">
-        <span class="sub-badge badge-font" data-el="Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ" data-en="VENUE &amp; ACCESS">Ο ΧΩΡΟΣ &amp; ΠΡΟΣΒΑΣΗ</span>
-        <h2 data-el="Κέντρο Πολιτισμού «Ελληνικός Κόσμος»" data-en="Hellenic Cosmos Cultural Centre">Κέντρο Πολιτισμού «Ελληνικός Κόσμος»</h2>
-        <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); font-size: 1.25rem;">
-          <strong>Ίδρυμα Μείζονος Ελληνισμού</strong> — Πειραιώς 254, 177 78 Ταύρος, Αθήνα
-        </p>
-      </div>
-
-      <div class="venue-grid">
-        <div class="venue-card">
-          <img src="https://admin.videotheatre.gr/api/files/media/cqdrf1an4dded5c/ek_01b_cij8mo7j2t.jpg" alt="Κέντρο Πολιτισμού Ελληνικός Κόσμος">
-          <div class="venue-card-body">
-            <h3 data-el="Υπερσύγχρονες Εγκαταστάσεις" data-en="State-of-the-Art Facilities">Υπερσύγχρονες Εγκαταστάσεις</h3>
-            <p data-el="Ο «Ελληνικός Κόσμος» αποτελεί έναν από τους πιο σύγχρονους πολιτιστικούς χώρους στην Ελλάδα, με πλήρη κλιματισμό, άνετους χώρους αναμονής, πωλητήριο επίσημων αναμνηστικών και πλήρη προσβασιμότητα για άτομα με αναπηρία (ΑμεΑ)." data-en="Hellenic Cosmos offers world-class museum facilities, full air-conditioning, visitor lounge, official gift shop, and seamless accessibility for visitors with reduced mobility.">
-              Ο «Ελληνικός Κόσμος» αποτελεί έναν από τους πιο σύγχρονους πολιτιστικούς χώρους στην Ελλάδα, με πλήρη κλιματισμό, άνετους χώρους αναμονής, πωλητήριο επίσημων αναμνηστικών και πλήρη προσβασιμότητα για άτομα με αναπηρία (ΑμεΑ).
-            </p>
-            <ul class="access-list">
-              <li data-el="Δωρεάν υπόγειο &amp; υπαίθριο parking 220 θέσεων για Ι.Χ." data-en="Free underground &amp; outdoor parking (220 spaces).">Δωρεάν υπόγειο &amp; υπαίθριο parking 220 θέσεων για Ι.Χ.</li>
-              <li data-el="Ειδικός χώρος αποβίβασης και στάθμευσης σχολικών λεωφορείων / πούλμαν." data-en="Dedicated drop-off and parking bay for tour buses and school coaches.">Ειδικός χώρος αποβίβασης και στάθμευσης σχολικών λεωφορείων / πούλμαν.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="venue-card">
-          <a href="https://maps.app.goo.gl/QAspfTbA8cZcZ6oN6" target="_blank" rel="noopener noreferrer" title="Άνοιγμα στο Google Maps">
-            <img src="https://admin.videotheatre.gr/api/files/media/0tifotp3xkvsf0g/map_dye8q9e7y2.jpg" alt="Χάρτης Πρόσβασης Ελληνικός Κόσμος">
-          </a>
-          <div class="venue-card-body">
-            <h3 data-el="Οδηγίες Πρόσβασης" data-en="How to Get Here">Οδηγίες Πρόσβασης</h3>
-            <ul class="access-list">
-              <li data-el="Με Λεωφορείο: Γραμμές 049 (Ομόνοια - Πειραιάς) και 914 (Ομόνοια - Πειραιάς μέσω Π. Ράλλη), στάση «Σχολή Καλών Τεχνών»." data-en="By Bus: Routes 049 &amp; 914 (Omonoia - Piraeus), Stop 'School of Fine Arts'.">
-                <strong>Λεωφορεία:</strong> Γραμμές 049 &amp; 914, στάση «Σχολή Καλών Τεχνών».
-              </li>
-              <li data-el="Με ΗΣΑΠ (Ηλεκτρικός): Σταθμός «Καλλιθέα» (περίπου 10 λεπτά με τα πόδια) ή σταθμός «Ταύρος»." data-en="By Metro/Train: Line 1 stations 'Kallithea' (10-min walk) or 'Tavros'.">
-                <strong>ΗΣΑΠ (Τρένο):</strong> Σταθμοί «Καλλιθέα» (10' περπάτημα) ή «Ταύρος».
-              </li>
-              <li data-el="Με Αυτοκίνητο: Εύκολη πρόσβαση από την οδό Πειραιώς (ύψος ΑΣΚΤ) με άμεση είσοδο στο δωρεάν parking του συγκροτήματος." data-en="By Car: Direct access via Pireos Street opposite ASFA into the complimentary on-site parking.">
-                <strong>Αυτοκίνητο:</strong> Άμεση είσοδος από Πειραιώς στο δωρεάν parking.
-              </li>
-            </ul>
-
-            <div style="margin-top: 1.5rem; text-align: center;">
-              <a href="https://maps.app.goo.gl/QAspfTbA8cZcZ6oN6" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; font-size: 1.1rem; padding: 0.75rem 1rem;">
-                📍 Άνοιγμα στο Google Maps
-              </a>
-            </div>
-
-            <div class="map-preview-wrap">
-              <iframe 
-                src="https://maps.google.com/maps?q=37.9678,23.6931&z=15&output=embed" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Προεπισκόπηση Χάρτη Ελληνικός Κόσμος">
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ -->
-  <section id="schools" class="block-section block-schools">
-    <div class="block-inner schools-grid">
-      <div>
-        <span class="sub-badge badge-font" data-el="ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027" data-en="EDUCATIONAL PROGRAM 2026-2027">ΕΚΠΑΙΔΕΥΤΙΚΟ ΠΡΟΓΡΑΜΜΑ 2026-2027</span>
-        <h2 style="font-size: 2.5rem; margin-bottom: 1.2rem;" data-el="Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις" data-en="School Visits &amp; Guided Tours">
-          Σχολικές Επισκέψεις &amp; Ομαδικές Ξεναγήσεις
-        </h2>
-        <p data-el="Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM." data-en="Jules Verne 200 is specifically curated for Kindergarten, Primary, and Secondary school students, connecting Physics, Geography, History, and Literature through experiential STEAM learning.">
-          Η έκθεση Jules Verne 200 είναι ιδανική για μαθητές Νηπιαγωγείου, Δημοτικού, Γυμνασίου και Λυκείου, συνδέοντας άμεσα τα μαθήματα της Φυσικής, της Γεωγραφίας, της Ιστορίας και της Λογοτεχνίας με τη βιωματική ψηφιακή εκπαίδευση STEAM.
-        </p>
-        <ul class="school-features">
-          <li data-el="Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά." data-en="Interactive Sketch &amp; Post workshop where students actively create and animate vehicles.">Διαδραστικό εργαστήριο Sketch &amp; Post όπου κάθε μαθητής συμμετέχει ενεργά.</li>
-          <li data-el="Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών." data-en="Optimized visit flow guided by trained museum educators.">Προσαρμοσμένη ροή χωρίς καθυστερήσεις με συνοδεία εξειδικευμένων μουσειοπαιδαγωγών.</li>
-          <li data-el="Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη." data-en="Comprehensive Educational Guide with classroom activities for before and after the visit.">Εγκεκριμένος εκπαιδευτικός φάκελος με προτεινόμενες δραστηριότητες πριν και μετά την επίσκεψη.</li>
-        </ul>
-
-        <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <a href="https://www.dropbox.com/scl/fi/2xnr0wh974od7sgif871t/JV200_Schools_EL_Small.pdf?rlkey=yg7w1zhi0km889z6ip4aj8gyj&st=7u7z0h2a&dl=1" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)" data-en="DOWNLOAD EDUCATIONAL GUIDE (PDF)">
-            ΚΑΤΕΒΑΣΤΕ ΤΟΝ ΕΚΠΑΙΔΕΥΤΙΚΟ ΟΔΗΓΟ (PDF)
-          </a>
-        </div>
-
-        <div class="contact-box">
-          <p><strong>Τηλέφωνα Κρατήσεων Σχολείων:</strong> <a href="tel:6977407217">6977 407217</a> &bull; <a href="tel:6980267672">6980 267672</a></p>
-          <p><strong>Email Επικοινωνίας:</strong> <a href="mailto:jv200greece@gmail.com">jv200greece@gmail.com</a></p>
-        </div>
-      </div>
-      <div class="schools-poster">
-        <img src="https://admin.videotheatre.gr/api/files/media/b5oyapliot8pho5/jules_vern_poster_july_2026_jsij98axcf.jpg?thumb=800x0" alt="Αφίσα Έκθεσης">
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ -->
-  <section id="info" class="block-section block-info">
-    <div class="block-inner">
-      <div class="block-header">
-        <span class="sub-badge badge-font" data-el="ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ" data-en="VISIT INFORMATION">ΠΛΗΡΟΦΟΡΙΕΣ ΕΠΙΣΚΕΨΗΣ</span>
-        <h2 data-el="Ωράριο &amp; Τιμές Εισιτηρίων" data-en="Opening Hours &amp; Prices">Ωράριο &amp; Τιμές Εισιτηρίων</h2>
-        <div class="dashed-divider"></div>
-        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-el="Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200." data-en="All the essential details for your visit to the Jules Verne 200 exhibition.">
-          Όλες οι πληροφορίες για την είσοδό σας στην έκθεση Jules Verne 200.
-        </p>
-      </div>
-
-      <div class="info-grid">
-        <div class="schedule-box">
-          <h3 data-el="Ωράριο Λειτουργίας" data-en="Opening Hours">Ωράριο Λειτουργίας</h3>
-          <div class="schedule-item">
-            <span class="schedule-day" data-el="Δευτέρα – Πέμπτη" data-en="Monday – Thursday">Δευτέρα – Πέμπτη</span>
-            <span class="schedule-hours">10:00 – 21:00</span>
-          </div>
-          <div class="schedule-item">
-            <span class="schedule-day" data-el="Παρασκευή" data-en="Friday">Παρασκευή</span>
-            <span class="schedule-hours">10:00 – 22:00</span>
-          </div>
-          <div class="schedule-item">
-            <span class="schedule-day" data-el="Σάββατο &amp; Κυριακή" data-en="Saturday &amp; Sunday">Σάββατο &amp; Κυριακή</span>
-            <span class="schedule-hours">10:00 – 22:00</span>
-          </div>
-          <div class="schedule-item">
-            <span class="schedule-day" data-el="Τελευταία Είσοδος" data-en="Last Entrance">Τελευταία Είσοδος</span>
-            <span class="schedule-hours">20:00</span>
-          </div>
-          <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem;" data-el="* Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης." data-en="* Special morning timeslots available for pre-booked school groups.">
-            * Για σχολικές επισκέψεις ισχύουν πρωινές ειδικές ζώνες κατόπιν κράτησης.
-          </div>
-        </div>
-
-        <div class="pricing-box">
-          <h3 data-el="Πίνακας Εισιτηρίων" data-en="Ticket Prices">Πίνακας Εισιτηρίων</h3>
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th data-el="Κατηγορία Εισιτηρίου" data-en="Ticket Type">Κατηγορία Εισιτηρίου</th>
-                <th data-el="Καθημερινές" data-en="Weekdays">Καθημερινές</th>
-                <th data-el="Σαββατοκύριακα" data-en="Weekends">Σαββατοκύριακα</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-el="Γενική Είσοδος (Ενήλικες)" data-en="General Admission (Adults)">Γενική Είσοδος (Ενήλικες)</td>
-                <td class="price">14,50 €</td>
-                <td class="price">18,50 €</td>
-              </tr>
-              <tr>
-                <td data-el="Μειωμένο (Φοιτητές, 65+, ΑμεΑ)" data-en="Reduced (Students, 65+, Disabled)">Μειωμένο (Φοιτητές, 65+, ΑμεΑ)</td>
-                <td class="price">11,50 €</td>
-                <td class="price">14,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Παιδικό / Junior (έως 12 ετών)" data-en="Junior / Kids (up to 12 yrs)">Παιδικό / Junior (έως 12 ετών)</td>
-                <td class="price">9,50 €</td>
-                <td class="price">12,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Οικογενειακό Πακέτο (4 άτομα)" data-en="Family Pack (4 persons)">Οικογενειακό Πακέτο (4 άτομα)</td>
-                <td class="price">38,00 €</td>
-                <td class="price">48,00 €</td>
-              </tr>
-              <tr>
-                <td data-el="Σχολικές Ομάδες (ανά μαθητή)" data-en="School Groups (per student)">Σχολικές Ομάδες (ανά μαθητή)</td>
-                <td class="price" colspan="2" style="color: #0D9269; font-size: 1.25rem;">Ειδική Τιμή Κατόπιν Κράτησης</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="margin-top: 2rem; text-align: center;">
-            <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-el="ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE" data-en="BUY TICKETS ONLINE">
-              ΑΓΟΡΑ ΕΙΣΙΤΗΡΙΩΝ ONLINE (MORE.COM)
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. BLOCK: ΕΡΩΤΗΣΕΙΣ -->
-  <section id="faqs" class="block-section block-faqs">
-    <div class="block-inner faq-container">
-      <div class="block-header">
-        <span class="sub-badge badge-font">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</span>
-        <h2 data-el="Ερωτήσεις &amp; Απαντήσεις" data-en="Questions &amp; Answers">Ερωτήσεις &amp; Απαντήσεις</h2>
-        <div class="dashed-divider"></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span data-el="Πόση ώρα διαρκεί η επίσκεψη στην έκθεση;" data-en="How long does the visit last?">Πόση ώρα διαρκεί η επίσκεψη στην έκθεση;</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer" data-el="Η μέση διάρκεια της εμπειρίας είναι 60 με 75 λεπτά. Περιλαμβάνει 25 λεπτά στην αίθουσα εμβύθισης 360°, 10 λεπτά στο VR, χρόνο στο διαδραστικό εργαστήριο Sketch &amp; Post και περιήγηση στις προθήκες κειμηλίων." data-en="The estimated visit time is 60 to 75 minutes, encompassing the 25-minute 360° immersive screening, 10-minute VR stations, the Sketch &amp; Post workshop, and historical showcases.">
-          Η μέση διάρκεια της εμπειρίας είναι 60 με 75 λεπτά. Περιλαμβάνει 25 λεπτά στην αίθουσα εμβύθισης 360°, 10 λεπτά στο VR, χρόνο στο διαδραστικό εργαστήριο Sketch &amp; Post και περιήγηση στις προθήκες κειμηλίων.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span data-el="Είναι κατάλληλη η έκθεση για μικρά παιδιά;" data-en="Is the exhibition suitable for young children?">Είναι κατάλληλη η έκθεση για μικρά παιδιά;</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer" data-el="Απολύτως! Η έκθεση είναι ειδικά σχεδιασμένη για επισκέπτες όλων των ηλικιών και οικογένειες. Τα παιδιά λατρεύουν ιδιαίτερα το εργαστήριο Sketch &amp; Post όπου ζωγραφίζουν μηχανές και τις βλέπουν να κινούνται ψηφιακά στον τοίχο." data-en="Absolutely! It is family-friendly and suitable for all ages. Kids especially love the interactive Sketch &amp; Post workshop where their colored machines come alive on the screen.">
-          Απολύτως! Η έκθεση είναι ειδικά σχεδιασμένη για επισκέπτες όλων των ηλικιών και οικογένειες. Τα παιδιά λατρεύουν ιδιαίτερα το εργαστήριο Sketch &amp; Post όπου ζωγραφίζουν μηχανές και τις βλέπουν να κινούνται ψηφιακά στον τοίχο.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span data-el="Επιτρέπεται η λήψη φωτογραφιών και βίντεο;" data-en="Are photography and filming permitted?">Επιτρέπεται η λήψη φωτογραφιών και βίντεο;</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer" data-el="Ναι, η ερασιτεχνική λήψη φωτογραφιών και βίντεο (χωρίς φλας και τρίποδο) επιτρέπεται ελεύθερα σε όλους τους χώρους. Μάλιστα, υπάρχει ειδικό Photo Opportunity spot με σκηνικά και avatar του Ιουλίου Βερν." data-en="Yes, non-commercial photography and video recording without flash or tripods are welcomed. Dedicated Photo Opportunity zones are featured throughout the venue.">
-          Ναι, η ερασιτεχνική λήψη φωτογραφιών και βίντεο (χωρίς φλας και τρίποδο) επιτρέπεται ελεύθερα σε όλους τους χώρους. Μάλιστα, υπάρχει ειδικό Photo Opportunity spot με σκηνικά και avatar του Ιουλίου Βερν.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span data-el="Υπάρχει προσβασιμότητα για άτομα με αναπηρία (ΑμεΑ);" data-en="Is the venue wheelchair accessible?">Υπάρχει προσβασιμότητα για άτομα με αναπηρία (ΑμεΑ);</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer" data-el="Ναι, όλοι οι εκθεσιακοί χώροι του Κέντρου Πολιτισμού «Ελληνικός Κόσμος» είναι πλήρως προσβάσιμοι σε άτομα με αμαξίδιο, με ράμπες, ανελκυστήρες και ειδικά διαμορφωμένους χώρους υγιεινής." data-en="Yes, the entirety of Hellenic Cosmos is fully wheelchair accessible with flat floors, ramps, elevators, and accessible restrooms.">
-          Ναι, όλοι οι εκθεσιακοί χώροι του Κέντρου Πολιτισμού «Ελληνικός Κόσμος» είναι πλήρως προσβάσιμοι σε άτομα με αμαξίδιο, με ράμπες, ανελκυστήρες και ειδικά διαμορφωμένους χώρους υγιεινής.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span data-el="Πώς κλείνουμε επίσκεψη για σχολική ομάδα ή σύλλογο;" data-en="How do we book group or school reservations?">Πώς κλείνουμε επίσκεψη για σχολική ομάδα ή σύλλογο;</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer" data-el="Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται στα τηλέφωνα 6977 407217 &bull; 6980 267672 ή μέσω email στο jv200greece@gmail.com." data-en="School and group bookings can be coordinated at +30 6977 407217 &bull; +30 6980 267672 or via email at jv200greece@gmail.com.">
-          Οι κρατήσεις για σχολικές μονάδες και πολυπληθείς ομάδες γίνονται στα τηλέφωνα 6977 407217 &bull; 6980 267672 ή μέσω email στο jv200greece@gmail.com.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="partners-grid">
-        <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
-        <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
-        <img src="https://admin.videotheatre.gr/api/files/media/vqnv01decw0nxed/vt_logo_white_9qjm1mm18a.png" alt="Video Theatre">
-      </div>
-
-      <p class="venue-info">
-        <strong>ΙΟΥΛΙΟΣ ΒΕΡΝ 200: Η ΣΥΝΑΡΠΑΣΤΙΚΗ ΕΜΠΕΙΡΙΑ - AN IMMERSIVE JOURNEY</strong><br>
-        Κέντρο Πολιτισμού «Ελληνικός Κόσμος» — Πειραιώς 254, 177 78 Ταύρος
-      </p>
-
-      <p class="copyright">
-        &copy; 2026 Jules Verne 200. Με την επιφύλαξη παντός δικαιώματος.
-      </p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('yt-player', {
-        videoId: '_DLV2fUaArU',
-        playerVars: {
-          'autoplay': 1,
-          'controls': 0,
-          'showinfo': 0,
-          'rel': 0,
-          'modestbranding': 1,
-          'playsinline': 1,
-          'mute': 1,
-          'start': 5
-        },
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      event.target.mute();
-      event.target.seekTo(5);
-      event.target.playVideo();
-    }
-
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.ENDED) {
-        player.seekTo(5);
-        player.playVideo();
-      }
-    }
-
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('active');
-    }
-
-    function toggleFaq(element) {
-      const item = element.parentElement;
-      item.classList.toggle('active');
-    }
-
-    let currentLang = 'el';
-    function toggleLanguage() {
-      currentLang = currentLang === 'el' ? 'en' : 'el';
-      document.getElementById('langToggle').textContent = currentLang === 'el' ? 'EN' : 'EL';
-      document.getElementById('mobileLangToggle').textContent = currentLang === 'el' ? 'EN / ENGLISH' : 'EL / ΕΛΛΗΝΙΚΑ';
-
-      const translatableElements = document.querySelectorAll('[data-el]');
-      translatableElements.forEach(el => {
-        if (currentLang === 'en' && el.getAttribute('data-en')) {
-          el.innerHTML = el.getAttribute('data-en');
-        } else if (currentLang === 'el' && el.getAttribute('data-el')) {
-          el.innerHTML = el.getAttribute('data-el');
-        }
-      });
-    }
-  </script>
-
-</body>
-</html>
+      display: block; /* Αλλαγή σε block για σωστή στοίχιση */
+      margin-top:

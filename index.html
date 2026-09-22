@@ -777,7 +777,7 @@
       transform: rotate(45deg);
     }
 
-    /* FOOTER (Links added) */
+    /* FOOTER */
     footer {
       background-color: var(--sky-blue-dark);
       color: #FFFCFC;
@@ -796,20 +796,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 3.5rem;
     }
 
     .partners-grid a {
       display: inline-block;
       transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .partners-grid img {
-      height: 78px;
-      max-width: 220px;
-      width: auto;
       opacity: 0.95;
-      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
     }
 
     .partners-grid a:hover {
@@ -817,25 +810,12 @@
       transform: scale(1.06);
     }
 
-    /* Footer partner links text list */
-    .footer-partner-links {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-      font-size: 0.9rem;
-    }
-
-    .footer-partner-links a {
-      color: #93C5FD;
-      text-decoration: underline;
-      word-break: break-all;
-      flex: 1;
-      text-align: center;
-    }
-
-    .footer-partner-links a:hover {
-      color: #FFFFFF;
+    .partners-grid img {
+      height: 78px;
+      max-width: 220px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
     }
 
     .venue-info {
@@ -878,13 +858,9 @@
       .block-header h2 { font-size: 2.1rem; }
       .partners-grid { 
         flex-direction: column; 
-        gap: 1.5rem; 
+        gap: 2rem; 
       }
       .partners-grid img { height: 55px; }
-      .footer-partner-links {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
       .intro-grid, .schools-grid, .venue-grid {
         grid-template-columns: 1fr;
         gap: 2.2rem;
@@ -1275,7 +1251,7 @@
     </div>
   </section>
 
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ -->
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (ΩΡΑΡΙΟ & ΤΙΜΕΣ) -->
   <section id="info" class="block-section block-info">
     <div class="block-inner">
       <div class="block-header">
@@ -1414,26 +1390,22 @@
     </div>
   </section>
 
-  <!-- FOOTER (Με ενεργά links σε νέο παράθυρο) -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="partners-grid">
-        <a href="https://www.hellenic-cosmos.gr/" target="_blank" rel="noopener noreferrer">
+        <!-- 1. ΕΛΛΗΝΙΚΟΣ ΚΟΣΜΟΣ / IME -->
+        <a href="https://www.hellenic-cosmos.gr/" target="_blank" rel="noopener noreferrer" title="Κέντρο Πολιτισμού Ελληνικός Κόσμος">
           <img src="https://admin.videotheatre.gr/api/files/media/sdw3j2jdpyqunyx/ek_logo_white_cdg32re31p.png" alt="Ίδρυμα Μείζονος Ελληνισμού">
         </a>
-        <a href="https://layerofreality.com/" target="_blank" rel="noopener noreferrer">
+        <!-- 2. LAYERS OF REALITY -->
+        <a href="https://layersofreality.com/" target="_blank" rel="noopener noreferrer" title="Layers of Reality">
           <img src="https://admin.videotheatre.gr/api/files/media/o2f5zjxj9yv6acz/layers_of_reality_logo_white_qaokeekxnz.png" alt="Layers of Reality">
         </a>
-        <a href="https://www.videotheatre.gr/" target="_blank" rel="noopener noreferrer">
+        <!-- 3. VIDEOTHEATRE -->
+        <a href="https://www.videotheatre.gr/" target="_blank" rel="noopener noreferrer" title="Video Theatre">
           <img src="https://admin.videotheatre.gr/api/files/media/vqnv01decw0nxed/vt_logo_white_9qjm1mm18a.png" alt="Video Theatre">
         </a>
-      </div>
-
-      <!-- Links κειμένου κάτω από τα logos όπως τα ζήτησες -->
-      <div class="footer-partner-links">
-        <a href="https://www.hellenic-cosmos.gr/" target="_blank" rel="noopener noreferrer">https://www.hellenic-cosmos.gr/</a>
-        <a href="https://www.videotheatre.gr/" target="_blank" rel="noopener noreferrer">https://www.videotheatre.gr/</a>
-        <a href="https://layersofreality.com/" target="_blank" rel="noopener noreferrer">https://layersofreality.com/</a>
       </div>
 
       <p class="venue-info">

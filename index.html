@@ -16,7 +16,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cinzel:wght@600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -58,9 +58,10 @@
     }
 
     .badge-font {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      letter-spacing: 2.5px;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     /* NAVIGATION */
@@ -80,7 +81,6 @@
       border-bottom: 1px solid rgba(233, 190, 116, 0.25);
     }
 
-    /* OVERHANGING LOGO */
     .nav-logo-link {
       position: relative;
       top: 38px;
@@ -112,8 +112,9 @@
     .nav-menu a {
       color: var(--snow-white);
       text-decoration: none;
-      font-size: 1.15rem;
-      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
       letter-spacing: 1.5px;
       transition: color 0.3s;
     }
@@ -125,8 +126,9 @@
       border: 1px solid var(--harvest-gold);
       color: var(--harvest-gold);
       padding: 0.3rem 0.8rem;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
       cursor: pointer;
       border-radius: 2px;
       transition: all 0.3s;
@@ -141,8 +143,9 @@
     .btn {
       display: inline-block;
       padding: 0.95rem 2.4rem;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.45rem;
       letter-spacing: 1.5px;
       text-decoration: none;
       border-radius: 2px;
@@ -156,7 +159,7 @@
       background-color: var(--harvest-gold);
       color: var(--seal-brown);
       border: 1px solid var(--harvest-gold);
-      font-weight: bold;
+      font-weight: 800;
       box-shadow: 0 4px 15px rgba(233, 190, 116, 0.35);
     }
 
@@ -231,12 +234,12 @@
     }
 
     .hero-date {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       color: var(--snow-white);
       margin-bottom: 2.5rem;
-      letter-spacing: 3.5px;
+      letter-spacing: 3px;
       text-shadow: 0 3px 15px rgba(0,0,0,0.9);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .hero-buttons {
@@ -265,7 +268,7 @@
 
     .block-header .sub-badge {
       color: var(--harvest-gold);
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       letter-spacing: 3px;
       display: block;
       margin-bottom: 0.4rem;
@@ -306,7 +309,7 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.85);
     }
 
-    /* 2. THE 10 STATIONS (EXPERIENCE) */
+    /* 2. THE 10 STATIONS BLOCK */
     .block-rooms {
       background: rgba(12, 8, 7, 0.75);
       backdrop-filter: blur(10px);
@@ -316,13 +319,13 @@
     .rooms-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 2.2rem;
+      gap: 2.4rem;
     }
 
     .room-card {
-      background: rgba(63, 18, 16, 0.55);
+      background: rgba(45, 14, 12, 0.65);
       border: 1px solid var(--border-gold);
-      border-radius: 4px;
+      border-radius: 5px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -333,34 +336,59 @@
     .room-card:hover {
       border-color: var(--harvest-gold);
       transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
+    }
+
+    .room-card-header {
+      background: linear-gradient(90deg, rgba(97, 18, 5, 0.95) 0%, rgba(55, 12, 10, 0.95) 100%);
+      padding: 0.85rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .room-num-badge {
+      background: var(--harvest-gold);
+      color: var(--seal-brown);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 3px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .room-header-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--snow-white);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
     }
 
     .room-card-img {
       position: relative;
-      height: 240px;
+      height: 230px;
+      overflow: hidden;
     }
 
     .room-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
 
-    .room-num {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: var(--red-oxide);
-      color: var(--harvest-gold);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
-      padding: 0.3rem 0.9rem;
-      border: 1px solid var(--harvest-gold);
+    .room-card:hover .room-card-img img {
+      transform: scale(1.04);
     }
 
     .room-body {
-      padding: 2.2rem;
+      padding: 2rem;
       flex-grow: 1;
     }
 
@@ -500,7 +528,7 @@
       font-weight: bold;
     }
 
-    /* 5. INFO BLOCK (ΦΩΤΕΙΝΟΤΕΡΟ BLOCK) */
+    /* 5. INFO BLOCK */
     .block-info {
       background: linear-gradient(180deg, rgba(233, 190, 116, 0.14) 0%, rgba(20, 12, 10, 0.85) 100%);
       border-bottom: 1px solid var(--border-gold);
@@ -581,7 +609,7 @@
     .pricing-table td.price {
       color: var(--snow-white);
       font-weight: bold;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.45rem;
       letter-spacing: 1px;
     }
@@ -709,7 +737,6 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <!-- OVERHANGING INTERACTIVE LOGO LINK -->
     <a href="#" class="nav-logo-link" title="Ιούλιος Βερν 200 - Αρχική">
       <img src="https://admin.videotheatre.gr/api/files/media/c0ztc0z1lmsvnye/logo_jules_verne_grec_textura_trans_small_zhdfzr3qlt.png" alt="Jules Verne 200">
     </a>
@@ -722,7 +749,7 @@
       <a href="#info" data-el="ΠΛΗΡΟΦΟΡΙΕΣ" data-en="INFO &amp; TICKETS">ΠΛΗΡΟΦΟΡΙΕΣ</a>
       <a href="#faqs" data-el="ΕΡΩΤΗΣΕΙΣ" data-en="FAQS">ΕΡΩΤΗΣΕΙΣ</a>
       <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">EN</button>
-      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.15rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
+      <a href="https://www.more.com/gr-el/tickets/theater/jv200/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.45rem 1.3rem; font-size: 1.2rem;" data-el="ΕΙΣΙΤΗΡΙΑ" data-en="TICKETS">ΕΙΣΙΤΗΡΙΑ</a>
     </div>
   </nav>
 
@@ -752,7 +779,7 @@
     </div>
   </header>
 
-  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ (ABOUT ME THN EIKONA GATE) -->
+  <!-- 1. BLOCK: Η ΕΚΘΕΣΗ -->
   <section id="about" class="block-section block-intro">
     <div class="block-inner intro-grid">
       <div>
@@ -789,12 +816,15 @@
       <div class="rooms-grid">
         <!-- 1. Γνωριμία με τον Ιούλιο Βερν -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">01</span>
+            <span class="room-header-title" data-el="Γνωριμία με τον Βερν" data-en="Meeting Verne">Γνωριμία με τον Βερν</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">01. ΓΝΩΡΙΜΙΑ ΜΕ ΤΟΝ ΒΕΡΝ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/fdenjnrpbagv8cd/nautilus_qiwhzdvc2h.png" alt="Γνωριμία με τον Ιούλιο Βερν">
           </div>
           <div class="room-body">
-            <h3 data-el="Γνωριμία με τον Ιούλιο Βερν" data-en="Meeting Jules Verne">Γνωριμία με τον Ιούλιο Βερν</h3>
+            <h3 data-el="Το Σύμπαν του Συγγραφέα" data-en="The Author's Universe">Το Σύμπαν του Συγγραφέα</h3>
             <p data-el="Προσπεράστε τον επιβλητικό Ναυτίλο και αγγίξτε τη μεγάλη διαδραστική οθόνη: ξεφυλλίστε σπάνια χειρόγραφα και κρυμμένα μυστικά από τα ταξίδια του Βερν." data-en="Pass beneath the majestic Nautilus and explore the giant touch-screen archive: uncover rare manuscripts, vintage letters, and secrets from Verne's travels with a swipe of your fingers.">
               Προσπεράστε τον επιβλητικό Ναυτίλο και αγγίξτε τη μεγάλη διαδραστική οθόνη: ξεφυλλίστε σπάνια χειρόγραφα και κρυμμένα μυστικά από τα ταξίδια του Βερν.
             </p>
@@ -803,12 +833,15 @@
 
         <!-- 2. Βόλτα στο Παρίσι -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">02</span>
+            <span class="room-header-title" data-el="Βόλτα στο Παρίσι" data-en="Stroll in Paris">Βόλτα στο Παρίσι</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">02. ΒΟΛΤΑ ΣΤΟ ΠΑΡΙΣΙ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/9crtc6aym7qgkl2/paris_1800_collage_287ekxzg0k.jpg?thumb=800x0" alt="Βόλτα στο Παρίσι">
           </div>
           <div class="room-body">
-            <h3 data-el="Βόλτα στο Παρίσι" data-en="Stroll in Paris">Βόλτα στο Παρίσι</h3>
+            <h3 data-el="Παρίσι του 19ου Αιώνα" data-en="19th-Century Paris">Παρίσι του 19ου Αιώνα</h3>
             <p data-el="Περπατήστε πάνω σε βρεγμένο λιθόστρωτο κάτω από το ζεστό φως των φαναριών και ταξιδέψτε στα παρισινά θεάματα του 1800 μέσα από ένα αυθεντικό κολάζ εποχής." data-en="Step onto a rain-washed cobblestone street under vintage gas lamps, surrounded by genuine Belle Époque theatre posters and the artistic charm of 19th-century Paris.">
               Περπατήστε πάνω σε βρεγμένο λιθόστρωτο κάτω από το ζεστό φως των φαναριών και ταξιδέψτε στα παρισινά θεάματα του 1800 μέσα από ένα αυθεντικό κολάζ εποχής.
             </p>
@@ -817,12 +850,15 @@
 
         <!-- 3. VR Βιογραφία -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">03</span>
+            <span class="room-header-title" data-el="VR Βιογραφία" data-en="VR Biography">VR Βιογραφία</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">03. VR ΒΙΟΓΡΑΦΙΑ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/d69su2ohd4nie7u/vr_empty_360_9hy19cimn6.jpg?thumb=800x0" alt="VR Βιογραφία">
           </div>
           <div class="room-body">
-            <h3 data-el="VR Βιογραφία" data-en="VR Biography">VR Βιογραφία</h3>
+            <h3 data-el="Pages Biographiques VR" data-en="Pages Biographiques VR">Pages Biographiques VR</h3>
             <p data-el="Φορέστε τα VR headsets και αφεθείτε σε μια καθιστή εικονική πτήση στις τρεις πόλεις που διαμόρφωσαν το ανήσυχο πνεύμα του οραματιστή συγγραφέα." data-en="Put on your VR headset and take flight across the three defining cities that forged the author's extraordinary imagination.">
               Φορέστε τα VR headsets και αφεθείτε σε μια καθιστή εικονική πτήση στις τρεις πόλεις που διαμόρφωσαν το ανήσυχο πνεύμα του οραματιστή συγγραφέα.
             </p>
@@ -831,12 +867,15 @@
 
         <!-- 4. Γύρος του Κόσμου σε 80 δεύτερα -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">04</span>
+            <span class="room-header-title" data-el="Γύρος του Κόσμου" data-en="Around the World">Γύρος του Κόσμου</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">04. ΓΥΡΟΣ ΤΟΥ ΚΟΣΜΟΥ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/t5dyliqt9esddrp/immersive_4_elt1gi9pgh.jpeg?thumb=800x0" alt="Γύρος του Κόσμου σε 80 δεύτερα">
           </div>
           <div class="room-body">
-            <h3 data-el="Γύρος του Κόσμου σε 80 δεύτερα" data-en="Around the World in 80 seconds">Γύρος του Κόσμου σε 80 δεύτερα</h3>
+            <h3 data-el="Σε 80 Δευτερόλεπτα" data-en="In 80 Seconds">Σε 80 Δευτερόλεπτα</h3>
             <p data-el="Μια πρωτοποριακή εικαστική εγκατάσταση των Fontcuberta &amp; Aleu, όπου η τεχνητή νοημοσύνη και η φωτογραφία αποδομούν τον χρόνο, την ταχύτητα και την έννοια του ταξιδιού." data-en="A visionary digital art installation where algorithmic imagery reimagines time, velocity, and future exploration.">
               Μια πρωτοποριακή εικαστική εγκατάσταση των Fontcuberta &amp; Aleu, όπου η τεχνητή νοημοσύνη και η φωτογραφία αποδομούν τον χρόνο, την ταχύτητα και την έννοια του ταξιδιού.
             </p>
@@ -845,12 +884,15 @@
 
         <!-- 5. Οι Μηχανές του Βερν -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">05</span>
+            <span class="room-header-title" data-el="Οι Μηχανές του Βερν" data-en="Verne's Machines">Οι Μηχανές του Βερν</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">05. ΟΙ ΜΗΧΑΝΕΣ ΤΟΥ ΒΕΡΝ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/97cj0gqnkw3iebu/machine_verne_jp_64yqbqzte8.jpg?thumb=800x0" alt="Οι Μηχανές του Βερν">
           </div>
           <div class="room-body">
-            <h3 data-el="Οι Μηχανές του Βερν" data-en="Verne's Machines">Οι Μηχανές του Βερν</h3>
+            <h3 data-el="Sketch &amp; Post Lab" data-en="Sketch &amp; Post Lab">Sketch &amp; Post Lab</h3>
             <p data-el="Δώστε τα δικά σας χρώματα στις φουτουριστικές μηχανές του συγγραφέα, σκανάρετέ τες και δείτε τες να απογειώνονται ζωντανά στη μεγάλη προβολή." data-en="Color your own visionary Vernian machine, scan it, and watch it instantly launch into a massive dynamic projection.">
               Δώστε τα δικά σας χρώματα στις φουτουριστικές μηχανές του συγγραφέα, σκανάρετέ τες και δείτε τες να απογειώνονται ζωντανά στη μεγάλη προβολή.
             </p>
@@ -859,12 +901,15 @@
 
         <!-- 6. Αίθουσα Εμβύθισης -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">06</span>
+            <span class="room-header-title" data-el="Αίθουσα Εμβύθισης" data-en="Immersive Hall">Αίθουσα Εμβύθισης</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">06. ΑΙΘΟΥΣΑ ΕΜΒΥΘΙΣΗΣ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/lrvfy1r9w2q7a6l/immersive_1_nub3otw9cn.jpeg?thumb=800x0" alt="Αίθουσα Εμβύθισης">
           </div>
           <div class="room-body">
-            <h3 data-el="Αίθουσα Εμβύθισης" data-en="Immersive Hall">Αίθουσα Εμβύθισης</h3>
+            <h3 data-el="Μεγάλη Προβολή 360°" data-en="Grand 360° Projections">Μεγάλη Προβολή 360°</h3>
             <p data-el="25 λεπτά απόλυτης οπτικοακουστικής εμβύθισης σε τοίχους και δάπεδο: βυθιστείτε στην άβυσσο των ωκεανών, πετάξτε στα αστέρια και ταξιδέψτε στα έγκατα της Γης." data-en="25 minutes of 360° projection: dive into oceanic abysses, soar toward the cosmos, and plunge into the Earth's fiery core.">
               25 λεπτά απόλυτης οπτικοακουστικής εμβύθισης σε τοίχους και δάπεδο: βυθιστείτε στην άβυσσο των ωκεανών, πετάξτε στα αστέρια και ταξιδέψτε στα έγκατα της Γης.
             </p>
@@ -873,26 +918,32 @@
 
         <!-- 7. Εκδόσεις & Κειμήλια -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">07</span>
+            <span class="room-header-title" data-el="Εκδόσεις &amp; Κειμήλια" data-en="Editions &amp; Relics">Εκδόσεις &amp; Κειμήλια</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">07. ΕΚΔΟΣΕΙΣ &amp; ΚΕΙΜΗΛΙΑ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/a8qntssoga2s0fk/vitrina_m7s1acz5lt.jpeg?thumb=800x0" alt="Εκδόσεις & Κειμήλια">
           </div>
           <div class="room-body">
-            <h3 data-el="Εκδόσεις &amp; Κειμήλια" data-en="Editions &amp; Artifacts">Εκδόσεις &amp; Κειμήλια</h3>
+            <h3 data-el="Σπάνια Ιστορικά Τεκμήρια" data-en="Rare Historical Relics">Σπάνια Ιστορικά Τεκμήρια</h3>
             <p data-el="Ανακαλύψτε σπάνια ναυτικά και επιστημονικά όργανα του 19ου αιώνα, ιστορικές πρώτες εκδόσεις και τη συναρπαστική διαδρομή των βιβλίων που άλλαξαν τον κόσμο." data-en="Inspect authentic navigational instruments, rare first editions, and the fascinating secrets of manuscripts that reshaped modern literature.">
               Ανακαλύψτε σπάνια ναυτικά και επιστημονικά όργανα του 19ου αιώνα, ιστορικές πρώτες εκδόσεις και τη συναρπαστική διαδρομή των βιβλίων που άλλαξαν τον κόσμο.
             </p>
           </div>
         </div>
 
-        <!-- 8. Σημείο Φωτογράφισης (BALLOON ASSET) -->
+        <!-- 8. Σημείο Φωτογράφισης (BARO A PHOTO OPPORTUNITY ASSET) -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">08</span>
+            <span class="room-header-title" data-el="Σημείο Φωτογράφισης" data-en="Photo Opportunity">Σημείο Φωτογράφισης</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">08. ΣΗΜΕΙΟ ΦΩΤΟΓΡΑΦΙΣΗΣ</span>
-            <img src="https://admin.videotheatre.gr/api/files/media/r30tx2b56b5i3cq/balloon_jules_vern_8ajjaywzzm.jpeg" alt="Σημείο Φωτογράφισης">
+            <img src="https://admin.videotheatre.gr/api/files/media/c4uiu8po3fz5cb6/photo_op_wghkaqg1ip.jpg" alt="Σημείο Φωτογράφισης">
           </div>
           <div class="room-body">
-            <h3 data-el="Σημείο Φωτογράφισης" data-en="Photo Opportunity">Σημείο Φωτογράφισης</h3>
+            <h3 data-el="Αναμνηστικό Ταξιδιού" data-en="Souvenir Photo">Αναμνηστικό Ταξιδιού</h3>
             <p data-el="Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι." data-en="Step into the basket of the iconic hot-air balloon alongside Jules Verne himself and capture your own unforgettable souvenir photo.">
               Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι.
             </p>
@@ -901,26 +952,32 @@
 
         <!-- 9. VR MetaVerne -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">09</span>
+            <span class="room-header-title" data-el="VR MetaVerne" data-en="VR MetaVerne">VR MetaVerne</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">09. VR METAVERNE</span>
             <img src="https://admin.videotheatre.gr/api/files/media/j35qf86zlopy5wb/metaverse_kosmo_05713ta804.png?thumb=800x0" alt="VR MetaVerne">
           </div>
           <div class="room-body">
-            <h3 data-el="VR MetaVerne" data-en="VR MetaVerne">VR MetaVerne</h3>
+            <h3 data-el="Περιπατητικό Free-Roam" data-en="Free-Roam VR Experience">Περιπατητικό Free-Roam</h3>
             <p data-el="Περπατήστε ελεύθερα στον χώρο (free-roam VR) και εξερευνήστε 4 φαντασμαγορικούς κόσμους σε μια πρωτοποριακή εμπειρία που ξεπερνά κάθε φαντασία." data-en="Roam freely in space as you step inside 4 breathtaking worlds in a groundbreaking free-roaming VR adventure.">
               Περπατήστε ελεύθερα στον χώρο (free-roam VR) και εξερευνήστε 4 φαντασμαγορικούς κόσμους σε μια πρωτοποριακή εμπειρία που ξεπερνά κάθε φαντασία.
             </p>
           </div>
         </div>
 
-        <!-- 10. 20.000 Λεύγες Έμπνευσης (NEO ASSET 20000 INSPIRATION) -->
+        <!-- 10. 20.000 Λεύγες Έμπνευσης (BARO A 20000 INSPIRATION ASSET) -->
         <div class="room-card">
+          <div class="room-card-header">
+            <span class="room-num-badge">10</span>
+            <span class="room-header-title" data-el="20.000 Λεύγες Έμπνευσης" data-en="20,000 Leagues of Inspiration">20.000 Λεύγες Έμπνευσης</span>
+          </div>
           <div class="room-card-img">
-            <span class="room-num">10. 20.000 ΛΕΥΓΕΣ ΕΜΠΝΕΥΣΗΣ</span>
             <img src="https://admin.videotheatre.gr/api/files/media/pfls2w5h8s2ejxk/20_lll_s1bxu1tpqc.jpg" alt="20.000 Λεύγες Έμπνευσης">
           </div>
           <div class="room-body">
-            <h3 data-el="20.000 Λεύγες Έμπνευσης" data-en="20,000 Leagues of Inspiration">20.000 Λεύγες Έμπνευσης</h3>
+            <h3 data-el="Η Παγκόσμια Κληρονομιά" data-en="Global Legacy">Η Παγκόσμια Κληρονομιά</h3>
             <p data-el="Ο επιβλητικός διάδρομος εξόδου αποκαλύπτει πώς το όραμα του Βερν ενέπνευσε τους πρωτοπόρους της ανθρωπότητας, από τον Ζακ Κουστώ μέχρι τις αποστολές στο διάστημα." data-en="The grand exit corridor reveals how Verne's vision inspired trailblazers, from Jacques Cousteau to humanity's greatest missions into outer space.">
               Ο επιβλητικός διάδρομος εξόδου αποκαλύπτει πώς το όραμα του Βερν ενέπνευσε τους πρωτοπόρους της ανθρωπότητας, από τον Ζακ Κουστώ μέχρι τις αποστολές στο διάστημα.
             </p>
@@ -930,7 +987,7 @@
     </div>
   </section>
 
-  <!-- 3. BLOCK: Ο ΧΩΡΟΣ (VENUE & ACCESS) -->
+  <!-- 3. BLOCK: Ο ΧΩΡΟΣ -->
   <section id="venue" class="block-section block-venue">
     <div class="block-inner">
       <div class="block-header">
@@ -978,7 +1035,7 @@
     </div>
   </section>
 
-  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ (SCHOOLS) -->
+  <!-- 4. BLOCK: ΣΧΟΛΕΙΑ -->
   <section id="schools" class="block-section block-schools">
     <div class="block-inner schools-grid">
       <div>
@@ -1012,7 +1069,7 @@
     </div>
   </section>
 
-  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ (INFO - ΩΡΑΡΙΟ & ΤΙΜΕΣ) -->
+  <!-- 5. BLOCK: ΠΛΗΡΟΦΟΡΙΕΣ -->
   <section id="info" class="block-section block-info">
     <div class="block-inner">
       <div class="block-header">
@@ -1095,7 +1152,7 @@
     </div>
   </section>
 
-  <!-- 6. BLOCK: ΕΡΩΤΗΣΕΙΣ (FAQS) -->
+  <!-- 6. BLOCK: ΕΡΩΤΗΣΕΙΣ -->
   <section id="faqs" class="block-section block-faqs">
     <div class="block-inner faq-container">
       <div class="block-header">

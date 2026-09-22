@@ -632,7 +632,7 @@
       font-weight: bold;
     }
 
-    /* 5. INFO BLOCK (STACKED VERTICAL LAYOUT FOR MOBILE FRIENDLINESS) */
+    /* 5. INFO BLOCK (STACKED VERTICAL LAYOUT) */
     .block-info {
       background-image: var(--sky-gradient);
       border-bottom: 1px solid var(--border-blue);
@@ -640,7 +640,7 @@
 
     .info-grid {
       display: flex;
-      flex-direction: column; /* Πάνω-κάτω διάταξη για απόλυτη άνεση */
+      flex-direction: column;
       gap: 2.5rem;
       max-width: 900px;
       margin: 0 auto;
@@ -677,7 +677,6 @@
     .schedule-day { font-weight: 700; color: var(--text-dark); flex-shrink: 0; }
     .schedule-hours { color: var(--sky-blue-dark); font-weight: bold; text-align: right; }
 
-    /* ΝΕΕΣ ΤΙΜΕΣ ΚΑΘΑΡΗ ΔΙΑΤΑΞΗ */
     .pricing-list {
       display: flex;
       flex-direction: column;
@@ -1270,7 +1269,11 @@
           </div>
           <div class="schedule-item">
             <span class="schedule-day" data-el="ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ" data-en="TUE - WED - THU">ΤΡΙΤΗ - ΤΕΤΑΡΤΗ - ΠΕΜΠΤΗ</span>
-            <span class="schedule-hours">9.30 - 15.00</span>
+            <span class="schedule-hours" data-el="9.30 - 15.00" data-en="9.30 - 15.00">9.30 - 15.00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-day" data-el="ΤΡΙΤΗ - ΠΑΡΑΣΚΕΥΗ" data-en="TUESDAY - FRIDAY">ΤΡΙΤΗ - ΠΑΡΑΣΚΕΥΗ</span>
+            <span class="schedule-hours" data-el="Τελευταία είσοδος 1.30 μ.μ." data-en="Last entry 1:30 PM">Τελευταία είσοδος 1.30 μ.μ.</span>
           </div>
           <div class="schedule-item">
             <span class="schedule-day" data-el="ΠΑΡΑΣΚΕΥΗ" data-en="FRIDAY">ΠΑΡΑΣΚΕΥΗ</span>
@@ -1286,7 +1289,7 @@
           </div>
         </div>
 
-        <!-- ΤΙΜΕΣ ΕΙΣΙΤΗΡΙΩΝ (ΝΕΕΣ ΤΙΜΕΣ ΚΑΙ ΣΗΜΕΙΩΣΕΙΣ) -->
+        <!-- ΤΙΜΕΣ ΕΙΣΙΤΗΡΙΩΝ (ΝΕΕΣ ΤΙΜΕΣ) -->
         <div class="pricing-box">
           <h3 data-el="Τιμές Εισιτηρίων" data-en="Ticket Prices">Τιμές Εισιτηρίων</h3>
           
@@ -1296,11 +1299,11 @@
               <span class="pricing-val">18 €</span>
             </div>
             <div class="pricing-row">
-              <span class="pricing-label" data-el="FAMILY 3 (3 Άτομα)" data-en="FAMILY 3 (3 Persons)">FAMILY 3</span>
+              <span class="pricing-label" data-el="FAMILY 3" data-en="FAMILY 3">FAMILY 3</span>
               <span class="pricing-val">17 €</span>
             </div>
             <div class="pricing-row">
-              <span class="pricing-label" data-el="FAMILY 4 (4 Άτομα)" data-en="FAMILY 4 (4 Persons)">FAMILY 4</span>
+              <span class="pricing-label" data-el="FAMILY 4" data-en="FAMILY 4">FAMILY 4</span>
               <span class="pricing-val">16 €</span>
             </div>
             <div class="pricing-row">

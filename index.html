@@ -884,6 +884,28 @@
       }
       .faq-question { font-size: 1.1rem; }
       .schedule-box, .pricing-box { padding: 1.5rem; }
+      
+      /* Mobile fix for schedule & pricing grids */
+      .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+      }
+      .schedule-hours {
+        text-align: left;
+      }
+      .rooms-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav { height: 65px; padding: 0 0.8rem; }
+      .nav-logo-link { top: 18px; }
+      .nav-logo-link img { height: 85px; }
+      .hero-title { font-size: 1.5rem; }
+      .block-header h2 { font-size: 1.8rem; }
+      .schedule-box, .pricing-box, .venue-card-body, .room-body { padding: 1.2rem; }
     }
   </style>
 </head>
@@ -1108,7 +1130,7 @@
           </div>
         </div>
 
-        <!-- 8. Σημείο Φωτογράφισης -->
+        <!-- 8. Σημείο Φωτογράφισης (Updated text) -->
         <div class="room-card">
           <div class="room-card-header">
             <span class="room-num-badge">08</span>
@@ -1119,8 +1141,8 @@
           </div>
           <div class="room-body">
             <h3 data-el="Αναμνηστικό Ταξιδιού" data-en="Souvenir Photo">Αναμνηστικό Ταξιδιού</h3>
-            <p data-el="Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι." data-en="Step into the basket of the iconic hot-air balloon alongside Jules Verne himself and capture your own unforgettable souvenir photo.">
-              Επιβιβαστείτε στο καλάθι του θρυλικού αερόστατου δίπλα στον ίδιο τον Ιούλιο Βερν και κρατήστε ζωντανή τη δική σας μοναδική ανάμνηση από το ταξίδι.
+            <p data-el="Σταθείτε δίπλα στον ίδιο τον Ιούλιο Βερν, ποζάρετε μέσα στις σελίδες των «Θαυμαστών Ταξιδιών» του και απαθανατίστε τη δική σας μοναδική στιγμή από την έκθεση." data-en="Stand right beside Jules Verne himself, pose within the pages of his 'Extraordinary Voyages', and capture your own unforgettable souvenir moment from the exhibition.">
+              Σταθείτε δίπλα στον ίδιο τον Ιούλιο Βερν, ποζάρετε μέσα στις σελίδες των «Θαυμαστών Ταξιδιών» του και απαθανατίστε τη δική σας μοναδική στιγμή από την έκθεση.
             </p>
           </div>
         </div>
